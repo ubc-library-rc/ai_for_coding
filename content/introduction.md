@@ -90,7 +90,7 @@ By the end of this workshop, you will be able to:
 
 ### **Data — Palmer Penguins Dataset**
 
-Preview of the data you'll work with:
+Preview of the data we'll work with:
 
 | species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
 |---------|--------|----------------|---------------|-------------------|-------------|-----|------|
@@ -100,15 +100,18 @@ Preview of the data you'll work with:
 | Chinstrap | Dream | 46.5 | 17.9 | 192 | 3500 | female | 2007 |
 | Gentoo | Biscoe | 46.1 | 13.2 | 211 | 4500 | female | 2007 |
 
+![Palmer Penguins Illustrations](../img/lter_penguins.png)
+
 **📊 344 rows × 8 columns** — Real penguin data from Antarctica  
 **🔗 [⬇️ Download Dataset (CSV)](../data/penguins.csv)** — Included in repo, ready to use  
-**📚 Source:** [Palmer Penguins R Package](https://allisonhorst.github.io/palmerpenguins/) — Learn more about the dataset
+**📚 Source:** [Palmer Penguins R Package](https://allisonhorst.github.io/palmerpenguins/) — Learn more about the dataset  
+**🎨 Artwork:** [Palmer Penguins Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst) — Perfect for teaching materials
 
 ---
 
 ## Quick Setup
 
-![Cursor Logo](../img/cursor_icon_download.png){: width="80" }
+![Cursor Logo](../img/cursor_icon_download.png)
 
 1. Download Cursor from [cursor.com](https://cursor.com)
 2. Install and open it
