@@ -27,6 +27,18 @@ Models don't see words — they see tokens (roughly 0.75 words each). More impor
 
 **This means:** Keep prompts short and specific. Rambling wastes tokens and confuses the AI.
 
+### Try It: Visualize Tokens with Tiktokenizer
+
+Test how many tokens your prompts use by pasting text below:
+
+<iframe src="https://tiktokenizer.vercel.app/" width="100%" height="600" style="border: 1px solid #ccc; border-radius: 5px;"></iframe>
+
+**Or open in a new tab:** [Tiktokenizer](https://tiktokenizer.vercel.app/)
+
+**Example to try:**
+- Paste the **"Bad (vague)"** prompt below and count tokens
+- Then paste the **"Good (structured)"** prompt and compare!
+
 ---
 
 ## The Prompt Formula
