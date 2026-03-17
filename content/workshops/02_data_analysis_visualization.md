@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Data Analysis & Visualization
+title: 2. Data Analysis & Visualization
+parent: Workshops
 nav_order: 2
 ---
 
@@ -102,5 +103,5 @@ Pick one and use Cursor Chat to build it:
 
 ---
 
-**Previous:** [1. Fundamentals](1_fundamentals.md)  
-**Next:** [3. Building with AI](3_building_with_ai.md)
+**Previous:** [1. Fundamentals](01_fundamentals.md)  
+**Next:** [3. Building with AI](03_building_with_ai.md)

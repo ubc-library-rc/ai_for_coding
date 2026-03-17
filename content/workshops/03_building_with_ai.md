@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Building with AI
+title: 3. Building with AI
+parent: Workshops
 nav_order: 3
 ---
 
@@ -156,7 +157,7 @@ Pick one to extend your analysis:
 
 ---
 
-**Previous:** [2. Data Analysis & Visualization](2_data_analysis_visualization.md)
+**Previous:** [2. Data Analysis & Visualization](02_data_analysis_visualization.md)
 
 ---
 

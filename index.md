@@ -1,26 +1,39 @@
 ---
 layout: default
 title: Outline
-nav_order: 1
+nav_order: 3
 ---
 
-## Note: this workshop is in development and not yet complete.
+# Workshop Overview
 
-Description...
+## Learning Objectives
 
-## Learning objectives
+By the end of these three workshops, you will be able to:
 
-At the end of this workshop, you will be able to:
-1.
-2.
-3.
+1. **Write effective prompts** for AI tools using the prompt formula (context + task + constraints + format)
+2. **Create data visualizations** with ggplot2 by describing your intent to an AI
+3. **Build a complete data analysis workflow** from data loading to visualization using Cursor
 
-## Schedule
+---
 
-| 0:00 | Welcome and using Zoom|
-| 0:05 | Introduction |  
-| 0:15 |  |
-| 0:30 |  |   
-| 0:45 |  |
-| 1:00 | Wrap-up and Discussion |
+## Workshop Structure
 
+| Workshop | Focus | Duration | Key Skill |
+|----------|-------|----------|-----------|
+| **[1. Fundamentals](content/workshops/01_fundamentals.md)** | How to ask good questions | 30 min | Writing better prompts |
+| **[2. Data Analysis & Visualization](content/workshops/02_data_analysis_visualization.md)** | Creating charts with AI | 30 min | Building visualizations |
+| **[3. Building with AI](content/workshops/03_building_with_ai.md)** | Complete analysis | 30 min | End-to-end workflow |
+
+---
+
+## Prerequisites
+
+- Basic familiarity with R (or willingness to learn alongside AI)
+- Cursor IDE installed
+- R and RStudio (optional but recommended)
+
+---
+
+## Start Learning
+
+→ **[Go to Introduction](content/introduction.md)**

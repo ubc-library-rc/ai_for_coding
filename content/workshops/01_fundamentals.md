@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Fundamentals of AI-Assisted Coding
+title: 1. Fundamentals
+parent: Workshops
 nav_order: 1
 ---
 
@@ -78,4 +79,4 @@ OR
 
 ---
 
-**Next:** [2. Data Analysis & Visualization](2_data_analysis_visualization.md)
+**Next:** [2. Data Analysis & Visualization](02_data_analysis_visualization.md)
