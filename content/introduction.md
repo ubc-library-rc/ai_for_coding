@@ -15,7 +15,9 @@ Learn to use Cursor AI for data analysis in just 30 minutes per topic.
 ### **[1. Fundamentals](workshops/01_fundamentals.md)** — 30 min
 Write better prompts using the prompt formula. Learn why specificity matters.
 
-**You'll Learn:**
+**Learning Objectives**
+
+By the end of this workshop, you will be able to:
 - How LLMs work and why tokens matter
 - The prompt formula: context + task + constraints + format
 - How to write focused, specific prompts that work
@@ -35,7 +37,9 @@ Write better prompts using the prompt formula. Learn why specificity matters.
 ### **[2. Data Analysis & Visualization](workshops/02_data_analysis_visualization.md)** — 30 min  
 Create 2 charts using ggplot2. Build data visualization skills.
 
-**You'll Learn:**
+**Learning Objectives**
+
+By the end of this workshop, you will be able to:
 - How to describe visualizations to AI
 - When to use bar plots, scatter plots, and box plots
 - Generate ggplot2 code by talking to Cursor
@@ -56,7 +60,9 @@ Create 2 charts using ggplot2. Build data visualization skills.
 ### **[3. Building with AI](workshops/03_building_with_ai.md)** — 30 min
 Build a complete analysis workflow: load → clean → summarize → plot.
 
-**You'll Learn:**
+**Learning Objectives**
+
+By the end of this workshop, you will be able to:
 - How to use Cursor Chat for real data analysis
 - Build a workflow from data loading to visualization
 - Debug errors using AI conversation
@@ -81,6 +87,7 @@ Build a complete analysis workflow: load → clean → summarize → plot.
 - Download and install — free tier works great
 - Chat shortcut: `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux)
 
+
 ### **Data — Palmer Penguins Dataset**
 
 Preview of the data you'll work with:
@@ -101,13 +108,15 @@ Preview of the data you'll work with:
 
 ## Quick Setup
 
+![Cursor Logo](../img/cursor_icon_download.png){: width="80" }
+
 1. Download Cursor from [cursor.com](https://cursor.com)
 2. Install and open it
 3. Sign in with an account
 4. Press `Cmd+L` (Mac) or `Ctrl+L` (Windows) to open Chat
 5. You're ready to start!
 
-**Optional:** Install R and RStudio if you want to run code locally (but not required — you can learn from Cursor examples)
+
 
 ---
 
