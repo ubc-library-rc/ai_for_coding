@@ -26,14 +26,21 @@ By the end of these three workshops, you will be able to:
 
 ---
 
-## Prerequisites
+## Setup
 
-- Basic familiarity with R (or willingness to learn alongside AI)
-- Cursor IDE installed
-- R and RStudio (optional but recommended)
+### Install Cursor
+
+1. Go to [cursor.com](https://cursor.com)
+2. Click **Download** and select your OS (Mac, Windows, or Linux)
+3. Install and open Cursor
+4. Create/sign in with an account
+5. Verify Chat works: Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux)
+
 
 ---
 
 ## Start Learning
 
 → **[Go to Introduction](content/introduction.md)**
+
+
