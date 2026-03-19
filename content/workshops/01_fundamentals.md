@@ -51,7 +51,6 @@ Use dplyr. Show as a tibble rounded to 1 decimal.
 ```
 
 ![Penguins Bill Diagram](../img/culmen_depth.png)
-
 ---
 
 **🎨 Artwork:** [Palmer Penguins Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
