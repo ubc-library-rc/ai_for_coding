@@ -50,7 +50,8 @@ Load it with readr and group by species to show average bill length and body mas
 Use dplyr. Show as a tibble rounded to 1 decimal.
 ```
 
-![Penguins Bill Diagram](/img/culmen_depth.png)
+<img src="/img/culmen_depth.png" alt="Penguins Bill Diagram" width="400" />
+
 ---
 
 **🎨 Artwork:** [Palmer Penguins Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
