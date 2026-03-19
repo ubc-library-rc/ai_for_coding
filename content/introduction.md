@@ -132,7 +132,3 @@ Preview of the data we'll work with:
 3. Finish with **[Workshop 3: Building with AI](workshops/03_building_with_ai.md)**
 
 Each one builds on the previous, but you can jump around if you want.
-
----
-
-**Ready? → [Start with Workshop 1: Fundamentals](workshops/01_fundamentals.md)**
