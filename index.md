@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Outline
-nav_order: 3
+nav_order: .5
 ---
 
-# Workshop Overview
+# Workshop series overview
+
 
 ## Learning Objectives
 
