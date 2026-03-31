@@ -24,7 +24,7 @@ By the end of these three workshops, you will be able to:
 
 1. **write effective prompts** for ai tools using the prompt formula (context + task + constraints + format)
 2. **create data visualizations** with ggplot2 by describing your intent to an ai
-3. **build a complete data analysis workflow** from data loading to visualization using cursor
+3. **build a complete data analysis workflow** from data loading to visualization using Cursor
 
 
 ---
