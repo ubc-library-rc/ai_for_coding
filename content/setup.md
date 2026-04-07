@@ -19,14 +19,14 @@ We use Python in these workshops because it is widely used for data analysis and
 
 ## What you need
 
-### Python
+### **Python**
 
-**Stack:** Python **3.11 or newer**, plus **pandas** (tables) and **matplotlib** (plots). 
+**Stack:** Python **3.11 or newer**, plus **pandas** (for tables) and **matplotlib** (for plots) libraries. 
 
-### **Cursor** (required)
+### **Cursor** 
 
-- Free IDE from [cursor.com](https://cursor.com)
-- Download and install (the free tier is enough for these workshops)
+- IDE from [cursor.com](https://cursor.com)
+- Download and install (the free tier is enough for purpose of our workshops)
 - Chat shortcut: `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux)
 
 ---
@@ -36,7 +36,7 @@ We use Python in these workshops because it is widely used for data analysis and
 ![Cursor logo](../img/cursor_icon_download.png)
 
 1. Download **[cursor.com](https://cursor.com)** → choose your OS → install.
-2. Open Cursor and **sign in**.
+2. Open Cursor.
 3. Open Chat: **`Cmd+L`** (Mac) or **`Ctrl+L`** (Windows / Linux).
 
 ---
@@ -69,8 +69,8 @@ Put `penguins.csv` in your project so paths match the workshops (e.g. `data/peng
 
 ## Quick start workshops
 
-1. **[Workshop 1: Fundamentals](workshops/01_fundamentals.md)** — ~30 min  
+1. **[Workshop 1: Fundamentals](workshops/01_fundamentals.md)**  
 2. **[Workshop 2: Data analysis & visualization](workshops/02_data_analysis_visualization.md)**  
 3. **[Workshop 3: Building with AI](workshops/03_building_with_ai.md)**
 
-Workshops build on each other, but you can change the order if you prefer.
+Workshops build on each other, but you can go at your own pace if you prefer.
