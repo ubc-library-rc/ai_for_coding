@@ -45,14 +45,14 @@ Create charts with **pandas** and **matplotlib**. Build data visualization skill
 By the end of this workshop, you will know:
 - How to describe visualizations to AI
 - When to use bar plots, scatter plots, and box plots
-- Generate matplotlib (and pandas) code by talking to Cursor
+- Generate code by prompting Cursor
 - Build charts by specifying what you want, not syntax
 
 **Time Breakdown:**
 
 | Time | Activity |
 |------|----------|
-| 0–2 min | Setup (pandas, matplotlib, load data) |
+| 0–2 min | Setup (pandas, matplotlib, get data) |
 | 2–10 min | Chart 1: Bar Plot Tutorial |
 | 10–18 min | Chart 2: Scatter Plot Tutorial |
 | 18–28 min | Your Turn (pick & build one chart) |
@@ -70,16 +70,21 @@ By the end of this workshop, you will know:
 - Build a workflow from data loading to visualization with pandas and matplotlib
 - Debug errors using AI conversation
 - Iterate and improve code through prompts
+- Consider ethical implications of using AI in coding and data analysis
+- Identify practical, real-world applications for AI-assisted workflows
 
 **Time Breakdown:**
 
-| Time | Activity |
-|------|----------|
-| 0–5 min | Step 1: Load & Inspect Data |
-| 5–10 min | Step 2: Clean Data |
-| 10–15 min | Step 3: Summary Statistics |
-| 15–25 min | Step 4: Create Visualization |
-| 25–30 min | Debugging Tips & Next Steps |
+| Time     | Activity                                   |
+|----------|--------------------------------------------|
+| 0–5 min  | Step 1: Load & Inspect Data                |
+| 5–10 min | Step 2: Clean Data                         |
+| 10–15 min| Step 3: Summary Statistics                 |
+| 15–20 min| Step 4: Create Visualization               |
+| 20–25 min| Discussion: Ethics and Responsible AI Use  |
+| 25–27 min| Applications: Real-world Use Cases of AI   |
+| 27–30 min| Debugging Tips & Next Steps                |
+
 
 ---
 
