@@ -7,46 +7,84 @@ nav_order: 2
 
 # 2. Data Analysis & Visualization
 
-Create charts and plots with AI using ggplot2.
+Create charts and plots with AI using **pandas** and **matplotlib**.
 
-**Duration:** 30 min | **Tools:** Cursor, R, ggplot2
+**Duration:** 30 min | **Tools:** Cursor, Python, pandas, matplotlib
 
 ---
 
 ## What You'll Learn
 
 - Build 2 quick visualizations using AI prompts
-- Understand what ggplot2 code looks like
+- Understand what matplotlib code looks like for common chart types
 - Know when to use which chart type
 
 ---
 
 ## Setup (2 minutes)
 
-```r
-library(tidyverse)
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
 
-penguins <- read_csv("data/penguins.csv") |> drop_na()
+penguins = pd.read_csv("data/penguins.csv").dropna()
 
-species_colors <- c(Adelie = "#4878d0", Chinstrap = "#ee854a", Gentoo = "#6acc65")
+species_colors = {
+    "Adelie": "#4878d0",
+    "Chinstrap": "#ee854a",
+    "Gentoo": "#6acc65",
+}
 ```
+
+{:.callout-tip}
+
+**Framework for Choosing a Chart Type**
+
+Before jumping in to create your chart, lets step back and think about your data and **the story you want to tell**. When choosing a visualization type, ask yourself:
+
+- **What do I want to show?**
+    - A change over time? (e.g. line or area chart)
+    - The distribution of values? (e.g. histogram, boxplot)
+    - Parts of a whole? (e.g. pie chart, stacked bars)
+    - A comparison of categories? (e.g. bar, column, dot plot)
+    - A relationship/correlation? (e.g. scatter plot)
+    - Geographical patterns? (e.g. maps)
+
+- **What type of variables do I have?**
+    - Are they **numeric** (numbers), **categorical** (names/groups), **ordinal** (ordered), or something else?
+    - Is there a clear **independent** (predictor) and **dependent** (response/outcome) variable?
+
+- **Which visual will best support my main message?**
+    - Is my goal to make a comparison, show a trend, or highlight an outlier?
+    - Will my audience understand this chart type easily?
+
+*Why use this process?*  
+Most of the time, a simple bar, line, or scatter plot is your best tool—they’re recognized and easy to interpret. Fancier visualizations exist, but they’re only helpful if they make your data more understandable or support your message.
+
+{:.callout-info}
+Want visuals and more advice? Some further resources for chart type selection:
+- [FT Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)
+- [From Data to Viz](https://www.data-to-viz.com/)
+
 
 ---
 
 ## Chart 1: Bar Plot (Species Count)
 
 **Cursor prompt:**
-> "Create a bar chart showing how many penguins are in each species. Use the species_colors palette. Add count labels on top of each bar."
+> "Create a bar chart showing how many penguins are in each species. Use the species_colors dictionary for bar colors. Add count labels on top of each bar."
 
-```r
-penguins |>
-  count(species) |>
-  ggplot(aes(x = species, y = n, fill = species)) +
-  geom_col(width = 0.6, show.legend = FALSE) +
-  geom_text(aes(label = n), vjust = -0.4, fontface = "bold") +
-  scale_fill_manual(values = species_colors) +
-  labs(title = "Penguin Count by Species", x = NULL, y = "Count") +
-  theme_minimal()
+```python
+counts = penguins["species"].value_counts().sort_index()
+
+fig, ax = plt.subplots(figsize=(6, 4))
+colors = [species_colors[s] for s in counts.index]
+bars = ax.bar(counts.index.astype(str), counts.values, color=colors, width=0.6)
+ax.bar_label(bars, labels=counts.values, fontweight="bold")
+ax.set_title("Penguin Count by Species")
+ax.set_ylabel("Count")
+ax.set_xlabel("")
+plt.show()
 ```
 
 ---
@@ -54,35 +92,53 @@ penguins |>
 ## Chart 2: Scatter Plot (Bill vs. Flipper Length)
 
 **Cursor prompt:**
-> "Create a scatter plot with bill length on x-axis and flipper length on y-axis. Color by species using species_colors. Add title and axis labels."
+> "Create a scatter plot with bill length on x-axis and flipper length on y-axis. Color by species using species_colors (one color per species). Add title and axis labels."
 
-```r
-penguins |>
-  ggplot(aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
-  geom_point(alpha = 0.7, size = 2) +
-  scale_color_manual(values = species_colors) +
-  labs(
-    title = "Bill Length vs. Flipper Length",
-    x = "Bill Length (mm)",
-    y = "Flipper Length (mm)",
-    color = "Species"
-  ) +
-  theme_minimal()
+```python
+fig, ax = plt.subplots(figsize=(6, 4))
+
+for sp in ["Adelie", "Chinstrap", "Gentoo"]:
+    sub = penguins[penguins["species"] == sp]
+    ax.scatter(
+        sub["bill_length_mm"],
+        sub["flipper_length_mm"],
+        c=species_colors[sp],
+        label=sp,
+        alpha=0.7,
+        s=20,
+    )
+
+ax.set_title("Bill Length vs. Flipper Length")
+ax.set_xlabel("Bill Length (mm)")
+ax.set_ylabel("Flipper Length (mm)")
+ax.legend(title="Species")
+plt.show()
 ```
 
 ---
 
-## Your Turn (10 minutes)
+## Interactive Challenge (10 minutes)
 
-Pick one and use Cursor Chat to build it:
+Pick one of the tasks below and try building it live using Cursor Chat.  
+**Bonus:** After you finish, comment in the chat and share which option you chose or what surprised you about the result!
 
-**Option 1:** Box plot of body mass by species  
-**Option 2:** Histogram of flipper length with overlays by species  
-**Option 3:** Simple table showing average measurements per species
+**Pick a chart or summary to build:**
 
-**Tip:** Open Chat (`Cmd+L`), paste one of these, and let Cursor write the code:
+- [ ] **Box plot:** Body mass by species  
+- [ ] **Histogram:** Flipper length, with overlays by species  
+- [ ] **Summary table:** Average measurements per species  
+
+**How to try it:**
+
+1. Choose and check off an option above
+2. Open Cursor Chat (`Cmd+L`)
+3. Paste your chosen prompt (or write your own)
+4. Run the generated code and review the output
+5. **Comment:** In the chat, share which task you chose, your code, or any challenges or observations you discovered
+
+**Prompt template to use:**
 ```
-"Create a [chart type] showing [what data]. Use species_colors. Add title and labels."
+Create a [chart type] showing [what data]. Use species_colors for colors. Use matplotlib. Add title and labels.
 ```
 
 ---
@@ -98,8 +154,8 @@ Pick one and use Cursor Chat to build it:
 
 ## Resources
 
-- [ggplot2 reference](https://ggplot2.tidyverse.org/reference/)
-- [Common chart types](https://www.r-graph-gallery.com/)
+- [Matplotlib documentation](https://matplotlib.org/stable/index.html)
+- [Matplotlib gallery](https://matplotlib.org/stable/gallery/index.html) (examples by chart type)
 
 ---
 
