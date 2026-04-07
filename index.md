@@ -22,8 +22,9 @@ To build on other [UBC Library Research Commons workshops](https://ubc-library-r
 
 By the end of these three workshops, you will be able to:
 
-1. **write effective prompts** for ai tools using the prompt formula (context + task + constraints + format)
-2. **create data visualizations** with matplotlib (and pandas) by describing your intent to an ai
+1. **write effective prompts** for AI tools using the prompt formula:
+    > **Context** + **Task** + **Constraints** + **Format**
+2. **create data visualizations** with matplotlib (and pandas) by describing your intent to an AI
 3. **build a complete data analysis workflow** from data loading to visualization using Cursor
 
 
@@ -44,4 +45,4 @@ For more detail see the [Workshops](content/workshops/) page.
 ## Get ready! 
 {: .no_toc }
 
-The first workshop introduces concepts; in the second and third we invite you to practice with hands-on activities. Follow the **[Setup](content/setup.md)** page to install **Python** (pandas, matplotlib), **Cursor**, and the **Palmer Penguins** data before you begin.
+The first workshop introduces concepts; in the second and third we invite you to practice with hands-on activities. Follow the **[Setup](content/setup.md)** page to install **Cursor**, and check **Palmer Penguins** data before we begin.
