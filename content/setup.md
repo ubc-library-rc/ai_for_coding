@@ -9,11 +9,11 @@ nav_order: 1.3
 
 {:toc}
 
-The concepts we cover are general and apply to many languages and tools. In this series we demonstrate how to code in R using the Cursor Integrated Development Environment (IDE), which provides a simple way to incorporate AI into the coding process. We encourage you to apply what you learn in your own environments.
+The concepts we cover are general and apply to many languages and tools. In this series we demonstrate how to code with Python using the Cursor Integrated Development Environment (IDE), which provides a simple way to incorporate AI into the coding process. What you learn throughout the workshop can apply to many environments and tools, and this is simply one way of doing things.
 
-Complete this page before the hands-on workshops (especially workshops 2 and 3). We will use **Cursor** for AI-assisted coding and **RStudio** to run the examples (ggplot2, tidyverse).
+Complete this page before the hands-on workshops (especially workshops 2 and 3). We will use **Cursor** for AI-assisted coding and **Python** based notebooks to run the examples with **pandas** and **matplotlib** popular libraries.
 
-For Python: We also include this exact text for Python and mention why we use the combination of these tools—one ecosystem with Cursor: many learners already use Python; notebooks/scripts in the repo feel natural next to AI chat.
+We use Python in these workshops because it is widely used for data analysis and it integrates well ith Cursor. You can easily write and run Python code alongside AI chat in the same workspace which is very practical for real projects.
 
 ---
 
