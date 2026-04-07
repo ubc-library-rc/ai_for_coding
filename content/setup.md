@@ -9,66 +9,83 @@ nav_order: 1.3
 
 {:toc}
 
-Complete this page before the hands-on workshops (especially workshops 2 and 3). You will use **Cursor** for AI-assisted coding and **R** to run the examples (ggplot2, tidyverse).
+Before workshops **2** and **3**, work through the sections below. You will use **Cursor** for AI-assisted coding and **Python** (**pandas**, **matplotlib**) for the code examples.
+
+---
+
+## At a glance
+
+| Check | Item |
+|-------|------|
+| ☑ | **Python 3.11+** with packages **pandas** and **matplotlib** |
+| ☑ | **Cursor** installed (free tier is fine) |
+| ☑ | **Palmer Penguins** CSV saved as `data/penguins.csv` in your project (see **Data** below) |
 
 ---
 
 ## What you need
 
-### **R** (required for 2nd and 3rd workshop)
+### Python
 
-The examples use R and packages such as **tidyverse** and **ggplot2**. Install R before the workshops:
+**Stack:** Python **3.11 or newer**, plus **pandas** (tables) and **matplotlib** (plots). No virtual environment is required unless your school or workplace asks for one.
 
-1. Open **[cloud.r-project.org](https://cloud.r-project.org/)** (CRAN).
-2. Choose your operating system (**Download R for Windows** / **Download R for macOS** / **Download R for Linux**).
-3. Run the installer and accept the defaults unless your organization requires different options.
-4. **Verify:** open R (or a terminal and type `R`) and run:
+**Install Python**
 
-   ```r
-   R.version.string
-   ```
+1. Download from **[python.org/downloads](https://www.python.org/downloads/)** (Windows, macOS, or Linux).
+2. *Windows:* turn on **Add Python to PATH** if the installer offers it.
+3. *macOS (optional):* `brew install python` with Homebrew works too.
 
-You should see a version line (e.g. R version 4.x).
+**Check that Python runs**
 
-#### **R packages used in the workshops**
+Open a terminal and run:
 
-After R is installed, install the packages we use for data wrangling and plots. In R, run:
-
-```r
-install.packages(c("tidyverse", "readr"))
+```bash
+python3 --version
 ```
 
-`tidyverse` includes **ggplot2**, **dplyr**, **readr**, and related tools. If installation asks to compile from source and you are unsure, choose a binary/cran build when offered.
+If that fails, try `python --version`. You want **3.11+**.
+
+**Install workshop packages**
+
+```bash
+pip install pandas matplotlib
+```
+
+If `pip` is not found, try `pip3` or:
+
+```bash
+python3 -m pip install pandas matplotlib
+```
+
+**Sanity check (optional)**
+
+```bash
+python3 -c "import pandas, matplotlib; print('OK:', pandas.__version__)"
+```
+
+**Optional — Jupyter (`.ipynb`)**
+
+For notebook-based demos, install when you need it:
+
+```bash
+pip install notebook
+```
+
+Then run `jupyter notebook` or open `.ipynb` files in Cursor. Skip this if you only run `.py` files.
 
 ---
 
-### **RStudio** (required for 2nd and 3rd workshop)
-
-**RStudio Desktop** is not required for this series. The workshops are built around **Cursor** for prompts and editing; you only need a way to **run R code** (R itself, plus the packages above).
-
-You may still want RStudio if you prefer a separate R console and plots pane:
-
-- Download **[RStudio Desktop](https://posit.co/download/rstudio-desktop/)** (Posit).
-- Install it after R is on your machine.
-
-Alternatively, run R in a **terminal inside Cursor**, or use an R extension for your editor if you already use one. Use whichever approach lets you execute the code blocks in the workshop pages.
-
----
-
-### **Cursor** (required for 2nd and 3rd workshop)
-## Quick setup
+### Cursor
 
 ![Cursor logo](../img/cursor_icon_download.png)
 
-1. Download Cursor from [cursor.com](https://cursor.com)
-2. Install and open it
-3. Sign in with an account
-4. Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux) to open Chat
-5. You're ready to start!
+1. Download **[cursor.com](https://cursor.com)** → choose your OS → install.
+2. Open Cursor and **sign in**.
+3. Open Chat: **`Cmd+L`** (Mac) or **`Ctrl+L`** (Windows / Linux).
 
 ---
 
-### **Data — Palmer Penguins dataset**
+### Data — Palmer Penguins dataset
 
 Preview of the data we'll work with:
 
@@ -86,18 +103,18 @@ Preview of the data we'll work with:
 
 **[Download dataset (CSV)](../data/penguins.csv)**
 
-**Source:** [Palmer Penguins R package](https://allisonhorst.github.io/palmerpenguins/) — learn more about the dataset  
+**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
 
-**Artwork:** [Palmer Penguins illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
+**Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
 
-Save `penguins.csv` in a folder you will use with Cursor (for example a project folder that also contains `data/penguins.csv`, matching the workshop paths).
+Put `penguins.csv` in your project so paths match the workshops (e.g. `data/penguins.csv` next to your scripts or notebook).
 
 ---
 
 ## Quick start workshops
 
-1. Start with **[Workshop 1: Fundamentals](workshops/01_fundamentals.md)** — about 30 minutes
-2. Continue with **[Workshop 2: Data analysis & visualization](workshops/02_data_analysis_visualization.md)** when you're ready
-3. Finish with **[Workshop 3: Building with AI](workshops/03_building_with_ai.md)**
+1. **[Workshop 1: Fundamentals](workshops/01_fundamentals.md)** — ~30 min  
+2. **[Workshop 2: Data analysis & visualization](workshops/02_data_analysis_visualization.md)**  
+3. **[Workshop 3: Building with AI](workshops/03_building_with_ai.md)**
 
-Each workshop builds on the previous one, but you can jump around if you want.
+Workshops build on each other, but you can change the order if you prefer.
