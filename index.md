@@ -24,7 +24,7 @@ By the end of these three workshops, you will be able to:
 
 1. **write effective prompts** for AI tools using the prompt formula:
     > **Context** + **Task** + **Constraints** + **Format**
-2. **create data visualizations** with matplotlib (and pandas) by describing your intent to an AI
+2. **create data visualizations** with matplotlib & pandas library by describing your intent to an AI
 3. **build a complete data analysis workflow** from data loading to visualization using Cursor
 
 

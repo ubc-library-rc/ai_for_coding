@@ -38,21 +38,21 @@ By the end of this workshop, you will know:
 ---
 
 ## [2. Data Analysis & Visualization](02_data_analysis_visualization.md) — 30 min  
-Create charts using ggplot2. Build data visualization skills.
+Create charts with **pandas** and **matplotlib**. Build data visualization skills.
 
 **Learning Objectives**
 
 By the end of this workshop, you will know:
 - How to describe visualizations to AI
 - When to use bar plots, scatter plots, and box plots
-- Generate ggplot2 code by talking to Cursor
+- Generate matplotlib (and pandas) code by talking to Cursor
 - Build charts by specifying what you want, not syntax
 
 **Time Breakdown:**
 
 | Time | Activity |
 |------|----------|
-| 0–2 min | Setup (load libraries, data) |
+| 0–2 min | Setup (pandas, matplotlib, load data) |
 | 2–10 min | Chart 1: Bar Plot Tutorial |
 | 10–18 min | Chart 2: Scatter Plot Tutorial |
 | 18–28 min | Your Turn (pick & build one chart) |
@@ -61,13 +61,13 @@ By the end of this workshop, you will know:
 ---
 
 ## [3. Building with AI](03_building_with_ai.md) — 30 min
-Build a complete analysis workflow: load → clean → summarize → plot.
+Build analysis workflow in Python: load → clean → summarize → plot (pandas + matplotlib).
 
 **Learning Objectives**
 
 By the end of this workshop, you will know:
-- How to use Cursor Chat for real data analysis
-- Build a workflow from data loading to visualization
+- How to use Cursor Chat for real data analysis in Python
+- Build a workflow from data loading to visualization with pandas and matplotlib
 - Debug errors using AI conversation
 - Iterate and improve code through prompts
 
