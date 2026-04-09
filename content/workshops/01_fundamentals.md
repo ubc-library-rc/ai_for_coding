@@ -24,22 +24,22 @@ By the end of this workshop, you will know:
 
 ---
 
-## Key Idea: Tokens & Context
+## Key Idea: Why Tokens & Context Matter for Learning with AI
 
-Models don't see words — they see tokens (roughly 0.75 words each). More importantly, every time you send a message, the model receives **your entire conversation history**, not just your latest message.
+Before we can get the most out of AI-assisted coding, it's important to understand how the underlying models work. LLMs, like the ones powering coding assistants, process everything as tokens (short pieces of words or characters—not full words). Even more crucially, these models consider **the entire conversation history** when generating each new response.
 
-**This means:** Keep prompts short and specific. Rambling wastes tokens and confuses the AI.
+**Why does this matter for you as a learner?**  
+- Every message—including previous questions—affects the AI's answers.
+- Long or unfocused prompts can quickly use up tokens (the model’s memory), making responses less clear or even cutting off your conversation.
+- Learning to write precise, clear prompts helps you get more relevant support, improves the quality of help you receive, and mirrors good communication with real collaborators.
 
-### Try It: Visualize Tokens with Tiktokenizer
+### See It in Action: Explore Your Prompt's Token Breakdown
 
-Test how many tokens your prompts use:
+Understanding how many tokens your prompt uses is a practical way to see this in action—and helps you develop stronger prompts. Try pasting your questions into the tool below to measure and refine your prompts for clarity and efficiency.
 
 **🔗 [Open Tiktokenizer in new tab](https://tiktokenizer.vercel.app/)**
 
-**Example to try:**
-1. Go to Tiktokenizer
-2. Paste the **"Bad (vague)"** prompt below and count tokens
-3. Then paste the **"Good (structured)"** prompt and compare!
+> - "10 facts about penguin demographics and behaviors. What makes penguins so fascinating..."
 
 
 ---
