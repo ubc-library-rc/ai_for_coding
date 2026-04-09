@@ -13,11 +13,14 @@ Learn how LLMs work and write better prompts.
 
 ---
 
-## What You'll Learn
+## Learning objectives
 
-- Why **tokens** matter in AI prompts
-- How to write prompts that get better results
-- The "prompt formula" for asking AI to help with data
+By the end of this workshop, you will know:
+
+- How LLMs work and why tokens matter
+- The prompt formula: context + task + constraints + format
+- How to write focused, specific prompts that work
+- Why conversation history affects your results
 
 ---
 

@@ -15,6 +15,11 @@ Complete this page before the hands-on workshops (especially workshops 2 and 3).
 
 We use Python in these workshops because it is widely used for data analysis and it integrates well ith Cursor. You can easily write and run Python code alongside AI chat in the same workspace which is very practical for real projects.
 
+{: .warn}
+**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+
+More detail: [UBC AI guidance](ubc_ai_policy.html).
+
 ---
 
 ## What you need

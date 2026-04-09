@@ -46,3 +46,8 @@ For more detail see the [Workshops](content/workshops/) page.
 {: .no_toc }
 
 The first workshop introduces concepts; in the second and third we invite you to practice with hands-on activities. Follow the **[Setup](content/setup.md)** page to install **Cursor**, and check **Palmer Penguins** data before we begin.
+
+{: .warn}
+**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+
+More detail: [UBC AI guidance](content/ubc_ai_policy.html).
