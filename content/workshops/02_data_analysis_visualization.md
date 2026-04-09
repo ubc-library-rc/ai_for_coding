@@ -11,13 +11,21 @@ Create charts and plots with AI using **pandas** and **matplotlib**.
 
 **Duration:** 30 min | **Tools:** Cursor, Python, pandas, matplotlib
 
+{: .warn}
+**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+
+More detail: [UBC AI guidance](../ubc_ai_policy.html).
+
 ---
 
-## What You'll Learn
+## Learning objectives
 
-- Build 2 quick visualizations using AI prompts
-- Understand what matplotlib code looks like for common chart types
-- Know when to use which chart type
+By the end of this workshop, you will know:
+
+- How to describe visualizations to AI
+- When to use bar plots, scatter plots, and box plots
+- Generate code by prompting Cursor (pandas and matplotlib)
+- Build charts by specifying what you want, not syntax
 
 ---
 

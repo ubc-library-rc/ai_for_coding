@@ -15,12 +15,18 @@ Three quick 30-minute workshops to get started with AI-assisted data analysis us
 {: .note }
 Before you begin, see [Setup](../setup.html) to download the necessary software and data.
 
+{: .warn}
+**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+
+More detail: [UBC AI guidance](../ubc_ai_policy.html).
+
 ## [1. Fundamentals](01_fundamentals.md) — 30 min
 Write better prompts using the prompt formula. Learn why specificity matters.
 
-**Learning Objectives**
+**Learning objectives**
 
 By the end of this workshop, you will know:
+
 - How LLMs work and why tokens matter
 - The prompt formula: context + task + constraints + format
 - How to write focused, specific prompts that work
@@ -40,12 +46,13 @@ By the end of this workshop, you will know:
 ## [2. Data Analysis & Visualization](02_data_analysis_visualization.md) — 30 min  
 Create charts with **pandas** and **matplotlib**. Build data visualization skills.
 
-**Learning Objectives**
+**Learning objectives**
 
 By the end of this workshop, you will know:
+
 - How to describe visualizations to AI
 - When to use bar plots, scatter plots, and box plots
-- Generate code by prompting Cursor
+- Generate code by prompting Cursor (pandas and matplotlib)
 - Build charts by specifying what you want, not syntax
 
 **Time Breakdown:**
@@ -63,9 +70,10 @@ By the end of this workshop, you will know:
 ## [3. Building with AI](03_building_with_ai.md) — 30 min
 Build analysis workflow in Python: load → clean → summarize → plot (pandas + matplotlib).
 
-**Learning Objectives**
+**Learning objectives**
 
 By the end of this workshop, you will know:
+
 - How to use Cursor Chat for real data analysis in Python
 - Build a workflow from data loading to visualization with pandas and matplotlib
 - Debug errors using AI conversation
@@ -75,15 +83,16 @@ By the end of this workshop, you will know:
 
 **Time Breakdown:**
 
-| Time     | Activity                                   |
-|----------|--------------------------------------------|
-| 0–5 min  | Step 1: Load & Inspect Data                |
-| 5–10 min | Step 2: Clean Data                         |
-| 10–15 min| Step 3: Summary Statistics                 |
-| 15–20 min| Step 4: Create Visualization               |
-| 20–25 min| Discussion: Ethics and Responsible AI Use  |
-| 25–27 min| Applications: Real-world Use Cases of AI   |
-| 27–30 min| Debugging Tips & Next Steps                |
+| Time      | Activity                                  |
+|-----------|-------------------------------------------|
+| 0–5 min   | Step 1: Load & Inspect Data               |
+| 5–10 min  | Step 2: Clean Data                        |
+| 10–15 min | Step 3: Summary Statistics                |
+| 15–20 min | Step 4: Create Visualization            |
+| 20–23 min | If something goes wrong (debugging)       |
+| 23–26 min | Ethics and responsible use                |
+| 26–28 min | Real-world applications                   |
+| 28–30 min | Next steps, key takeaways                 |
 
 
 ---

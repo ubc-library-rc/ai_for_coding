@@ -11,13 +11,23 @@ Put it all together: load data, clean it, summarize it, plot it.
 
 **Duration:** 30 min | **Tools:** Cursor, Python (pandas, matplotlib)
 
+{: .warn}
+**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+
+More detail: [UBC AI guidance](../ubc_ai_policy.html).
+
 ---
 
-## What You'll Learn
+## Learning objectives
 
-- How to use Cursor Chat to write real analysis code
-- Build a complete workflow from data → summary → visualization
-- Quick debugging tips when things go wrong
+By the end of this workshop, you will know:
+
+- How to use Cursor Chat for real data analysis in Python
+- Build a workflow from data loading to visualization with pandas and matplotlib
+- Debug errors using AI conversation
+- Iterate and improve code through prompts
+- Consider ethical implications of using AI in coding and data analysis
+- Identify practical, real-world applications for AI-assisted workflows
 
 ---
 
@@ -161,6 +171,20 @@ Pick one to extend your analysis:
 
 ---
 
+## Ethics and responsible use
+
+AI can speed up coding. However make sure to check outputs against your data, watch for biased defaults or hallucinations, and follow your instructor’s and institution’s rules for coursework and data. Use AI as a helper—not as a substitute for understanding what your code does.
+
+For UBC-specific expectations and links to official generative-AI guidance, see **[UBC AI guidance](../ubc_ai_policy.html)**.
+
+---
+
+## Real-world applications
+
+The same workflow—load, clean, summarize, visualize—applies to coursework, lab reports, and exploratory research. Cursor is useful for learning syntax, trying ideas quickly, and iterating; final decisions about methods and reporting still rest with you.
+
+---
+
 ## Key Takeaways
 
 1. **Start simple** — load, clean, summarize, plot
@@ -175,6 +199,7 @@ Pick one to extend your analysis:
 - [Cursor docs](https://docs.cursor.com)
 - [pandas documentation](https://pandas.pydata.org/docs/)
 - [Matplotlib documentation](https://matplotlib.org/stable/index.html)
+- [UBC AI guidance](../ubc_ai_policy.html) — policies and expectations for generative AI at UBC
 
 ---
 
