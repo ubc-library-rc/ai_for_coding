@@ -44,6 +44,24 @@ species_colors = {
 }
 ```
 
+
+- We'll focus on **Agent mode** today. It helps you quickly build data analysis workflows and generate multi-step code with AI.
+
+![Cursor chat setup for plotting](../../img/cursor_setup.png)
+- Other modes:
+  - **Ask**: For quick coding questions or short code snippets.
+  - **Debug**: For help fixing errors.
+  - **Plan**: For outlining or structuring coding tasks.
+
+![Choosing a Cursor model](../../img/cursor_model.png)
+
+Choose any of the available AI models (e.g., Cursor, GPT-4, etc.). The specific model doesn't matter too much here; all can handle these code examples.
+
+
+![Cursor sample plot output](../../img/cursor_sample_plot.pmg.png)
+
+Example: A generated plot workflow in Cursor (project with penguin data set up)
+
 {:.callout-tip}
 
 **Framework for Choosing a Chart Type**
@@ -94,6 +112,10 @@ ax.set_xlabel("")
 plt.show()
 ```
 
+Expected output:
+
+![Chart 1 bar plot output](../../img/chart1_barplot.png)
+
 ---
 
 ## Chart 2: Scatter Plot (Bill vs. Flipper Length)
@@ -122,6 +144,10 @@ ax.legend(title="Species")
 plt.show()
 ```
 
+Expected output:
+
+![Chart 2 scatter plot output](../../img/chart2_scatterplot.png.png)
+
 ---
 
 ## Interactive Challenge (10 minutes)
@@ -147,6 +173,10 @@ Pick one of the tasks below and try building it live using Cursor Chat.
 ```
 Create a [chart type] showing [what data]. Use species_colors for colors. Use matplotlib. Add title and labels.
 ```
+
+Example challenge output:
+
+![Interactive challenge options output](../../img/options_plot.png)
 
 ---
 
