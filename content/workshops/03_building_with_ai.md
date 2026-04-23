@@ -142,12 +142,10 @@ print("Species summary:")
 print(species_summary)
 ```
 
-<details>
 <summary>Example correlation heatmap output:(optional)</summary>
 
 ![Workshop 3 numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
 
-</details>
 
 ---
 
