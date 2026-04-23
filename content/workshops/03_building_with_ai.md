@@ -7,7 +7,8 @@ nav_order: 3
 
 # 3. Building with AI: Build a Real Analysis in 30 Minutes
 
-Put it all together: load data, clean it, summarize it, plot it.
+In this workshop, you will use AI prompts to build a short evidence-based report that answers one question:
+> ## What variables are most associated with penguin body mass?
 
 **Duration:** 30 min | **Tools:** Cursor, Python (pandas, matplotlib)
 
@@ -22,12 +23,10 @@ More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
 By the end of this workshop, you will know:
 
-- How to use Cursor Chat for real data analysis in Python
-- Build a workflow from data loading to visualization with pandas and matplotlib
-- Debug errors using AI conversation
-- Iterate and improve code through prompts
-- Consider ethical implications of using AI in coding and data analysis
-- Identify practical, real-world applications for AI-assisted workflows
+- How to write focused prompts for association analysis in pandas and matplotlib
+- How to build evidence using data checks, summary tables, and plots
+- How to compare likely predictors of `body_mass_g` and explain your reasoning
+- How to produce a short report-style conclusions
 
 ---
 
@@ -41,20 +40,30 @@ By the end of this workshop, you will know:
 
 ---
 
-## The Project: Quick Penguin Report
+## The Project: Body Mass Association Report
 
 Create a new **Jupyter notebook** (`.ipynb`) for this project. This format works great in Cursor **and** Google Colab, so your code outputs appear just like a report.
 
-Build your workflow step by step below using Cursor Chat to generate and refine analysis code (see steps below).
+Build your workflow step by step below using Cursor Chat. By the end, your report should include:
+- a quick data quality check,
+- a summary of body mass across groups,
+- numeric and visual evidence for likely associations,
+- a short final answer to the question.
 
 ---
 
 ### Step 1: Load & Inspect (5 minutes)
 
-**Chat prompt:**
+**Sample prompt:**
 ```
-Load data/penguins.csv with pandas. Show: how many rows,
-column names, and missing values per column.
+Load the penguins.csv file using pandas.
+
+- Print how many rows there are.
+- Show the column names.
+- Show the data types for each column.
+- Show how many missing values are in each column.
+
+Also, list which columns you think could help predict body_mass_g.
 ```
 
 **Expected output:**
@@ -64,56 +73,113 @@ import pandas as pd
 penguins = pd.read_csv("data/penguins.csv")
 print("Rows:", len(penguins))
 print(penguins.columns.tolist())
+print(penguins.dtypes)
 print(penguins.isna().sum())
+
+candidate_predictors = [
+    "bill_length_mm",
+    "bill_depth_mm",
+    "flipper_length_mm",
+    "species",
+    "sex",
+    "island",
+    "year",
+]
+print("Candidate predictors:", candidate_predictors)
 ```
 
 ---
 
 ### Step 2: Clean Data (5 minutes)
 
-**Chat prompt:**
+**Sample prompt:**
 ```
-Remove rows with missing values. Show how many rows we had
-before and after.
+Context: Keep the same body_mass_g question.
+Task: Remove rows with missing values in body mass and key predictor columns.
+Constraints: Use pandas; keep code simple.
+Format: Show row count before/after and percent rows retained.
 ```
 
 **Expected output:**
 ```python
-penguins_clean = penguins.dropna()
-print("Before:", len(penguins), "| After:", len(penguins_clean))
+cols_needed = [
+    "body_mass_g",
+    "bill_length_mm",
+    "bill_depth_mm",
+    "flipper_length_mm",
+    "species",
+    "sex",
+    "island",
+    "year",
+]
+
+penguins_clean = penguins.dropna(subset=cols_needed).copy()
+before = len(penguins)
+after = len(penguins_clean)
+print("Before:", before, "| After:", after)
+print("Retained (%):", round(after / before * 100, 1))
 ```
+
+Use `penguins_clean` for all remaining steps so your comparisons are consistent.
 
 ---
 
-### Step 3: Summary Statistics (5 minutes)
+### Step 3: Association Table (5 minutes)
 
-**Chat prompt:**
+**Sample prompt:**
 ```
-Group by species and show: count, average bill length,
-average body mass. Round averages to 1 decimal place.
+Continue exploring which factors are linked to body mass with cleaned data
+Generate:
+1) a summary table by category showing how many cases are in each group and the average body mass
+2) (Optional, if interested) a table ranking other numeric variables by how strongly they are correlated with body mass
+Constraints: Use only pandas.
+Format: Print the tables, with numbers rounded for easy reading.
 ```
 
 **Expected output:**
 ```python
-summary = (
+species_summary = (
     penguins_clean.groupby("species")
     .agg(
-        n=("bill_length_mm", "count"),
-        avg_bill=("bill_length_mm", lambda s: round(s.mean(), 1)),
-        avg_mass=("body_mass_g", lambda s: round(s.mean(), 1)),
+        n=("body_mass_g", "count"),
+        avg_body_mass_g=("body_mass_g", "mean"),
     )
+    .round(1)
 )
-print(summary)
+
+print("Species summary:")
+print(species_summary)
 ```
+
+<details>
+<summary>Show code: Ranked numeric associations with body mass (optional)</summary>
+
+```python
+num_cols = ["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "year", "body_mass_g"]
+corr_to_mass = (
+    penguins_clean[num_cols]
+    .corr(numeric_only=True)["body_mass_g"]
+    .drop("body_mass_g")
+    .sort_values(key=lambda s: s.abs(), ascending=False)
+    .to_frame("corr_with_body_mass_g")
+)
+print("\nRanked numeric associations (absolute strength):")
+print(corr_to_mass.round(3))
+```
+</details>
 
 ---
 
-### Step 4: One Visualization (10 minutes)
+### Step 4: Visualization (10 minutes)
 
-**Chat prompt:**
+**Sample prompt:**
 ```
-Scatter plot: bill length (x-axis) vs flipper length (y-axis).
-Color by species. Add title and axis labels. Use matplotlib.
+Context: Keep the same body_mass_g question and use penguins_clean.
+Task: Create a scatter plot of flipper_length_mm (x) vs body_mass_g (y),
+colored by species, with clear labels and legend.
+Then add an optional box plot of body_mass_g by species.
+Constraints: matplotlib only.
+Format: show plots and include a one-line interpretation.
 ```
 
 **Expected output:**
@@ -130,44 +196,77 @@ fig, ax = plt.subplots(figsize=(6, 4))
 for sp in ["Adelie", "Chinstrap", "Gentoo"]:
     sub = penguins_clean[penguins_clean["species"] == sp]
     ax.scatter(
-        sub["bill_length_mm"],
         sub["flipper_length_mm"],
+        sub["body_mass_g"],
         c=species_colors[sp],
         label=sp,
         alpha=0.7,
         s=20,
     )
 
-ax.set_title("Penguin Measurements")
-ax.set_xlabel("Bill Length (mm)")
-ax.set_ylabel("Flipper Length (mm)")
+ax.set_title("Body Mass vs Flipper Length by Species")
+ax.set_xlabel("Flipper Length (mm)")
+ax.set_ylabel("Body Mass (g)")
 ax.legend(title="Species")
+plt.show()
+
+# Optional (if time permits): box plot of body mass by species
+fig, ax = plt.subplots(figsize=(6, 4))
+penguins_clean.boxplot(column="body_mass_g", by="species", ax=ax)
+ax.set_title("Body Mass by Species")
+ax.set_xlabel("Species")
+ax.set_ylabel("Body Mass (g)")
+plt.suptitle("")
 plt.show()
 ```
 
+Interpretation hint: Look for stronger trend patterns, clearer group separation, and how much overlap exists.
+
 ---
 
-## If Something Goes Wrong
+### Step 5: Report Conclusion (5 minutes)
 
-**Error in your code?**
-1. Copy the full error message
-2. Open Chat (`Cmd+L`)
-3. Paste: `I'm getting this error: [paste error]. Here's my code: [paste code]. What does it mean?`
+**Sample prompt:**
+```
+Context: I am writing a short report from my tables and plots.
+Task: Draft 3-5 sentences answering:
+"What variables are most associated with body_mass_g?"
+Constraints: Plain language, no jargon.
+Format:
+1) strongest numeric association,
+2) one grouping variable finding (e.g., species),
+3) one limitation of this analysis.
+```
 
-**Plot doesn't look right?**
-1. Select the plot code
-2. Press `Cmd+K`
-3. Type: `Make this plot [describe what you want]`
+**Expected output style (example):**
+```text
+In this dataset, ... shows the strongest numeric association with body mass.
+Species differences are also clear, with .... penguins tending to have higher body mass than ... penguins.
+
+> One limitation is that this is an observational dataset, so association does not imply causation.
+```
+
 
 ---
 
 ## Next Steps
 
 Pick one to extend your analysis:
-- Add a second plot (box plot of body mass by species)
-- Calculate correlation between bill length and flipper length
-- Compare just two species instead of all three
-- Save your results to a CSV file
+- Add a simple linear regression prompt (predict `body_mass_g` from `flipper_length_mm` and `bill_length_mm`)
+- Compare associations separately for each species and see if ranking changes
+- Test sensitivity: compare results from `dropna()` vs another missing-data strategy
+- Save your summary and correlation tables to CSV for your report appendix
+
+---
+
+## Other Observations You Could Ask
+
+- How does body mass vary by island or year?
+- Does flipper length differ by species or sex?
+- Are bill dimensions related to each other?
+- Which variable best separates the species?
+
+What questions come to your mind? Are there other things you're curious about in the data that you'd like to explore?
 
 ---
 
@@ -177,20 +276,15 @@ AI can speed up coding. However make sure to check outputs against your data, wa
 
 For UBC-specific expectations and links to official generative-AI guidance, see **[UBC AI guidance](../ubc_ai_policy.html)**.
 
----
-
-## Real-world applications
-
-The same workflow—load, clean, summarize, visualize—applies to coursework, lab reports, and exploratory research. Cursor is useful for learning syntax, trying ideas quickly, and iterating; final decisions about methods and reporting still rest with you.
 
 ---
 
 ## Key Takeaways
 
-1. **Start simple** — load, clean, summarize, plot
-2. **Use Chat for guidance** — don't try to memorize pandas or matplotlib syntax
-3. **Test after each step** — catch mistakes early
-4. **Iterate** — your first version won't be perfect, and that's OK
+1. **Start with one question** — keep every prompt tied to the same analysis goal
+2. **Build evidence step by step** — data checks, association tables, and targeted plots
+3. **Use AI to draft, then verify** — check outputs against your data before concluding
+4. **Report clearly** — state strongest associations and one limitation in plain language
 
 ---
 
@@ -207,4 +301,4 @@ The same workflow—load, clean, summarize, visualize—applies to coursework, l
 
 ---
 
-Congratulations! You now know how to use AI tools to do real data analysis.
+Congratulations! You now know how to use AI prompts to build a focused, report-style analysis from data to conclusion.
