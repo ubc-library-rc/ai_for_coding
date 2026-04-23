@@ -24,7 +24,6 @@ By the end of this workshop, you will know:
 - How to write focused prompts for association analysis in pandas and matplotlib
 - How to build evidence using data checks, summary tables, and plots
 - How to compare likely predictors of `body_mass_g` and explain your reasoning
-- How to produce a short report-style conclusions
 
 ---
 
@@ -41,7 +40,6 @@ Build your workflow step by step below using Cursor Chat. By the end, your repor
 - a quick data quality check,
 - a summary of body mass across groups,
 - numeric and visual evidence for likely associations,
-- a short final answer to the question.
 
 ---
 
@@ -215,31 +213,6 @@ Interpretation hint: Look for stronger trend patterns, clearer group separation,
 
 ---
 
-### Step 5: Report Conclusion (5 minutes)
-
-**Sample prompt:**
-```
-Context: I am writing a short report from my tables and plots.
-Task: Draft 3-5 sentences answering:
-"What variables are most associated with body_mass_g?"
-Constraints: Plain language, no jargon.
-Format:
-1) strongest numeric association,
-2) one grouping variable finding (e.g., species),
-3) one limitation of this analysis.
-```
-
-**Expected output style (example):**
-```text
-In this dataset, ... shows the strongest numeric association with body mass.
-Species differences are also clear, with .... penguins tending to have higher body mass than ... penguins.
-
-> One limitation is that this is an observational dataset, so association does not imply causation.
-```
-
-
----
-
 ## Next Steps
 
 Pick one to extend your analysis:
@@ -250,7 +223,7 @@ Pick one to extend your analysis:
 
 ---
 
-## Other Observations You Could Ask
+## Other Observations You Could Explore
 
 - How does body mass vary by island or year?
 - Does flipper length differ by species or sex?
