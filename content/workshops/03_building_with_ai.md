@@ -7,8 +7,6 @@ nav_order: 3
 
 # 3. Building with AI: Build a Real Analysis in 30 Minutes
 
-In this workshop, you will use AI prompts to build a short evidence-based report that answers one question:
-> ## What variables are most associated with penguin body mass?
 
 **Duration:** 30 min | **Tools:** Cursor, Python (pandas, matplotlib)
 
@@ -30,13 +28,8 @@ By the end of this workshop, you will know:
 
 ---
 
-## Cursor Shortcuts
-
-| Shortcut | What It Does |
-|----------|-------------|
-| `Cmd+L` | Open Chat (ask questions, get code) |
-| `Cmd+I` | Open Composer (generate full sections) |
-| `Cmd+K` | Inline edit (fix selected code) |
+In this workshop, you will use AI prompts to build a short evidence-based report that answers one question:
+> ## What variables are most associated with penguin body mass?
 
 ---
 
