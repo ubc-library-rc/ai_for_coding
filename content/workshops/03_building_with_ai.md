@@ -152,20 +152,10 @@ print(species_summary)
 ```
 
 <details>
-<summary>Show code: Ranked numeric associations with body mass (optional)</summary>
+<summary>Example correlation heatmap output:(optional)</summary>
 
-```python
-num_cols = ["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "year", "body_mass_g"]
-corr_to_mass = (
-    penguins_clean[num_cols]
-    .corr(numeric_only=True)["body_mass_g"]
-    .drop("body_mass_g")
-    .sort_values(key=lambda s: s.abs(), ascending=False)
-    .to_frame("corr_with_body_mass_g")
-)
-print("\nRanked numeric associations (absolute strength):")
-print(corr_to_mass.round(3))
-```
+![Workshop 3 numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
+
 </details>
 
 ---
@@ -219,6 +209,14 @@ ax.set_ylabel("Body Mass (g)")
 plt.suptitle("")
 plt.show()
 ```
+
+Example scatter output:
+
+![Workshop 3 scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
+
+Example box plot output:
+
+![Workshop 3 box plot: body mass by species](../../img/workshop3_boxplot_body-mass_by_species.png)
 
 Interpretation hint: Look for stronger trend patterns, clearer group separation, and how much overlap exists.
 
