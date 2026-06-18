@@ -33,7 +33,7 @@ flowchart LR
     C[You share context<br/>snippets · errors · docs · chat] --> B
     B --> D[Better context]
     D --> E[Better answers<br/>draft · explain · fix]
-    F[Your full project] -.->|not seen unless you share it| B
+    F[Your project] -.->|not seen unless you share it| B
 ```
 > Large language models (LLM) learned general coding patterns from huge amounts of public code and documentation online. That means that AI models are good at recognizing common syntax, coding libraries, and typical fixes in programming languages.
 
