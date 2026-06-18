@@ -139,7 +139,6 @@ Notice how these are vague or missing context. As you practice, try to avoid the
 
 ## Resources
 
-- [Cursor docs](https://docs.cursor.com)
 - [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
 
 ---
