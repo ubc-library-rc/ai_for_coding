@@ -23,23 +23,19 @@ By the end of this workshop, you will know:
 
 ---
 
-## Key Idea: Why Tokens & Context Matter for Learning with AI
+## Behind the Scene
 
-Before we can get the most out of AI-assisted coding, it's important to understand how the underlying models work. LLMs, like the ones powering coding assistants, process everything as tokens (short pieces of words or characters—not full words). Even more crucially, these models consider **the entire conversation history** when generating each new response.
+Before we can get the most out of AI-assisted coding, it's important to understand how the underlying models work. LLMs, like the ones powering coding assistants, process everything as tokens (short pieces of words or characters—not full words)....
 
-**Why does this matter for you as a learner?**  
-- Every message—including previous questions—affects the AI's answers.
-- Long or unfocused prompts can quickly use up tokens (the model’s memory), making responses less clear or even cutting off your conversation.
-- Learning to write precise, clear prompts helps you get more relevant support, improves the quality of help you receive, and mirrors good communication with real collaborators.
-
-### See It in Action: Explore Your Prompt's Token Breakdown
-
-Understanding how many tokens your prompt uses is a practical way to see this in action—and helps you develop stronger prompts. Try pasting your questions into the tool below to measure and refine your prompts for clarity and efficiency.
-
-**🔗 [Open Tiktokenizer in new tab](https://tiktokenizer.vercel.app/)**
-
-> - "10 facts about penguin demographics and behaviors. What makes penguins so fascinating..."
-
+```mermaid
+flowchart LR
+    A[Public code & docs<br/>model learned from] --> B[(LLM)]
+    C[You share context<br/>snippets · errors · docs · chat] --> B
+    B --> D[Better context]
+    D --> E[Better answers<br/>draft · explain · fix]
+    F[Your full project] -.->|not seen unless you share it| B
+```
+... (adding context)
 
 ---
 
