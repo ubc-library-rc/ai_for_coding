@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 1. Fundamentals
+title: Part 1. Concepts and Context 
 parent: Workshops
 nav_order: 1
 ---
 
-# 1. Fundamentals
+# Part 1. Concepts and Context 
 
 Learning concepts and context for how AI-Assisted Coding.
 
