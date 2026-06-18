@@ -5,9 +5,9 @@ parent: Workshops
 nav_order: 1
 ---
 
-# 1. Fundamentals of AI-Assisted Coding
+# 1. Fundamentals
 
-Learn how LLMs work and write better prompts.
+Learning concepts and context for how AI-Assisted Coding.
 
 **Duration:** 30 min
 
@@ -17,10 +17,9 @@ Learn how LLMs work and write better prompts.
 
 By the end of this workshop, you will know:
 
-- How LLMs work and why tokens matter
-- The prompt formula: context + task + constraints + format
-- How to write focused, specific prompts that work
-- Why conversation history affects your results
+- Have a conceptual understanding of how LLMs work
+- Learn how to write clear intelligible prompts that AI tools respond to best 
+- Understand the privacy risks inherent in LLMs like Copilot 
 
 ---
 
