@@ -1,18 +1,18 @@
 ---
 layout: default
-title: 2. Data Analysis & Visualization
+title: Part 2. Set Up GitHub Copilot
 parent: Workshops
 nav_order: 2
 ---
 
-# 2. Data Analysis & Visualization
+# Part 2. Set Up GitHub Copilot
 
-Create charts and plots with AI using **pandas** and **matplotlib**.
+Creating AI working environment with Copilot
 
-**Duration:** 30 min | **Tools:** Cursor, Python, pandas, matplotlib
+**Duration:** 30 min | **Tools:** Copilot, Python, pandas, matplotlib
 
 {: .warn}
-**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+**Only use [Copilot]([https://cursor.com/home](https://support.microsoft.com/en-us/microsoft-copilot/getting-started-with-microsoft-copilot)) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Copilot with personal or confidential data.
 
 More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
@@ -22,10 +22,11 @@ More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
 By the end of this workshop, you will know:
 
-- How to describe visualizations to AI
-- When to use bar plots, scatter plots, and box plots
-- Generate code by prompting Cursor (pandas and matplotlib)
-- Build charts by specifying what you want, not syntax
+- Develop an understanding of different coding environments to help you choose the best tools for your needs 
+
+- Familiarize yourself with GitHub Copilot set up and working environment 
+
+- Maintain an active/lead role when engaging with AI tools 
 
 ---
 
