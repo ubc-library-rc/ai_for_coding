@@ -36,7 +36,14 @@ flowchart LR
     F[Your full project] -.->|not seen unless you share it| B
 ```
 > Large language models (LLM) learned general coding patterns from huge amounts of public code and documentation online. That means that AI models are good at recognizing common syntax, coding libraries, and typical fixes in programming languages.
-> 
+
+> Every time you use a AI toolS (e.g. Copilot), the model works from the baseline information you share.
+
+> Your full project is not visible...
+
+> Better context leads to better answers; vague or missing context leads to generic or incomplete outputs...
+
+> add input/ouptu diagarm here...
 
 ---
 
