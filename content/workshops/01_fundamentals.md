@@ -35,7 +35,8 @@ flowchart LR
     D --> E[Better answers<br/>draft · explain · fix]
     F[Your full project] -.->|not seen unless you share it| B
 ```
-... (adding context)
+> Large language models (LLM) learned general coding patterns from huge amounts of public code and documentation online. That means that AI models are good at recognizing common syntax, coding libraries, and typical fixes in programming languages.
+> 
 
 ---
 
