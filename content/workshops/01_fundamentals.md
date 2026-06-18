@@ -7,7 +7,7 @@ nav_order: 1
 
 # Part 1. Concepts and Context 
 
-Learning concepts and context for how AI-Assisted Coding.
+Learning introductory concepts and context for AI-Assisted Coding.
 
 **Duration:** 30 min
 
