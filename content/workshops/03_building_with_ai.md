@@ -5,7 +5,7 @@ parent: Workshops
 nav_order: 3
 ---
 
-# 3. Building with AI: Build a Real Analysis in 30 Minutes
+# Part 3. Explore, Prompt, and Build with GitHub Copilot 
 
 
 **Duration:** 30 min | **Tools:** Cursor, Python (pandas, matplotlib)
