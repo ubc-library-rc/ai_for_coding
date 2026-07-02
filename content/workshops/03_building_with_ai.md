@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 3. Building with AI
+title: Part 3. Explore, Prompt, and Build with GitHub Copilot 
 parent: Workshops
 nav_order: 3
 ---
