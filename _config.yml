@@ -12,6 +12,3 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-include-cache
-
-mermaid:
-  version: "9.4.3"
