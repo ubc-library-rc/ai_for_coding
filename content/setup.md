@@ -13,7 +13,7 @@ Complete this page before the hands-on workshops (especially workshops 2 and 3).
 
 We use Python in these workshops because it is widely used for data analysis and it integrates well with GitHub Copilot. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
 
-
+<iframe src="https://scribehow.com/embed/How_to_Launch_a_GitHub_Codespace_for_Coding_Exercises__ndrCCbUcQnCtdToUSEweZQ" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px"></iframe>
 
 ---
 
