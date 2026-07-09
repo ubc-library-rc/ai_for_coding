@@ -7,13 +7,13 @@ nav_order: 1.3
 # Setup
 {: .no_toc }
 
-The concepts we cover are general and apply to many languages and tools. In this series we demonstrate how to code with Python using **GitHub Copilot** in the Visual Studio Code (VS Code) Integrated Development Environment (IDE), which provides a simple way to incorporate AI into the coding process. What you learn throughout the workshop can apply to many environments and tools, and this is simply one way of doing things.
+These workshops are set up to run **entirely in your browser** using **GitHub Codespaces**, which provides a simple way to incorporate AI into the coding process. You do **not** need to install Python, an editor, or any libraries on your own computer. When you launch your Codespace, Python and libraries (including **pandas** and **matplotlib**) are already installed and ready to go.
 
-Complete this page before the hands-on workshops (especially workshops 2 and 3). We will use **GitHub Copilot** for AI-assisted coding and **Python** with **Jupyter notebooks** (`.ipynb`) to run examples, together with **pandas** and **matplotlib**.
+We use **Python** in these workshops because it is widely used for data analysis and integrates well with GitHub Copilot. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
 
-We use Python in these workshops because it is widely used for data analysis and it integrates well with GitHub Copilot. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
+The concepts we cover are general and apply to many languages and tools—what you learn throughout the workshop can apply to many environments and tools, and this is just one way of doing things.
 
-<iframe src="https://scribehow.com/embed/How_to_Launch_a_GitHub_Codespace_for_Coding_Exercises__ndrCCbUcQnCtdToUSEweZQ" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px"></iframe>
+Complete this page before the hands-on workshops (Part 2 and 3). We will use **GitHub Copilot** for AI-assisted coding, and **Python** with **pandas** and **matplotlib** to run examples.
 
 ---
 
@@ -23,53 +23,54 @@ We use Python in these workshops because it is widely used for data analysis and
 - TOC
 {:toc}
 
-## Python, packages, and Jupyter
+To follow along you only need:
 
-In this workshop we use Python **3.10 or newer**, plus these libraries and packages:
+- A **free [GitHub account](https://github.com/signup)**
+- Access to **GitHub Copilot** (the free tier is enough for this workshop)
+- A modern **web browser** (Chrome, Edge, Firefox, or Safari)
 
-| Package / tool | Role |
-|----------------|------|
-| **pandas** | Load and work with tables |
-| **matplotlib** | Create plots |
-| **notebook** | Jupyter Notebook server so you can open and run `.ipynb` files (used in the workshops) |
-
-If you already have Python installed, skip to the GitHub Copilot section.  
-
-If you need to install Python and don't have a preferred distribution, **Miniconda** is a lightweight option: 
-
-1. Go to <https://www.anaconda.com/download/success> and download the Miniconda installer for your operating system.
-2. Run the installer and follow the prompts.
+{: .warn}
+Only use GitHub Copilot with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data. More detail: [UBC AI guidance](ubc_ai_policy.html).
 
 ---
 
-## GitHub Copilot
+## Launch your Codespace
 
-![GitHub Copilot logo](../img/cursor_icon_download.png)
+Follow along the slides below
 
-1. Download Visual Studio Code from <https://code.visualstudio.com/download> and install it for your operating system.
-2. Open VS Code and sign in with a free GitHub account when prompted.
-3. Install the **GitHub Copilot** extension from the Extensions view (or from <https://marketplace.visualstudio.com/items?itemName=GitHub.copilot>), then sign in to activate Copilot.
+<iframe src="https://scribehow.com/embed/How_to_Launch_a_GitHub_Codespace_for_Coding_Exercises__ndrCCbUcQnCtdToUSEweZQ" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px"></iframe>
 
-**Policy Notes for Using GitHub Copilot :**
+1. Open the exercises repository at **[github.com/ubc-library-rc/ai-for-coding-exercies](https://github.com/ubc-library-rc/ai-for-coding-exercies)** and sign in with your GitHub account.
+2. Click the green **`< > Code`** button, then open the **Codespaces** tab.
+3. Click **Create codespace on main**.
+4. Wait a few minutes while your Codespace builds — first-time builds can be slow. It's ready when the status shows **"Active."**
 
-- **[Privacy / Trust Center](https://resources.github.com/copilot-trust-center/)** — how GitHub Copilot collects and uses data when you use it.
-- **[Pricing](https://github.com/features/copilot/plans)** — free vs paid features; check what your use case needs (this workshop uses the free version).
+Your Codespace opens in the browser as a full coding environment. Python, the workshop libraries, and GitHub Copilot are already installed, so there's nothing else to set up.
 
-{: .warn}
-Only use GitHub Copilot with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
+{: .note}
+Your Codespace is given an automatically generated name, so it won't match the examples. To reopen it later, go to [github.com/codespaces](https://github.com/codespaces) and click your Codespace's name.
 
-More detail: [UBC AI guidance](ubc_ai_policy.html).
+---
 
+## Check your setup
+
+1. In your Codespace, create a new file named `setup_check.ipynb`.
+2. Add a code cell with the code below and run it (click the ▷ Run button next to the cell).
+
+   ```python
+   import pandas as pd
+   import matplotlib.pyplot as plt
+   print("Setup worked!")
+   ```
+
+If you see **`Setup worked!`** with no errors, you're ready for the workshops. If prompted to choose a kernel, pick the recommended Python environment.
 
 ---
 
 ## Palmer Penguins dataset
-Download the CSV dataset we'll use in the workshop:
 
-1. Create a project folder (you will open this folder later with VS Code)
-2. In your project folder, create a folder named `data`
-3. [Download penguins.csv](../data/penguins.csv) and save it in your `data` folder (right-click the link and select _Save Link As..._ or _Download Linked File As..._)
-   
+We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv](../data/penguins.csv) and save it in a `data` folder.)
+
 Preview of the data we'll work with:
 
 | species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
@@ -88,74 +89,11 @@ Preview of the data we'll work with:
 **Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
 
 ---
-
-## A Python environment for this project
-A Python environment is a separate workspace that contains its own copy of Python and any libraries you install, so your projects do not interfere with each other.
-
-### Option 1
-{: .no_toc }
-If you know how to create a Python environment, use your preferred method and install `pandas`, `matplotlib`, and `notebook`.
-
-### Option 2
-{: .no_toc }
-If you're new to Python environments, use VS Code to setup an environment suitable fo this workshop.
-
-{: .note} 
-We only recommend this as a fast way to get workshop notebooks running in VS Code. For long-term projects, use a more managed Python workflow (for example: pinned dependencies and reproducible environment files).
-
-1. In VS Code, open the project folder you created above:
-   - Menu: **File -> Open Folder...**
-   - Select your workshop project folder.   
-2. Create a notebook file (`.ipynb`):
-   - Menu: **File -> New File...**
-   - Save it as `setup_check.ipynb` inside your project folder.
-
-   _If you don't see a **File -> New File** menu option, VS Code might have opened without an editor window. Go to **File -> New Window**, then start over at step 1_
-3. Open that notebook, then use the kernel selector in the top-right and choose **Select Another Kernel...**.
-
-   ![Step 1: Select another kernel](../img/step-1-select-another-kernel.png)
-
-4. Choose **Python Environments...**.
-
-   ![Step 2: Select Python environment](../img/step-2-select-python-environment.png)
-
-5. Choose **Create Python Environment** and select **Venv**.
-
-   ![Step 3: Choose venv type](../img/step-3-choose-venv-type.png)
-
-6. Pick the Python interpreter VS Code should use to create the environment (3.10 or higher).
-
-   ![Step 4: Select Python interpreter](../img/step-4-select-python-interpreter.png)
-
-7. Install workshop packages in the new environment:
-    - Menu: **Terminal -> New Terminal**
-    - Run the command below in the terminal pane.
-
-   ```bash
-   pip install pandas matplotlib notebook
-   ```
-
-8. Quick check in a notebook cell:
-    - Near the top of the `setup_check.ipynb` file, click the **+ Code** button to add a new code block.
-    - Enter the code below, then click the triangle icon to run it.
-
-   ```python
-   import pandas as pd
-   import matplotlib.pyplot as plt
-   print("Setup worked!")
-   ```
-
-If the kernel does not switch automatically, reopen the kernel picker and select the newly created `.venv` interpreter.
-
-
----
-
-
 ## Quick start workshops
 {: .no_toc }
 
-1. **[Workshop 1: Fundamentals](workshops/01_fundamentals.md)**  
-2. **[Workshop 2: Data analysis & visualization](workshops/02_data_analysis_visualization.md)**  
-3. **[Workshop 3: Building with AI](workshops/03_building_with_ai.md)**
+**Previous:** [Workshop 1: Concepts and Context](workshops/01_fundamentals.md)  
+**Next:** [Workshop 2: Data Analysis & Visualization](workshops/02_data_analysis_visualization.md)  
+**Then:** [Workshop 3: Explore, Prompt, and Build with GitHub Copilot](workshops/03_building_with_ai.md)
 
 Workshops build on each other, but you can go at your own pace if you prefer.
