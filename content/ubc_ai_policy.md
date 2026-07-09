@@ -12,7 +12,7 @@ Professors will specify for each class or lab what AI usage is acceptable and th
 UBC has a thorough explanation of what is and is not appropriate [here](https://genai.ubc.ca/guidance/){:target="_blank"}, but we highlight a few key points from the website below. Our summary is general in nature and highlights elements of the UBC policy that are the most relevant to this workshop series. 
 
 {: .warn}
-Only use [Cursor](https://cursor.com/home) with files that can be made public. All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data. 
+Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data. 
 
 ## Key points from the UBC GenAI website
 ### [Principles](https://genai.ubc.ca/guidance/principles/)  
