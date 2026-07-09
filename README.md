@@ -1,9 +1,9 @@
-# Data Analysis with Cursor
+# AI for Coding (GitHub Copilot)
 ### UBC Library Research Commons
 
-**Description:** Learn to use Large Language Models (LLMs) to support exploratory data analysis in this series of three 30-minute workshops. We introduce fundamental concepts, practice breaking down problems into actionable components, and use the [Cursor IDE](https://cursor.com/get-started) to integrate AI and code more efficiently. 
+**Description:** The _AI for Coding_ series consists of three 30-minute workshops designed to help you use Large Language Models (LLMs) to support coding and exploratory data analysis. We will introduce fundamental concepts, practice breaking down problems into actionable components, and use [GitHub Copilot](https://github.com/features/copilot) in GitHub Codespaces to integrate AI and code more efficiently.
 
-**Important:** Only use Cursor with files that can be made public. All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data. 
+**Important:** Only use GitHub Copilot with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data. 
 
 **Link to workshop:** https://ubc-library-rc.github.io/ai_for_coding/
 
