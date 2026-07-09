@@ -7,11 +7,11 @@ nav_order: 1.3
 # Setup
 {: .no_toc }
 
-The concepts we cover are general and apply to many languages and tools. In this series we demonstrate how to code with Python using the Cursor Integrated Development Environment (IDE), which provides a simple way to incorporate AI into the coding process. What you learn throughout the workshop can apply to many environments and tools, and this is simply one way of doing things.
+The concepts we cover are general and apply to many languages and tools. In this series we demonstrate how to code with Python using **GitHub Copilot** in the Visual Studio Code (VS Code) Integrated Development Environment (IDE), which provides a simple way to incorporate AI into the coding process. What you learn throughout the workshop can apply to many environments and tools, and this is simply one way of doing things.
 
-Complete this page before the hands-on workshops (especially workshops 2 and 3). We will use **Cursor** for AI-assisted coding and **Python** with **Jupyter notebooks** (`.ipynb`) to run examples, together with **pandas** and **matplotlib**.
+Complete this page before the hands-on workshops (especially workshops 2 and 3). We will use **GitHub Copilot** for AI-assisted coding and **Python** with **Jupyter notebooks** (`.ipynb`) to run examples, together with **pandas** and **matplotlib**.
 
-We use Python in these workshops because it is widely used for data analysis and it integrates well with Cursor. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
+We use Python in these workshops because it is widely used for data analysis and it integrates well with GitHub Copilot. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
 
 
 
@@ -33,7 +33,7 @@ In this workshop we use Python **3.10 or newer**, plus these libraries and packa
 | **matplotlib** | Create plots |
 | **notebook** | Jupyter Notebook server so you can open and run `.ipynb` files (used in the workshops) |
 
-If you already have Python installed, skip to the Cursor section.  
+If you already have Python installed, skip to the GitHub Copilot section.  
 
 If you need to install Python and don't have a preferred distribution, **Miniconda** is a lightweight option: 
 
@@ -42,21 +42,21 @@ If you need to install Python and don't have a preferred distribution, **Minicon
 
 ---
 
-## Cursor
+## GitHub Copilot
 
-![Cursor logo](../img/cursor_icon_download.png)
+![GitHub Copilot logo](../img/cursor_icon_download.png)
 
-1. Download Cursor from <https://cursor.com/download> and install it for your operating system.
-2. Open Cursor. You will be prompted to sign in or create a free account.
-3. Follow the setup prompts (plugins are not required). 
+1. Download Visual Studio Code from <https://code.visualstudio.com/download> and install it for your operating system.
+2. Open VS Code and sign in with a free GitHub account when prompted.
+3. Install the **GitHub Copilot** extension from the Extensions view (or from <https://marketplace.visualstudio.com/items?itemName=GitHub.copilot>), then sign in to activate Copilot.
 
-**Policy Notes for Using Cursor :**
+**Policy Notes for Using GitHub Copilot :**
 
-- **[Privacy Policy](https://www.cursor.com/privacy)** — how Cursor collects and uses data when you use the app.
-- **[Pricing](https://www.cursor.com/pricing)** — free vs paid features; check what your use case needs (this workshop uses the free version).
+- **[Privacy / Trust Center](https://resources.github.com/copilot-trust-center/)** — how GitHub Copilot collects and uses data when you use it.
+- **[Pricing](https://github.com/features/copilot/plans)** — free vs paid features; check what your use case needs (this workshop uses the free version).
 
 {: .warn}
-Only use Cursor with files that can be made public. All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+Only use GitHub Copilot with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
 
 More detail: [UBC AI guidance](ubc_ai_policy.html).
 
@@ -66,7 +66,7 @@ More detail: [UBC AI guidance](ubc_ai_policy.html).
 ## Palmer Penguins dataset
 Download the CSV dataset we'll use in the workshop:
 
-1. Create a project folder (you will open this folder later with Cursor)
+1. Create a project folder (you will open this folder later with VS Code)
 2. In your project folder, create a folder named `data`
 3. [Download penguins.csv](../data/penguins.csv) and save it in your `data` folder (right-click the link and select _Save Link As..._ or _Download Linked File As..._)
    
@@ -98,19 +98,19 @@ If you know how to create a Python environment, use your preferred method and in
 
 ### Option 2
 {: .no_toc }
-If you're new to Python environments, use Cursor to setup an environment suitable fo this workshop.
+If you're new to Python environments, use VS Code to setup an environment suitable fo this workshop.
 
 {: .note} 
-We only recommend this as a fast way to get workshop notebooks running in Cursor. For long-term projects, use a more managed Python workflow (for example: pinned dependencies and reproducible environment files).
+We only recommend this as a fast way to get workshop notebooks running in VS Code. For long-term projects, use a more managed Python workflow (for example: pinned dependencies and reproducible environment files).
 
-1. In Cursor, open the project folder you created above:
+1. In VS Code, open the project folder you created above:
    - Menu: **File -> Open Folder...**
    - Select your workshop project folder.   
 2. Create a notebook file (`.ipynb`):
    - Menu: **File -> New File...**
    - Save it as `setup_check.ipynb` inside your project folder.
 
-   _If you don't see a **File -> New File** menu option, Cursor might have opened in "Agents" view. Go to **File -> Open Editor Window**, then start over at step 1_
+   _If you don't see a **File -> New File** menu option, VS Code might have opened without an editor window. Go to **File -> New Window**, then start over at step 1_
 3. Open that notebook, then use the kernel selector in the top-right and choose **Select Another Kernel...**.
 
    ![Step 1: Select another kernel](../img/step-1-select-another-kernel.png)
@@ -123,7 +123,7 @@ We only recommend this as a fast way to get workshop notebooks running in Cursor
 
    ![Step 3: Choose venv type](../img/step-3-choose-venv-type.png)
 
-6. Pick the Python interpreter Cursor should use to create the environment (3.10 or higher).
+6. Pick the Python interpreter VS Code should use to create the environment (3.10 or higher).
 
    ![Step 4: Select Python interpreter](../img/step-4-select-python-interpreter.png)
 
