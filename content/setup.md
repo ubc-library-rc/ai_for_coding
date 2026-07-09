@@ -23,11 +23,19 @@ Complete this page before the hands-on workshops (Part 2 and 3). We will use **G
 - TOC
 {:toc}
 
-To follow along you only need:
+To get started with these workshops, you don’t need any complicated setup or coding background—just a few basics:
 
-- A **free [GitHub account](https://github.com/signup)**
-- Access to **GitHub Copilot** (the free tier is enough for this workshop)
-- A modern **web browser** (Chrome, Edge, Firefox, or Safari)
+- **A free [GitHub account](https://github.com/signup)**
+  
+  If you don’t have a GitHub account, go to [github.com/signup](https://github.com/signup) and create one. Be sure to check your email and confirm your account before you start.
+
+- **Access to GitHub Copilot**  
+  
+  After creating your GitHub account, you may need to enable GitHub Copilot before it can be used in your Codespace. If you don’t see Copilot as an option in your Codespace or editor, go to [github.com/settings/copilot](https://github.com/settings/copilot) and click **Start using Copilot Free**.
+
+- **A modern web browser**  
+  Chrome, Edge, Firefox, or Safari all work—no software installation is needed on your computer.
+
 
 {: .warn}
 Only use GitHub Copilot with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data. More detail: [UBC AI guidance](ubc_ai_policy.html).
