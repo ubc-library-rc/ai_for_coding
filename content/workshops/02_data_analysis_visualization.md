@@ -12,7 +12,7 @@ Creating AI working environment with Copilot
 **Duration:** 30 min | **Tools:** Copilot, Python, pandas, matplotlib
 
 {: .warn}
-**Only use [Copilot]([https://cursor.com/home](https://support.microsoft.com/en-us/microsoft-copilot/getting-started-with-microsoft-copilot)) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Copilot with personal or confidential data.
+**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
 
 More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
@@ -48,19 +48,19 @@ species_colors = {
 
 - We'll focus on **Agent mode** today. It helps you quickly build data analysis workflows and generate multi-step code with AI.
 
-![Cursor chat setup for plotting](../../img/cursor_setup.png)
+![Copilot chat setup for plotting](../../img/cursor_setup.png)
 - Other modes:
   - **Ask**: For quick coding questions or short code snippets.
   - **Debug**: For help fixing errors.
   - **Plan**: For outlining or structuring coding tasks.
 
-![Choosing a Cursor model](../../img/cursor_model.png)
+![Choosing a Copilot model](../../img/cursor_model.png)
 
 Choose **Auto mode** for now for demo and learning. This helps to get started quickly while the system handles the technical choices on the free plan.
 
-![Cursor sample plot output](../../img/cursor_sample_plot.pmg.png)
+![Copilot sample plot output](../../img/cursor_sample_plot.pmg.png)
 
-Example: A generated plot workflow in Cursor (project with penguin data set up)
+Example: A generated plot workflow in GitHub Copilot (project with penguin data set up)
 
 {:.callout-tip}
 
@@ -96,7 +96,7 @@ Want visuals and more advice? Another resource for chart type selection:
 
 ## Chart 1: Bar Plot (Species Count)
 
-**Cursor prompt:**
+**Copilot prompt:**
 > "Create a bar chart showing how many penguins are in each species. Use the species_colors dictionary for bar colors. Add count labels on top of each bar."
 
 ```python
@@ -120,7 +120,7 @@ Expected output:
 
 ## Chart 2: Scatter Plot (Bill vs. Flipper Length)
 
-**Cursor prompt:**
+**Copilot prompt:**
 > "Create a scatter plot with bill length on x-axis and flipper length on y-axis. Color by species using species_colors (one color per species). Add title and axis labels."
 
 ```python
@@ -152,7 +152,7 @@ Expected output:
 
 ## Interactive Challenge (10 minutes)
 
-Pick one of the tasks below and try building it live using Cursor Chat.  
+Pick one of the tasks below and try building it live using Copilot Chat.  
 **Bonus:** After you finish, comment in the chat and share which option you chose or what surprised you about the result!
 
 **Pick a chart or summary to build:**
@@ -164,7 +164,7 @@ Pick one of the tasks below and try building it live using Cursor Chat.
 **How to try it:**
 
 1. Choose and check off an option above
-2. Open Cursor Chat (`Cmd+L`)
+2. Open Copilot Chat (`Ctrl+Cmd+I` on macOS, or `Ctrl+Alt+I` on Windows/Linux)
 3. Paste your chosen prompt (or write your own)
 4. Run the generated code and review the output
 5. **Comment:** In the chat, share which task you chose, your code, or any challenges or observations you discovered

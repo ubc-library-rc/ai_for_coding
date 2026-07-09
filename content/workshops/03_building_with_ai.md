@@ -8,10 +8,10 @@ nav_order: 3
 # Part 3. Explore, Prompt, and Build with GitHub Copilot 
 
 
-**Duration:** 30 min | **Tools:** Cursor, Python (pandas, matplotlib)
+**Duration:** 30 min | **Tools:** GitHub Copilot, Python (pandas, matplotlib)
 
 {: .warn}
-**Only use [Cursor](https://cursor.com/home) with files that can be made public.** All files in a Cursor _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use Cursor with personal or confidential data.
+**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
 
 More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
@@ -34,9 +34,9 @@ In this workshop, you will use AI prompts to build a short evidence-based report
 
 ## The Project: Body Mass Association Report
 
-Create a new **Jupyter notebook** (`.ipynb`) for this project. This format works great in Cursor **and** Google Colab, so your code outputs appear just like a report.
+Create a new **Jupyter notebook** (`.ipynb`) for this project. This format works great in VS Code with GitHub Copilot **and** Google Colab, so your code outputs appear just like a report.
 
-Build your workflow step by step below using Cursor Chat. By the end, your report should include:
+Build your workflow step by step below using Copilot Chat. By the end, your report should include:
 - a quick data quality check,
 - a summary of body mass across groups,
 - numeric and visual evidence for likely associations,
@@ -252,14 +252,15 @@ For UBC-specific expectations and links to official generative-AI guidance, see 
 
 ## Resources
 
-- [Cursor docs](https://docs.cursor.com)
+- [GitHub Copilot docs](https://docs.github.com/copilot)
 - [pandas documentation](https://pandas.pydata.org/docs/)
 - [Matplotlib documentation](https://matplotlib.org/stable/index.html)
 - [UBC AI guidance](../ubc_ai_policy.html) — policies and expectations for generative AI at UBC
 
 ---
 
-**Previous:** [2. Data Analysis & Visualization](02_data_analysis_visualization.md)
+**Previous:** [Part 2. Data Analysis & Visualization](02_data_analysis_visualization.md)  
+**Next:** [Congratulations!](#congratulations)
 
 ---
 
