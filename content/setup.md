@@ -52,21 +52,6 @@ Your Codespace is given an automatically generated name, so it won't match the e
 
 ---
 
-## Check your setup
-
-1. In your Codespace, create a new file named `setup_check.ipynb`.
-2. Add a code cell with the code below and run it (click the ▷ Run button next to the cell).
-
-   ```python
-   import pandas as pd
-   import matplotlib.pyplot as plt
-   print("Setup worked!")
-   ```
-
-If you see **`Setup worked!`** with no errors, you're ready for the workshops. If prompted to choose a kernel, pick the recommended Python environment.
-
----
-
 ## Palmer Penguins dataset
 
 We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv](../data/penguins.csv) and save it in a `data` folder.)
