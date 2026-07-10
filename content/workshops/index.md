@@ -20,7 +20,7 @@ Before you begin, see [Setup](../setup.html) to download the necessary software 
 
 More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
-## [(Part 1). AI for Coding: Concepts and Context](01_fundamentals.md) — 30 min
+## [(Part 1). AI for Coding: Concepts and Context](01_concepts_and_context.md) — 30 min
 The first in a three-part series on AI for Coding, this workshop introduces fundamental concepts that will help you engage efficiently with AI in coding tasks. We will use non-technical language to explain how Large Language Models (LLMs) like Copilot work, so you can use them more effectively.
 
 **Learning objectives**
@@ -43,7 +43,7 @@ By the end of this workshop, you will know:
 
 ---
 
-## [(Part 2) AI for Coding: Introduction to GitHub Copilot](02_data_analysis_visualization.md) — 30 min
+## [(Part 2) AI for Coding: Introduction to GitHub Copilot](02_set_up_github_copilot.md) — 30 min
 
 In the second workshop of the AI for Coding series, you will learn how to use GitHub Copilot to interact with data in a GitHub repository. You'll walk through the steps to set up your development environment, explore Copilot’s features in an online workspace, and integrate this powerful AI assistant into your workflow—no prior GitHub experience required.
 
@@ -69,7 +69,7 @@ By the end of this workshop, you will:
 
 ---
 
-## [(Part 3) AI for Coding: Explore, Prompt, and Build with GitHub Copilot](03_building_with_ai.md) — 30 min
+## [(Part 3) AI for Coding: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md) — 30 min
 
 In the third part of our AI for Coding series, you'll set up a GitHub Codespace and learn how to guide Copilot for data exploration and coding tasks. Working with the Palmer Penguins dataset, you'll practice crafting clear, focused prompts and use Copilot’s chat features to generate Python code to load, clean, and visualize data.
 
@@ -90,8 +90,8 @@ By the end of this workshop, you will:
 ## Quick Start Workshops
 {: .no_toc }
 
-1. Pick **[Workshop 1: Fundamentals](01_fundamentals.md)** and spend 30 minutes on it
-2. Come back for **[Workshop 2: Data Analysis & Visualization](02_data_analysis_visualization.md)** when you're ready
-3. Finish with **[Workshop 3: Building with AI](03_building_with_ai.md)**
+1. Pick **[Part 1: Concepts and Context](01_concepts_and_context.md)** and spend 30 minutes on it
+2. Come back for **[Part 2: Set Up GitHub Copilot](02_set_up_github_copilot.md)** when you're ready
+3. Finish with **[Part 3: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md)**
 
 Each one builds on the previous, but you can jump around if you want.

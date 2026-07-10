@@ -196,5 +196,5 @@ Example challenge output:
 
 ---
 
-**Previous:** [1. Fundamentals](01_fundamentals.md)  
-**Next:** [3. Building with AI](03_building_with_ai.md)
+**Previous:** [Part 1. Concepts and Context](01_concepts_and_context.md)  
+**Next:** [Part 3. Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md)

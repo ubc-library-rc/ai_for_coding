@@ -147,4 +147,4 @@ Notice how these are vague or missing context. As you practice, try to avoid the
 
 ---
 
-**Next:** [2. Data Analysis & Visualization](02_data_analysis_visualization.md)
+**Next:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)

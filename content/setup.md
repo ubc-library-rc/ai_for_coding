@@ -85,10 +85,10 @@ Preview of the data we'll work with:
 ## Quick start workshops
 {: .no_toc }
 
-[Workshop 1: Concepts and Context](workshops/01_fundamentals.md)  
+[Part 1: Concepts and Context](workshops/01_concepts_and_context.md)  
 
-[Workshop 2: Data Analysis & Visualization](workshops/02_data_analysis_visualization.md)  
+[Part 2: Set Up GitHub Copilot](workshops/02_set_up_github_copilot.md)  
 
-[Workshop 3: Explore, Prompt, and Build with GitHub Copilot](workshops/03_building_with_ai.md)
+[Part 3: Explore, Prompt, and Build with GitHub Copilot](workshops/03_explore_prompt_and_build_with_github_copilot.md)
 
 Workshops build on each other, but you can go at your own pace if you prefer.

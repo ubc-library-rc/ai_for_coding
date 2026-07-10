@@ -259,7 +259,7 @@ For UBC-specific expectations and links to official generative-AI guidance, see 
 
 ---
 
-**Previous:** [Part 2. Data Analysis & Visualization](02_data_analysis_visualization.md)  
+**Previous:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)  
 **Next:** [Congratulations!](#congratulations)
 
 ---
