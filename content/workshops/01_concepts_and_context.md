@@ -7,7 +7,7 @@ nav_order: 1
 
 # Part 1. Concepts and Context 
 
-Learning introductory concepts and context for AI-Assisted Coding.
+Learning introductory concepts and context for AI-assisted coding.
 
 **Duration:** 30 min
 
@@ -25,125 +25,164 @@ By the end of this workshop, you will know:
 
 ## Behind the Scene
 
-Before we can get the most out of AI-assisted coding, it's important to understand how the underlying models work. LLMs, like the ones powering coding assistants, process everything as tokens (short pieces of words or characters—not full words)....
+Large language models (LLM) learned general coding patterns from huge amounts of public code and documentation online. That means that AI models are good at recognizing common syntax, coding libraries, and typical fixes in programming languages.
+
+Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, process text by breaking it down into **tokens** — small pieces of text, which could be a few letters, a single character, or a part of a word.
+
+**Example:** The word `indivisible` might be split into tokens like `ind`, `iv`, `isible` rather than just one whole unit. The model recognizes and learns from patterns in these tokens.
+
+**Context window:** Copilot can only pay attention to a limited chunk of text at any one time — this includes your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten.
+
+Each time you use an AI tool (such as Copilot), the model starts from what information you provide in that session.
 
 ```mermaid
 flowchart LR
-    A[Public code & docs<br/>model learned from] --> B[(LLM)]
-    C[You share context<br/>snippets · errors · docs · chat] --> B
-    B --> D[Better context]
-    D --> E[Better answers<br/>draft · explain · fix]
-    F[Your project] -.->|not seen unless you share it| B
+    A[Model learns<br/>from public code] --> B[(LLM)]
+    C[You provide context<br/>(prompt, code, errors)] --> B
+    B --> D[LLM uses what you share<br/>to generate answers]
+    E[Your whole project] -.->|Not seen unless shared| B
 ```
-> Large language models (LLM) learned general coding patterns from huge amounts of public code and documentation online. That means that AI models are good at recognizing common syntax, coding libraries, and typical fixes in programming languages.
+# End of Selection
+```
 
-> Every time you use a AI toolS (e.g. Copilot), the model works from the baseline information you share.
+**What this means in practice:**
 
-> Your full project is not visible...
+- LLMs learned general coding patterns from huge amounts of **public** code and documentation online.
+- Every time you use Copilot, the model works from **what you share** in that moment — not your entire project by default.
+- **Better context → better answers.** Vague or missing context → generic or incomplete outputs.
 
-> Better context leads to better answers; vague or missing context leads to generic or incomplete outputs...
-
-> add input/ouptu diagarm here...
+```mermaid
+flowchart TD
+    A[You write a prompt] --> B[Copilot reads your prompt + recent chat]
+    B --> C{Enough context?}
+    C -->|Yes| D[Useful code, explanation, or fix]
+    C -->|No| E[Generic guess or follow-up questions]
+```
 
 ---
 
 ## The Prompt Formula
 
-When asking AI to help with data, a clear prompt gives better results. A simple structure you can use is:
+When asking AI to help with code or data, a clear prompt gives better results. Use this simple structure:
 
 ```
-Context: What data do you have?
+Context: What data or code are you working with?
 Task: What do you want to do?
-Constraints: Any details or tools to use?
-Format: How should the answer look?
+Constraints: Any rules, specific tools to be used, or limitations?
+Format: How should the output answer look?
 ```
 
-You can remember it as: **Context + Task + Constraints + Format**
+Remember it as: **Context + Task + Constraints + Format**
 
-Let's look at two ways to ask for help:
+### Example 1: From vague to clear
 
-**Bad (vague):**
-> "Tell me about my penguin data."
+**Less effective (too vague):**
+> "Tell me about my research data."
 
-**Better (simple and clear):**
-> "I have a CSV file with penguin data. How many columns does it have? Show me the column names as a list."
+**Much better:**
+> "I have a CSV file with book data. How many columns does it have? Show me the column names as a list."
 
-**Why the better prompt works:**  
-- It tells the AI what data you're working with (context)  
-- States what you want to know (task)  
-- Asks for a specific output (format)
+| Prompt Part | What’s included in the improved example               |
+|-------------|------------------------------------------------------|
+| Context     | There's a CSV file with reading study (book) data    |
+| Task        | Count columns, list the column names                 |
+| Format      | Show the result as a list                            |
 
-You can build on this as you get more comfortable. For example, you might add a tool or a more specific task:
+### Example 2: Adding a tool (Constraints)
 
-> "I have `penguins.csv`. Using pandas, show me the average flipper length for each species as a table."
+> "I have `book.csv`. Using pandas, show me the average pages read for each participant as a table."
 
-Start simple! 
-- Being specific helps, but you don’t need complex instructions
-- e.g. "How would you ask a person over the phone who has not seen your file?"
 
 ---
 
-## Quick Try-Out: What Would YOU Ask?
+## Data Privacy with LLMs: The Importance of Using Dummy Data
 
-Let's make this interactive!  
-Imagine you have a file called `data/penguins.csv` with penguin data.
+**Highlighting Our Third Learning Objective:**  
+One of the biggest concerns when using Large Language Models (LLMs) like GitHub Copilot (or ChatGPT) is data privacy. Everything you share—code, prompts, even your data—could become available to the tool. In this part of the workshop, we'll see why it's safer and smarter to use non-private, dummy data for most coding and analysis exercises. You'll also learn simple ways to create your own dummy datasets, so you’ll feel confident and protected working on your own projects.
 
-### Which prompt would you be most interested in trying?
+---
 
-Select one option:
+### What Happens to Data Shared with LLMs?
 
-- [ ] **A**: Load `data/penguins.csv` with pandas and show me the first 5 rows and column names.
-- [ ] **B**: I have `data/penguins.csv` with penguin measurements. Use pandas to group by species and count how many in each. Show as a table.
-- [ ] **C**: Plot a histogram of flipper length for each species in `data/penguins.csv` using matplotlib.
-- [ ] **D**: Find any missing values in the `penguins.csv` data and tell me which columns have them.
+The major issue around privacy for LLMs is that they store and can incorporate your input into their model. This is why _sharing data with Copilot or any LLM is a decision you should make with great care._ Let’s look at two types of data:
 
-### Data — Palmer Penguins dataset
+**Confidential data**  
+Patient records and Indigenous knowledge are examples of information that should **never** be uploaded to GitHub Copilot or any LLM. These types of data need to be protected, both where they’re stored (paper or digital) and in terms of who can access them. Uploading confidential material to LLMs exposes you (and others) to serious risks.
 
-Preview of the data we'll work with:
+**Non-confidential data**  
+Non-confidential data includes files or measurements you would likely publish anyway, such as water temperatures or reading test scores. These are _safer_, but even public data you upload to Copilot is fair game for others—there’s no guarantee you’ll get credit if your work winds up elsewhere.
 
-| species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
-|---------|--------|----------------|---------------|-------------------|-------------|-----|------|
-| Adelie | Torgersen | 39.1 | 18.7 | 181 | 3750 | male | 2007 |
-| Adelie | Torgersen | 39.5 | 17.4 | 186 | 3800 | female | 2007 |
-| Adelie | Torgersen | 40.3 | 18.0 | 195 | 3250 | female | 2007 |
-| Chinstrap | Dream | 46.5 | 17.9 | 192 | 3500 | female | 2007 |
-| Gentoo | Biscoe | 46.1 | 13.2 | 211 | 4500 | female | 2007 |
+---
 
-**344 rows × 8 columns**
+### Dummy Data: A Safe, Practical Solution
 
-**[Download dataset (CSV)](../data/penguins.csv)**
+#### Why dummy data?
 
-**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
+Because of privacy and security, you **shouldn’t upload real data** to Copilot unless you’re absolutely sure it’s safe to share. But dummy (fake) data is perfect for experimenting, troubleshooting, and learning:
+- Try out new code without worrying about leaks
+- Practice analysis techniques safely
+- Test your ideas and learn from mistakes—risk free
 
-**Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
+Experienced coders use dummy data all the time. It helps them see what results or errors to expect and builds confidence before working with real information.
 
+#### What makes dummy data "good"?
 
-What about these promts them less effective?  
+The best dummy datasets are:
+- **Small**—keep it quick to type and simple to understand
+- **Obvious group differences**—so results and charts are easy to interpret
+- **Structured like your real data**—same columns and data types as your real work
+- **Similar kinds of values**—e.g., numeric, dates, categories, etc.
 
-- “what’s in the file”
-- “analyze this”
-- “find errors”
-- “run pandas”
-- “missing values??”
+For example: If your actual book data has three groups measured over two days, just set up your dummy data the same way.
 
+---
 
-Notice how these are vague or missing context. As you practice, try to avoid these and be clear about what you want!
+#### Creating Dummy Data: A Quick Example
 
+Imagine your real research data tracks how many pages each student reads over two days.
+
+Let’s make a tiny “dummy” table with the right columns (`participant_id`, `day`, `pages_read`) and some realistic numbers:
+
+| participant_id | day | pages_read |
+|----------------|-----|-----------|
+| 1              | 1   | 20        |
+| 2              | 1   | 15        |
+| 3              | 1   | 22        |
+| 1              | 2   | 45        |
+| 2              | 2   | 37        |
+| 3              | 2   | 41        |
+
+---
+
+#### Using Dummy Data in Copilot
+
+Just copy this mini table and paste it into Copilot. You can ask for summary statistics, test your code, or explore data analysis steps—completely safely, with no risk of leaking personal or unpublished information.  
+*(Tip: Since this is just a table, not a CSV file, you can paste it in directly and experiment. No need to upload files.)*
+
+> Using dummy data is an ethical and professional best practice. It protects you, your research subjects, and your institution.
+
+---
+
+**In summary:**  
+There’s always a risk to sharing real data with Copilot or any LLM. By practicing with dummy data, you can experiment, learn, and solve problems completely safely. This is a standard approach for experienced developers—and something we highly recommend as you build your coding skills!
 
 ---
 
 ## Key Takeaways
 
-1. **Be specific** — the more detail, the better
-2. **Be concise** — don't ramble
-3. **State your format** — say exactly what output you want (table, plot, list, etc.)
-4. **Tools matter** — when you want code, say which language or libraries you have in mind (e.g. pandas)—you can still practice the wording without installing anything
+1. **LLMs work from patterns + your context** — they don't automatically see your whole project.
+2. **Tokens and context limits matter** — be clear and include what Copilot needs in the current chat.
+3. **Use the formula** — Context + Task + Constraints + Format beats vague requests.
+4. **Only share public-safe data** — never paste confidential or personal information into AI tools.
 
 ---
 
 ## Resources
 
 - [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
+- [UBC AI guidance](../ubc_ai_policy.html)
+- [GitHub Copilot Trust Center](https://resources.github.com/copilot-trust-center/)
+- [Making Dummy Data (Workshop Resource)](https://ubc-library-rc.github.io/AI_for_coding_2025/content/3_dummy_data.html)
 
 ---
 
