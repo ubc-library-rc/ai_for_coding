@@ -37,12 +37,10 @@ Each time you use an AI tool (such as Copilot), the model starts from what infor
 
 ```mermaid
 flowchart LR
-    A[Model learns<br/>from public code] --> B[(LLM)]
-    C[You provide context<br/>(prompt, code, errors)] --> B
-    B --> D[LLM uses what you share<br/>to generate answers]
+    A[Model learns from public code] --> B[(LLM)]
+    C[You provide context (prompt, code, errors)] --> B
+    B --> D[LLM uses what you share to generate answers]
     E[Your whole project] -.->|Not seen unless shared| B
-```
-# End of Selection
 ```
 
 **What this means in practice:**

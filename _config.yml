@@ -12,3 +12,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-include-cache
+
+# Enable Mermaid diagram rendering (just-the-docs / rc-theme)
+mermaid:
+  version: "10.9.0"
