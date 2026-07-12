@@ -46,7 +46,64 @@ Only use GitHub Copilot with files that can be made public. All files in a Copil
 
 Follow along the slides below
 
-<iframe src="https://scribehow.com/embed/How_to_Launch_a_GitHub_Codespace_for_Coding_Exercises__ndrCCbUcQnCtdToUSEweZQ" width="800" height="679" allow="fullscreen" style="aspect-ratio: 1 / 1; border: 0; min-height: 480px"></iframe>
+<!-- Interactive step-by-step: Launching your Codespace -->
+
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h3>Step 1: Open the Repository</h3>
+      <img src="../img/p1.png" alt="Open exercises repository" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>Go to <a href="https://github.com/ubc-library-rc/ai-for-coding-exercies" target="_blank">github.com/ubc-library-rc/ai-for-coding-exercies</a> and sign in with your GitHub account.</p>
+    </section>
+    <section>
+      <h3>Step 2: Click Code</h3>
+      <img src="../img/p2.png" alt="Click the Code button" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>Click on the green <b>Code</b> button near the top right of the repository page.</p>
+    </section>
+    <section>
+      <h3>Step 3: Open Codespaces Tab</h3>
+      <img src="../img/p3.png" alt="Go to Codespaces tab" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>Switch to the <b>Codespaces</b> tab in the menu that appears.</p>
+    </section>
+    <section>
+      <h3>Step 4: Create Codespace</h3>
+      <img src="../img/p4.png" alt="Create codespace on main" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>Click <b>Create codespace on main</b> to launch a new Codespace.</p>
+    </section>
+    <section>
+      <h3>Step 5: Wait for Setup</h3>
+      <img src="../img/p5.png" alt="Codespace setup progress" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>Wait a few moments—first time builds may take a minute or two. Your Codespace is ready when it shows "Active".</p>
+    </section>
+    <section>
+      <h3>Step 6: Start Coding!</h3>
+      <img src="../img/p6.png" alt="Start coding in Codespaces" style="max-width:100%; border:1px solid #ccc; border-radius:8px;">
+      <p>You now have a full coding environment with Python, workshop libraries, and Copilot ready to go—directly in your browser.</p>
+    </section>
+  </div>
+</div>
+
+<!-- 
+  This block uses basic reveal.js-style sectioning.
+  If you want to fully enable reveal.js interactive features, you'll need to include its JS/CSS in your layout or project-level config.
+  Otherwise, readers can scroll through step visuals as a vertical "slideshow".
+-->
+
+<style>
+.reveal .slides section {
+  margin-bottom: 45px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #ddd;
+}
+.reveal .slides img {
+  margin: 22px 0 12px 0;
+  background: #f7f7f7;
+  box-shadow: 2px 3px 13px #0001;
+}
+@media (max-width: 900px) {
+  .reveal .slides img { max-width: 100%; }
+}
+</style>
 
 1. Open the exercises repository at **[github.com/ubc-library-rc/ai-for-coding-exercies](https://github.com/ubc-library-rc/ai-for-coding-exercies)** and sign in with your GitHub account.
 2. Click the green **`< > Code`** button, then open the **Codespaces** tab.
