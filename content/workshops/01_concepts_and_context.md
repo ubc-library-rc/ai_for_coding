@@ -1,11 +1,11 @@
 ---
-layout: default
+
+## layout: default
 title: Part 1. Concepts and Context 
 parent: Workshops
 nav_order: 1
----
 
-# Part 1. Concepts and Context 
+# Part 1. Concepts and Context
 
 Learning introductory concepts and context for AI-assisted coding.
 
@@ -19,7 +19,7 @@ By the end of this workshop, you will:
 
 - Have a conceptual understanding of how LLMs work
 - Learn how to write clear intelligible prompts that AI tools respond to best 
-- Understand the privacy risks inherent in LLMs like Copilot 
+- Understand the privacy risks inherent in LLMs like Copilot
 
 ---
 
@@ -29,20 +29,14 @@ Large language models (LLMs) are trained on massive amounts of public code and d
 
 Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, process text by breaking it down into **tokens** — small pieces of text, which could be a few letters, a single character, or a part of a word.
 
-**For example:**  
-The word `indivisible` might be tokenized into `ind`, `iv`, `isible` rather than as one whole unit. The model learns and responds to patterns built from these tokens.
+> **For example:**  
+> The word `indivisible` might be tokenized into `ind`, `iv`, `isible` rather than as one whole unit. The model learns and responds to patterns built from these tokens.
+> {: .note }
 
-**Context window:** Copilot can only pay attention to a limited chunk of text at any one time — this includes your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten.
+> **Context window:** Copilot can only pay attention to a limited chunk of text at any one time — this includes your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten.
+> {: .note }
 
-Every time you interact with Copilot or any AI tool, it starts from whatever info you provide _that session_.
-
-```mermaid
-flowchart TD
-    A[Model learns from public code] --> B[LLM]
-    C[You provide context (prompt, code, errors)] --> B
-    B --> D[LLM uses what you share to generate answers]
-    E[Your whole project] -.->|Not seen unless shared| B
-```
+Every time you interact with Copilot or any AI tool, it starts from whatever info you provide *that session*.
 
 **What this means in practice:**
 
@@ -57,6 +51,8 @@ flowchart TD
     C -- Yes --> D[Copilot gives a helpful answer: code, explanation, or suggested fix tailored to your request]
     C -- No --> E[Copilot provides a generic guess or asks follow-up questions to get more information]
 ```
+
+
 
 ---
 
@@ -76,28 +72,29 @@ A handy way to remember: **Context + Task + Constraints + Format**
 ### Example 1: Vague vs. Clear
 
 **Less helpful:**  
+
 > "Tell me about my research data." 
 
-<div style="margin: 24px 0; text-align: center;">
-  <img src="../img/copilot_sample_chat.png" alt="Example Copilot Chat" style="max-width: 480px; width: 100%; border: 1px solid #ccc; 
-  border-radius: 8px;" />
-  <p style="color:#555;font-size:0.97em;margin-top:8px;">Example chat with Copilot.</p>
-</div>
+Example chat with Copilot.
 
 **Much better:**  
+
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
 
-| Prompt Part | What’s included in the improved example               |
-|-------------|------------------------------------------------------|
-| Context     | CSV file with penguins data                          |
-| Task        | Count columns, list column names                     |
-| Format      | Show the result as a list                            |
+
+| Prompt Part | What’s included in the improved example |
+| ----------- | --------------------------------------- |
+| Context     | CSV file with penguins data             |
+| Task        | Count columns, list column names        |
+| Format      | Show the result as a list               |
+
 
 ### Example 2: Stating Your Tools (Constraints)
 
 > "I have a `penguins.csv` dataset. Using the pandas library in Python, can you calculate the average ... (some metrics of interest)? Show the results as a table."
 
 This example makes your request clear and specific by:
+
 - Stating the tool you want to use (pandas library in Python).
 - Naming the data file (`penguins.csv`).
 - Defining exactly what to calculate (average flipper length by species).
@@ -109,9 +106,8 @@ This example makes your request clear and specific by:
 
 Data privacy is a major concern when using Large Language Models (LLMs) such as GitHub Copilot or ChatGPT. Anything you input—your code, prompts, or datasets—might be sent to and seen by the tool’s servers. For this reason, throughout this workshop, we are using non-confidential Penguins data for coding and analysis activities.
 
- 
 {: .warn}
-**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
+**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot *workspace* may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
 
 More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
