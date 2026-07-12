@@ -25,270 +25,73 @@ By the end of this workshop, you will:
 - Launch a GitHub Codespace for the workshop exercises
 - Familiarize yourself with GitHub Copilot setup and working environment
 - Maintain an active, lead role when engaging with AI tools
+
 ---
 
 ## Launch your Codespace
 
-Follow the steps below to open the exercises repository in a browser-based coding environment. Use the arrows or scroll sideways inside the frame.
+Follow the steps below to open the exercises repository in a browser-based coding environment.
 
-<div class="step-carousel" id="codespace-walkthrough" aria-label="Codespace setup walkthrough">
-  <div class="step-carousel__toolbar">
-    <span class="step-carousel__counter">Step <span data-current>1</span> of <span data-total>6</span></span>
-    <div class="step-carousel__controls">
-      <button type="button" class="step-carousel__btn" data-prev aria-label="Previous step">&#8592;</button>
-      <button type="button" class="step-carousel__btn" data-next aria-label="Next step">&#8594;</button>
-    </div>
-  </div>
-
-  <div class="step-carousel__viewport" tabindex="0">
-    <div class="step-carousel__track">
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p1.png" alt="Open exercises repository">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 1: Open the Repository</h4>
-          <p>Go to <a href="https://github.com/ubc-library-rc/ai-for-coding-exercies" target="_blank">github.com/ubc-library-rc/ai-for-coding-exercies</a> and sign in with your GitHub account.</p>
-        </div>
-      </article>
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p2.png" alt="Click the Code button">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 2: Click Code</h4>
-          <p>Click the green <strong>Code</strong> button near the top right of the repository page.</p>
-        </div>
-      </article>
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p3.png" alt="Go to Codespaces tab">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 3: Open Codespaces Tab</h4>
-          <p>Switch to the <strong>Codespaces</strong> tab in the menu that appears.</p>
-        </div>
-      </article>
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p4.png" alt="Create codespace on main">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 4: Create Codespace</h4>
-          <p>Click <strong>Create codespace on main</strong> to launch a new Codespace.</p>
-        </div>
-      </article>
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p5.png" alt="Codespace setup progress">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 5: Wait for Setup</h4>
-          <p>Wait a few moments—first-time builds may take a minute or two. Your Codespace is ready when it shows "Active".</p>
-        </div>
-      </article>
-      <article class="step-carousel__slide">
-        <div class="step-carousel__media">
-          <img src="../../img/p6.png" alt="Start coding in Codespaces">
-        </div>
-        <div class="step-carousel__caption">
-          <h4>Step 6: Start Coding!</h4>
-          <p>You now have a full coding environment with Python, workshop libraries, and Copilot ready to go—directly in your browser.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <div class="step-carousel__dots" aria-hidden="true"></div>
+<div class="setup-steps">
+  <section class="setup-step">
+    <h3>Step 1: Open the Repository</h3>
+    <img src="{{ '/img/p1.png' | relative_url }}" alt="Open exercises repository">
+    <p>Go to <a href="https://github.com/ubc-library-rc/ai-for-coding-exercies" target="_blank">github.com/ubc-library-rc/ai-for-coding-exercies</a> and sign in with your GitHub account.</p>
+  </section>
+  <section class="setup-step">
+    <h3>Step 2: Click Code</h3>
+    <img src="{{ '/img/p2.png' | relative_url }}" alt="Click the Code button">
+    <p>Click the green <strong>Code</strong> button near the top right of the repository page.</p>
+  </section>
+  <section class="setup-step">
+    <h3>Step 3: Open Codespaces Tab</h3>
+    <img src="{{ '/img/p3.png' | relative_url }}" alt="Go to Codespaces tab">
+    <p>Switch to the <strong>Codespaces</strong> tab in the menu that appears.</p>
+  </section>
+  <section class="setup-step">
+    <h3>Step 4: Create Codespace</h3>
+    <img src="{{ '/img/p4.png' | relative_url }}" alt="Create codespace on main">
+    <p>Click <strong>Create codespace on main</strong> to launch a new Codespace.</p>
+  </section>
+  <section class="setup-step">
+    <h3>Step 5: Wait for Setup</h3>
+    <img src="{{ '/img/p5.png' | relative_url }}" alt="Codespace setup progress">
+    <p>Wait a few moments—first-time builds may take a minute or two. Your Codespace is ready when it shows "Active".</p>
+  </section>
+  <section class="setup-step">
+    <h3>Step 6: Start Coding!</h3>
+    <img src="{{ '/img/p6.png' | relative_url }}" alt="Start coding in Codespaces">
+    <p>You now have a full coding environment with Python, workshop libraries, and Copilot ready to go—directly in your browser.</p>
+  </section>
 </div>
 
 <style>
-.step-carousel {
-  margin: 1rem 0 1.25rem;
-  border: 1px solid #d8dee8;
-  border-radius: 10px;
-  background: #f8fafc;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-  max-width: 820px;
+.setup-steps .setup-step {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #ddd;
 }
-.step-carousel__toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.55rem 0.85rem;
-  background: #fff;
-  border-bottom: 1px solid #e3e8ef;
-  font-size: 0.92rem;
-  color: #4a5568;
+.setup-steps .setup-step:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
 }
-.step-carousel__controls {
-  display: flex;
-  gap: 0.35rem;
-}
-.step-carousel__btn {
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid #c9d3e0;
-  border-radius: 6px;
-  background: #fff;
-  color: #2d3748;
-  cursor: pointer;
-  line-height: 1;
-  font-size: 1rem;
-}
-.step-carousel__btn:hover { background: #edf2f7; }
-.step-carousel__btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-.step-carousel__viewport {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-.step-carousel__track {
-  display: flex;
-  width: max-content;
-}
-.step-carousel__slide {
-  flex: 0 0 100%;
-  width: 100%;
-  max-width: 820px;
-  scroll-snap-align: start;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 0.75rem;
-  padding: 0.85rem;
-  box-sizing: border-box;
-  min-height: 260px;
-}
-.step-carousel__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border: 1px solid #e3e8ef;
-  border-radius: 8px;
-  padding: 0.35rem;
-  min-height: 0;
-}
-.step-carousel__media img {
+.setup-steps img {
   display: block;
-  width: 100%;
-  max-height: 220px;
-  object-fit: contain;
-  border-radius: 4px;
-}
-.step-carousel__caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.25rem 0.35rem;
-}
-.step-carousel__caption h4 {
-  margin: 0 0 0.45rem;
-  font-size: 1rem;
-  color: #1a202c;
-}
-.step-carousel__caption p {
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.45;
-  color: #4a5568;
-}
-.step-carousel__dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.55rem 0.85rem 0.75rem;
-  background: #fff;
-  border-top: 1px solid #e3e8ef;
-}
-.step-carousel__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  border: none;
-  padding: 0;
-  background: #cbd5e0;
-  cursor: pointer;
-}
-.step-carousel__dot.is-active { background: #2b6cb0; }
-@media (max-width: 720px) {
-  .step-carousel__slide {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .step-carousel__media img { max-height: 180px; }
+  max-width: 100%;
+  margin: 1rem 0 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f7f7f7;
+  box-shadow: 2px 3px 13px rgba(0, 0, 0, 0.06);
 }
 </style>
 
-<script>
-(function () {
-  var root = document.getElementById("codespace-walkthrough");
-  if (!root) return;
+1. Open the exercises repository at **[github.com/ubc-library-rc/ai-for-coding-exercies](https://github.com/ubc-library-rc/ai-for-coding-exercies)** and sign in with your GitHub account.
+2. Click the green **`< > Code`** button, then open the **Codespaces** tab.
+3. Click **Create codespace on main**.
+4. Wait a few minutes while your Codespace builds — first-time builds can be slow. It's ready when the status shows **"Active."**
 
-  var viewport = root.querySelector(".step-carousel__viewport");
-  var track = root.querySelector(".step-carousel__track");
-  var slides = Array.prototype.slice.call(root.querySelectorAll(".step-carousel__slide"));
-  var prevBtn = root.querySelector("[data-prev]");
-  var nextBtn = root.querySelector("[data-next]");
-  var currentEl = root.querySelector("[data-current]");
-  var totalEl = root.querySelector("[data-total]");
-  var dotsWrap = root.querySelector(".step-carousel__dots");
-  var index = 0;
-
-  totalEl.textContent = String(slides.length);
-
-  slides.forEach(function (_, i) {
-    var dot = document.createElement("button");
-    dot.type = "button";
-    dot.className = "step-carousel__dot" + (i === 0 ? " is-active" : "");
-    dot.setAttribute("aria-label", "Go to step " + (i + 1));
-    dot.addEventListener("click", function () { goTo(i); });
-    dotsWrap.appendChild(dot);
-  });
-
-  var dots = Array.prototype.slice.call(root.querySelectorAll(".step-carousel__dot"));
-
-  function goTo(i) {
-    index = Math.max(0, Math.min(slides.length - 1, i));
-    viewport.scrollLeft = slides[index].offsetLeft;
-    currentEl.textContent = String(index + 1);
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === slides.length - 1;
-    dots.forEach(function (dot, j) {
-      dot.classList.toggle("is-active", j === index);
-    });
-  }
-
-  prevBtn.addEventListener("click", function () { goTo(index - 1); });
-  nextBtn.addEventListener("click", function () { goTo(index + 1); });
-
-  viewport.addEventListener("scroll", function () {
-    var width = viewport.clientWidth || 1;
-    var nextIndex = Math.round(viewport.scrollLeft / width);
-    if (nextIndex !== index) {
-      index = nextIndex;
-      currentEl.textContent = String(index + 1);
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index === slides.length - 1;
-      dots.forEach(function (dot, j) {
-        dot.classList.toggle("is-active", j === index);
-      });
-    }
-  }, { passive: true });
-
-  goTo(0);
-})();
-</script>
-
-Your Codespace opens in the browser as a full coding environment. Python, the workshop libraries, and GitHub Copilot are already installed for you—thanks to a special configuration file called `.devcontainer` that ensures everything is set up automatically (we'll explain more about this later). There's nothing else you need to set up!
+Your Codespace opens in the browser as a full coding environment. Python, the workshop libraries, and GitHub Copilot are already installed for you—thanks to a special configuration file called `.devcontainer` that ensures everything is set up automatically. There's nothing else you need to set up!
 
 {: .note}
 Your Codespace is given an automatically generated name, so it won't match the examples. To reopen it later, go to [github.com/codespaces](https://github.com/codespaces) and click your Codespace's name.
@@ -297,7 +100,7 @@ Your Codespace is given an automatically generated name, so it won't match the e
 
 ## Palmer Penguins dataset
 
-We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv](../../data/penguins.csv) and save it in a `data` folder.)
+We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv]({{ '/data/penguins.csv' | relative_url }}) and save it in a `data` folder.)
 
 Preview of the data we'll work with:
 
@@ -311,7 +114,7 @@ Preview of the data we'll work with:
 
 **344 rows × 8 columns**
 
-![Palmer Penguins illustrations](../../img/lter_penguins.png)
+![Palmer Penguins illustrations]({{ '/img/lter_penguins.png' | relative_url }})
 
 **Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
 **Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
@@ -322,15 +125,11 @@ Preview of the data we'll work with:
 
 Open Copilot Chat (`Ctrl+Cmd+I` on macOS, or `Ctrl+Alt+I` on Windows/Linux).
 
-![Copilot chat setup for plotting](../../img/cursor_setup.png)
-
 We'll focus on **Agent mode** today — it helps you build multi-step workflows quickly. Other modes:
 
 - **Ask:** quick coding questions or short snippets
 - **Debug:** help fixing errors
 - **Plan:** outline or structure a coding task
-
-![Choosing a Copilot model](../../img/cursor_model.png)
 
 Choose **Auto mode** for now. On the free plan, this gets you started quickly while the system handles model selection.
 
@@ -359,9 +158,7 @@ species_colors = {
 
 Expected output:
 
-![Chart 1 bar plot output](../../img/chart1_barplot.png)
-
-![Copilot sample plot output](../../img/cursor_sample_plot.pmg.png)
+![Chart 1 bar plot output]({{ '/img/chart1_barplot.png' | relative_url }})
 
 ---
 
