@@ -49,7 +49,7 @@ By the end of these three workshops, you will be able to:
 ## Get ready! 
 {: .no_toc }
 
-The first workshop introduces concepts; in the second and third we invite you to practice with hands-on activities. Follow the **[Setup](content/setup.md)** page to install **GitHub Copilot**, and check **Palmer Penguins** data before we begin.
+The first workshop introduces concepts; in the second and third we invite you to practice with hands-on activities. Follow the **[Setup](content/setup.md)** page to create a GitHub account and enable Copilot.
 
 {: .warn}
 Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public. All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
