@@ -1,6 +1,6 @@
 ---
 
-## layout: default
+layout: default
 title: Part 1. Concepts and Context 
 parent: Workshops
 nav_order: 1
