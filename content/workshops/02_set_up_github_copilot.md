@@ -86,12 +86,10 @@ Follow the steps below to open the exercises repository in a browser-based codin
 }
 </style>
 
-1. Open the exercises repository at **[github.com/ubc-library-rc/ai-for-coding-exercies](https://github.com/ubc-library-rc/ai-for-coding-exercies)** and sign in with your GitHub account.
-2. Click the green **`< > Code`** button, then open the **Codespaces** tab.
-3. Click **Create codespace on main**.
-4. Wait a few minutes while your Codespace builds — first-time builds can be slow. It's ready when the status shows **"Active."**
+Once your Codespace opens in the browser, you'll see a full coding environment ready to use—just like in the screenshot below! Python, the workshop libraries, and GitHub Copilot are already installed for you automatically, thanks to the project's `.devcontainer` configuration file.
 
-Your Codespace opens in the browser as a full coding environment. Python, the workshop libraries, and GitHub Copilot are already installed for you—thanks to a special configuration file called `.devcontainer` that ensures everything is set up automatically. There's nothing else you need to set up!
+![GitHub Codespace environment: code editor with file tree, terminal, and Copilot chat panel]({{ '/img/github_codespace.png' | relative_url }})
+
 
 {: .note}
 Your Codespace is given an automatically generated name, so it won't match the examples. To reopen it later, go to [github.com/codespaces](https://github.com/codespaces) and click your Codespace's name.
