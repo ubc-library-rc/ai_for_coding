@@ -1,9 +1,9 @@
 ---
-
 layout: default
-title: Part 1. Concepts and Context 
+title: Part 1. Concepts and Context
 parent: Workshops
 nav_order: 1
+---
 
 # Part 1. Concepts and Context
 
@@ -31,10 +31,10 @@ Before getting the most out of AI-assisted coding, it’s important to understan
 
 > **For example:**  
 > The word `indivisible` might be tokenized into `ind`, `iv`, `isible` rather than as one whole unit. The model learns and responds to patterns built from these tokens.
-> {: .note }
+{: .note }
 
 > **Context window:** Copilot can only pay attention to a limited chunk of text at any one time — this includes your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten.
-> {: .note }
+{: .note }
 
 Every time you interact with Copilot or any AI tool, it starts from whatever info you provide *that session*.
 
