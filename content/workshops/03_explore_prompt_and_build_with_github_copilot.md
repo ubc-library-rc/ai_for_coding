@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Part 3. Explore, Prompt, and Build with GitHub Copilot 
+title: Part 3. Explore, Prompt, and Build with GitHub Copilot
 parent: Workshops
 nav_order: 3
 ---
 
-# Part 3. Explore, Prompt, and Build with GitHub Copilot 
+# Part 3. Explore, Prompt, and Build with GitHub Copilot
 
 
-**Duration:** 30 min | **Tools:** GitHub Copilot, Python (pandas, matplotlib)
+**Duration:** 30 min | **Tools:** GitHub Copilot, Jupyter notebook, Python (pandas, matplotlib)
 
 {: .warn}
 **Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
@@ -19,249 +19,154 @@ More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
 ## Learning objectives
 
-By the end of this workshop, you will know:
+By the end of this workshop, you will:
 
-- How to write focused prompts for association analysis in pandas and matplotlib
-- How to build evidence using data checks, summary tables, and plots
-- How to compare likely predictors of `body_mass_g` and explain your reasoning
-
----
-
-In this workshop, you will use AI prompts to build a short evidence-based report that answers one question:
-> ## What variables are most associated with penguin body mass?
+- Complete a Jupyter notebook EDA report on Palmer Penguins using step-by-step Copilot prompts
+- Apply the prompt formula (Context + Task + Constraints + Format) from [Part 1](01_concepts_and_context.md)
+- Use tables and plots to answer what makes penguins heavier—and verify Copilot output yourself
 
 ---
 
-## The Project: Body Mass Association Report
+## Your research question
 
-Create a new **Jupyter notebook** (`.ipynb`) for this project. This format works great in VS Code with GitHub Copilot **and** Google Colab, so your code outputs appear just like a report.
+Keep one question in mind for every prompt in this workshop:
 
-Build your workflow step by step below using Copilot Chat. By the end, your report should include:
-- a quick data quality check,
-- a summary of body mass across groups,
-- numeric and visual evidence for likely associations,
+> **What makes a penguin heavier?**
 
----
-
-### Step 1: Load & Inspect (5 minutes)
-
-**Sample prompt:**
-```
-Load the penguins.csv file using pandas.
-
-- Print how many rows there are.
-- Show the column names.
-- Show the data types for each column.
-- Show how many missing values are in each column.
-
-Also, list which columns you think could help predict body_mass_g.
-```
-
-**Expected output:**
-```python
-import pandas as pd
-
-penguins = pd.read_csv("data/penguins.csv")
-print("Rows:", len(penguins))
-print(penguins.columns.tolist())
-print(penguins.dtypes)
-print(penguins.isna().sum())
-
-candidate_predictors = [
-    "bill_length_mm",
-    "bill_depth_mm",
-    "flipper_length_mm",
-    "species",
-    "sex",
-    "island",
-    "year",
-]
-print("Candidate predictors:", candidate_predictors)
-```
+In the data, we measure this with the **`body_mass_g`** column (body mass in grams). Every step below adds evidence toward your answer.
 
 ---
 
-### Step 2: Clean Data (5 minutes)
+## Open the notebook
 
-**Sample prompt:**
-```
-Context: Keep the same body_mass_g question.
-Task: Remove rows with missing values in body mass and key predictor columns.
-Constraints: Use pandas; keep code simple.
-Format: Show row count before/after and percent rows retained.
-```
+In your Codespace (from [Part 2](02_set_up_github_copilot.md)), open:
 
-**Expected output:**
-```python
-cols_needed = [
-    "body_mass_g",
-    "bill_length_mm",
-    "bill_depth_mm",
-    "flipper_length_mm",
-    "species",
-    "sex",
-    "island",
-    "year",
-]
+**`analysies.ipynb` in the exercises repo**
 
-penguins_clean = penguins.dropna(subset=cols_needed).copy()
-before = len(penguins)
-after = len(penguins_clean)
-print("Before:", before, "| After:", after)
-print("Retained (%):", round(after / before * 100, 1))
-```
-
-Use `penguins_clean` for all remaining steps so your comparisons are consistent.
+- **Markdown cells** = section goals and your written findings
+- **Code cells** = where you paste Copilot-generated code, run it, and check the output
 
 ---
 
-### Step 3: Association Table (5 minutes)
+## Step 1: Load and inspect
 
-**Sample prompt:**
+**Goal:** Load `data/penguins.csv`, understand its structure, and list columns that could explain `body_mass_g`.
+
+**Suggested Prompt in Copilot Chat:**
+
 ```
-Continue exploring which factors are linked to body mass with cleaned data
-Generate:
-1) a summary table by category showing how many cases are in each group and the average body mass
-2) (Optional, if interested) a table ranking other numeric variables by how strongly they are correlated with body mass
-Constraints: Use only pandas.
-Format: Print the tables, with numbers rounded for easy reading.
-```
-
-**Expected output:**
-```python
-species_summary = (
-    penguins_clean.groupby("species")
-    .agg(
-        n=("body_mass_g", "count"),
-        avg_body_mass_g=("body_mass_g", "mean"),
-    )
-    .round(1)
-)
-
-print("Species summary:")
-print(species_summary)
+Context: I am working in analysies.ipynb with data/penguins.csv.
+Research question: "What makes a penguin heavier?"
+Task: Load the CSV with pandas. Print row count, column names, data types, and missing values per column.
+Also list which columns could help explain body_mass_g.
+Constraints: Use pandas only. Keep the code in one cell.
+Format: Print readable labels before each output.
 ```
 
-<summary>Example correlation heatmap output:(optional)</summary>
+**What to check before moving on:**
 
-![Workshop 3 numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
-
+- Does the file path match `data/penguins.csv`?
+- Do you see 8 columns and about 344 rows?
+- Are species names spelled correctly (Adelie, Chinstrap, Gentoo)?
 
 ---
 
-### Step 4: Visualization (10 minutes)
+## Step 2: Clean data
 
-**Sample prompt:**
+**Goal:** Keep rows with complete values for body mass and key predictors; report how many rows you kept.
+
+**Suggested Prompt in Copilot Chat:**
+
 ```
-Context: Keep the same body_mass_g question and use penguins_clean.
-Task: Create a scatter plot of flipper_length_mm (x) vs body_mass_g (y),
-colored by species, with clear labels and legend.
-Then add an optional box plot of body_mass_g by species.
-Constraints: matplotlib only.
-Format: show plots and include a one-line interpretation.
-```
-
-**Expected output:**
-```python
-import matplotlib.pyplot as plt
-
-species_colors = {
-    "Adelie": "#4878d0",
-    "Chinstrap": "#ee854a",
-    "Gentoo": "#6acc65",
-}
-
-fig, ax = plt.subplots(figsize=(6, 4))
-for sp in ["Adelie", "Chinstrap", "Gentoo"]:
-    sub = penguins_clean[penguins_clean["species"] == sp]
-    ax.scatter(
-        sub["flipper_length_mm"],
-        sub["body_mass_g"],
-        c=species_colors[sp],
-        label=sp,
-        alpha=0.7,
-        s=20,
-    )
-
-ax.set_title("Body Mass vs Flipper Length by Species")
-ax.set_xlabel("Flipper Length (mm)")
-ax.set_ylabel("Body Mass (g)")
-ax.legend(title="Species")
-plt.show()
-
-# Optional (if time permits): box plot of body mass by species
-fig, ax = plt.subplots(figsize=(6, 4))
-penguins_clean.boxplot(column="body_mass_g", by="species", ax=ax)
-ax.set_title("Body Mass by Species")
-ax.set_xlabel("Species")
-ax.set_ylabel("Body Mass (g)")
-plt.suptitle("")
-plt.show()
+Context: Same notebook. Research question: "What makes a penguin heavier?" Use the penguins DataFrame from the previous cell.
+Task: Drop rows with missing values in body_mass_g, bill_length_mm, bill_depth_mm, flipper_length_mm, species, sex, island, and year.
+Constraints: Use pandas; store the result as penguins_clean.
+Format: Print row count before cleaning, after cleaning, and percent retained.
 ```
 
-Example scatter output:
+**What to check before moving on:**
 
-![Workshop 3 scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
-
-Example box plot output:
-
-![Workshop 3 box plot: body mass by species](../../img/workshop3_boxplot_body-mass_by_species.png)
-
-Interpretation hint: Look for stronger trend patterns, clearer group separation, and how much overlap exists.
+- Did the row count go down (missing values removed)?
+- Are you using `penguins_clean` for the rest of the notebook?
 
 ---
 
-## Next Steps
+## Step 3: Summary tables
 
-Pick one to extend your analysis:
-- Add a simple linear regression prompt (predict `body_mass_g` from `flipper_length_mm` and `bill_length_mm`)
-- Compare associations separately for each species and see if ranking changes
-- Test sensitivity: compare results from `dropna()` vs another missing-data strategy
-- Save your summary and correlation tables to CSV for your report appendix
+**Goal:** Build numeric evidence — average body mass by species and a ranked view of numeric associations.
 
----
+**Suggested Prompt in Copilot Chat:**
 
-## Other Observations You Could Explore
+```
+Context: Same notebook; use penguins_clean. Research question: "What makes a penguin heavier?"
+Task: Create (1) a summary table by species with count and average body_mass_g, and (2) a ranked list of numeric columns correlated with body_mass_g.
+Constraints: Use pandas only.
+Format: Print both tables with values rounded to one decimal place.
+```
 
-- How does body mass vary by island or year?
-- Does flipper length differ by species or sex?
-- Are bill dimensions related to each other?
-- Which variable best separates the species?
+**What to check before moving on:**
 
-What questions come to your mind? Are there other things you're curious about in the data that you'd like to explore?
+- Which species has the highest average body mass?
+- Which numeric column has the strongest correlation with body mass?
+- Do the numbers match what you expect from the data?
 
----
+Example correlation output (optional):
 
-## Ethics and responsible use
-
-AI can speed up coding. However make sure to check outputs against your data, watch for biased defaults or hallucinations, and follow your instructor’s and institution’s rules for coursework and data. Use AI as a helper—not as a substitute for understanding what your code does.
-
-For UBC-specific expectations and links to official generative-AI guidance, see **[UBC AI guidance](../ubc_ai_policy.html)**.
-
+![Numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
 
 ---
 
-## Key Takeaways
+## Step 4: Visualize
 
-1. **Start with one question** — keep every prompt tied to the same analysis goal
-2. **Build evidence step by step** — data checks, association tables, and targeted plots
-3. **Use AI to draft, then verify** — check outputs against your data before concluding
-4. **Report clearly** — state strongest associations and one limitation in plain language
+**Goal:** Add plots that support your answer — relationship and group comparison.
+
+**Suggested Prompt in Copilot Chat:**
+```
+Context: Same notebook; use penguins_clean. Research question: "What makes a penguin heavier?"
+Use species_colors if helpful (Adelie #4878d0, Chinstrap #ee854a, Gentoo #6acc65).
+Task: Create a scatter plot of flipper_length_mm (x) vs body_mass_g (y), colored by species, with title and axis labels.
+Then add a box plot of body_mass_g by species.
+Constraints: Use matplotlib only.
+Format: Show both plots and add a one-line comment on what each plot suggests.
+```
+
+**What to check before moving on:**
+
+- Does the scatter plot show a positive trend (longer flippers → heavier penguins)?
+- Does the box plot show clear differences between species?
+- Do the visuals agree with your summary tables?
+
+Example outputs:
+
+![Scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
+
+![Box plot: body mass by species](../../img/workshop3_boxplot_body-mass_by_species.png)
+
+---
+
+## Optional
+
+> "Fit a simple linear regression predicting body_mass_g from flipper_length_mm and bill_length_mm using penguins_clean. Print the coefficients and a one-sentence interpretation."
+
+---
+
+## Key takeaways
+
+1. **One clear question** keeps every Copilot prompt focused
+2. **Notebook structure** — load → clean → summarize → visualize → interpret
+3. **Copilot drafts; you verify** — check row counts, labels, and whether plots match the tables
+4. **Use the prompt formula** — Context + Task + Constraints + Format (from Part 1)
 
 ---
 
 ## Resources
 
-- [GitHub Copilot docs](https://docs.github.com/copilot)
 - [pandas documentation](https://pandas.pydata.org/docs/)
 - [Matplotlib documentation](https://matplotlib.org/stable/index.html)
-- [UBC AI guidance](../ubc_ai_policy.html) — policies and expectations for generative AI at UBC
+- [UBC AI guidance](../ubc_ai_policy.html)
 
 ---
 
-**Previous:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)  
-**Next:** [Congratulations!](#congratulations)
+**Previous:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)
 
----
-
-Congratulations! You now know how to use AI prompts to build a focused, report-style analysis from data to conclusion.
+Congratulations — you built a short, evidence-based EDA report with Copilot from data to conclusion.

@@ -13,7 +13,7 @@ Three quick 30-minute workshops to get started with AI for Coding using GitHub C
 {:toc}
 
 {: .note }
-Before you begin, see [Setup](../setup.html) to create a GitHub account and enable Copilot. [Part 2](02_set_up_github_copilot.md) walks you through launching your Codespace.
+Before you begin, see [Setup](../setup.html) to create a GitHub account and enable Copilot. 
 
 {: .warn}
 **Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
@@ -71,7 +71,8 @@ By the end of this workshop, you will:
 
 ## [(Part 3) AI for Coding: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md) — 30 min
 
-In the third part of our AI for Coding series, you'll guide Copilot through data exploration and coding tasks. Working with the Palmer Penguins dataset, you'll practice crafting clear, focused prompts and use Copilot’s chat features to generate Python code to load, clean, and visualize data.
+In the third part of our AI for Coding series, you'll guide Copilot through data exploration and coding tasks. Working with the Palmer Penguins dataset, you'll practice crafting clear, focused prompts and use Copilot’s chat features to generate Python code to load, clean, and visualize data. We will use a Jupyter notebook template with Copilot, guided step by step, to answer one research question: *What makes a penguin heavier?*
+
 
 **Learning objectives**
 
