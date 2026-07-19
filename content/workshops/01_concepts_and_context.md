@@ -18,7 +18,7 @@ Learning introductory concepts and context for AI-assisted coding.
 By the end of this workshop, you will:
 
 - Have a conceptual understanding of how LLMs work
-- Learn how to write clear intelligible prompts that AI tools respond to best 
+- Learn how to write clear, intelligible prompts that AI tools respond to best
 - Understand the privacy risks inherent in LLMs like Copilot
 
 ---
@@ -27,14 +27,9 @@ By the end of this workshop, you will:
 
 Large language models (LLMs) are trained on massive amounts of public code and documentation. This means they're skilled at recognizing syntax, identifying common programming patterns, and suggesting relevant fixes.
 
-Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, process text by breaking it down into **tokens** — small pieces of text, which could be a few letters, a single character, or a part of a word.
+Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, don't understand language the way humans do. While we read text as **words and meaning**, the model breaks text into **tokens** — small chunks that may be a whole word, part of a word, or even a single character. Tokens are the model's real unit of work: they determine how much it can "remember" at once and how much usage costs.
 
-> **For example:**  
-> The word `indivisible` might be tokenized into `ind`, `iv`, `isible` rather than as one whole unit. The model learns and responds to patterns built from these tokens.
-{: .note }
-
-> **Context window:** Copilot can only pay attention to a limited chunk of text at any one time — this includes your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten.
-{: .note }
+**Context window:** AI agents can only pay attention to a limited chunk of text at any one time — your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten. The short, focused prompts we use in this workshop stay well within that limit, so it's just helpful background — something to keep in mind once you move on to larger, real-world projects.
 
 Every time you interact with Copilot or any AI tool, it starts from whatever info you provide *that session*.
 
@@ -58,7 +53,9 @@ flowchart TD
 
 ## The Prompt Formula
 
-When you want help from AI for code or data, a clear prompt really helps. Try using this structure in your requests:
+The quality of what you get back depends heavily on how you ask. A well-structured prompt gives the model the context it needs to be genuinely useful — instead of a vague guess. When asking for help with code or data, try framing your request around these four parts:
+
+**Context + Task + Constraints + Format**
 
 ```
 Context: What data or code are you working with?
@@ -67,44 +64,48 @@ Constraints: Any specific tools, libraries, or limits?
 Format: How should the AI present the answer?
 ```
 
-A handy way to remember: **Context + Task + Constraints + Format**
-
 ### Example 1: Vague vs. Clear
 
 **Less helpful:**  
 
-> "Tell me about my research data." 
+> "Tell me about my research data on penguins."
 
-Example chat with Copilot.
+![Copilot chat responding to the vague prompt "Tell me about my research data on penguins" with a generic answer]({{ '/img/copilot_sample_chat.png' | relative_url }})
 
 **Much better:**  
 
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
 
-
-| Prompt Part | What’s included in the improved example |
-| ----------- | --------------------------------------- |
-| Context     | CSV file with penguins data             |
-| Task        | Count columns, list column names        |
-| Format      | Show the result as a list               |
+Put the pieces together and you'll get a better response.
 
 
 ### Example 2: Stating Your Tools (Constraints)
 
-> "I have a `penguins.csv` dataset. Using the pandas library in Python, can you calculate the average ... (some metrics of interest)? Show the results as a table."
+> "I have a `penguins.csv` dataset. Using the dplyr package in R, can you calculate the average ... (some metrics of interest)? Show the results as a table."
 
-This example makes your request clear and specific by:
+This example makes your request clear and specific.
 
-- Stating the tool you want to use (pandas library in Python).
-- Naming the data file (`penguins.csv`).
-- Defining exactly what to calculate (average flipper length by species).
-- Requesting a specific output format (table).
+| Prompt Component | Sample |
+| :--- | :--- |
+| **Context** | *"I have a `penguins.csv` dataset..."* |
+| **Task** | *"...calculate the average flipper length by species..."* |
+| **Constraints** | *"...using the dplyr package in R..."* |
+| **Format** | *"...and show the result as a table."* |
+
+```mermaid
+flowchart TD
+    A[State tool: dplyr in R]
+    B[Name data file: penguins.csv]
+    C[Define calculation: average flipper length by species]
+    D[Request output: table]
+    A --> B --> C --> D
+```
 
 ---
 
 ## Data Privacy with LLMs
 
-Data privacy is a major concern when using Large Language Models (LLMs) such as GitHub Copilot or ChatGPT. Anything you input—your code, prompts, or datasets—might be sent to and seen by the tool’s servers. For this reason, throughout this workshop, we are using non-confidential Penguins data for coding and analysis activities.
+Data privacy is a major concern when using Large Language Models (LLMs) such as GitHub Copilot or ChatGPT. Anything you input—your code, prompts, or datasets—might be sent to and seen by the tool’s servers. For this reason, throughout this workshop, we are using non-confidential **Palmer Penguins** data for coding and analysis activities in [Part 2](02_set_up_github_copilot.md) and [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
 
 {: .warn}
 **Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot *workspace* may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
@@ -113,21 +114,14 @@ More detail: [UBC AI guidance](../ubc_ai_policy.html).
 
 ---
 
-## Key Takeaways
-
-1. **LLMs work from patterns + your context** — they don't automatically see your whole project.
-2. **Tokens and context limits matter** — be clear and include what Copilot needs in the current chat.
-3. **Use the formula** — Context + Task + Constraints + Format beats vague requests.
-4. **Only share public-safe data** — do not share confidential or personal information into AI tools.
-
----
-
-## Resources
+## Additional Resources
 
 - [UBC AI guidance](../ubc_ai_policy.html)
 - [GitHub Copilot Trust Center](https://resources.github.com/copilot-trust-center/)
+- [Models and pricing for GitHub Copilot](https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing)
 - [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
 
 ---
 
 **Next:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)
+
