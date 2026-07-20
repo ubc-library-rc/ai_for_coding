@@ -37,7 +37,7 @@ To get started with these workshops, you don't need any complicated setup or cod
   2. If you haven't set up Copilot yet, click **Start using Copilot Free**.
   3. On the **Copilot** → **Features** page, find and turn on **Copilot Chat in GitHub.com**—this is the only Copilot feature you need for these workshops.
      
-     ![GitHub Copilot activation and settings screenshot]({{ '/img/copilot_activation_setting.png' | relative_url }})
+     ![GitHub Copilot activation and settings screenshot]({{ '/img/copilot_activation_settings.png' | relative_url }})
 
   4. Save your changes, then reload your Codespace so it picks up the new settings.
    
