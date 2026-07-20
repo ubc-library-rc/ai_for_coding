@@ -8,23 +8,16 @@ nav_order: 2
 # Part 2. Set Up GitHub Copilot
 
 Creating an AI working environment with Copilot
-
-**Duration:** 30 min | **Tools:** GitHub Codespaces, Copilot, R, dplyr, ggplot2
-
-{: .warn}
-**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
-
-More detail: [UBC AI guidance](../ubc_ai_policy.html).
-
 ---
 
 ## Learning objectives
 
 By the end of this workshop, you will:
 
-- Launch a GitHub Codespace for the workshop exercises
-- Familiarize yourself with GitHub Copilot setup and working environment
-- Maintain an active, lead role when engaging with AI tools
+- Understand the necessary components of an AI-assisted coding environment 
+- Know how to integrate an AI assistant (Copilot) into your workflow to enhance learning and coding
+- Explore GitHub Codespace, where you can experiment and practice new skills
+
 
 ---
 

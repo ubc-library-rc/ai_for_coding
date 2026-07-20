@@ -109,11 +109,6 @@ flowchart LR
 
 Data privacy is a major concern when using Large Language Models (LLMs) such as GitHub Copilot or ChatGPT. Anything you input—your code, prompts, or datasets—might be sent to and seen by the tool’s servers. For this reason, throughout this workshop, we are using non-confidential **Palmer Penguins** data for coding and analysis activities in [Part 2](02_set_up_github_copilot.md) and [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
 
-{: .warn}
-**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot *workspace* may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
-
-More detail: [UBC AI guidance](../ubc_ai_policy.html).
-
 ---
 
 ## Additional Resources
