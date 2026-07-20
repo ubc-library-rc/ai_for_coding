@@ -41,7 +41,6 @@ To get started with these workshops, you don't need any complicated setup or cod
 
   1. Save your changes, then reload your Codespace so it picks up the new settings.
    
-- [ ] A modern **web browser** (Chrome, Edge, Firefox, or Safari)
 
 
 {: .warn}
