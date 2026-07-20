@@ -72,6 +72,8 @@ Format: How should the AI present the answer?
 
 ![Copilot chat responding to the vague prompt "Tell me about my research data on penguins" with a generic answer]({{ '/img/copilot_sample_chat.png' | relative_url }})
 
+*Notice how the prompt answer is vague and general about penguins datasets*
+
 **Much better:**  
 
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
@@ -93,7 +95,7 @@ This example makes your request clear and specific.
 | **Format** | *"...and show the result as a table."* |
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[State tool: dplyr in R]
     B[Name data file: penguins.csv]
     C[Define calculation: average flipper length by species]
