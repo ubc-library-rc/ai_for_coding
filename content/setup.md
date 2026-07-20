@@ -7,11 +7,7 @@ nav_order: 1.3
 # Setup
 {: .no_toc }
 
-These workshops are set up to run **entirely in your browser** using **GitHub Codespaces**, which provides a simple way to incorporate AI into the coding process. You do **not** need to install Python, an editor, or any libraries on your own computer. When you launch your Codespace, Python and libraries (including **pandas** and **matplotlib**) are already installed and ready to go.
-
-We use **Python** in these workshops because it is widely used for data analysis and integrates well with GitHub Copilot. You can write and run Python code alongside AI chat in the same workspace, which is practical for real projects.
-
-The concepts we cover are general and apply to many languages and tools—what you learn throughout the workshop can apply to many environments and tools, and this is just one way of doing things.
+These workshops run **entirely in your browser** using **GitHub Codespaces**—no installation required. You don’t need to set up programming languages or any new applications on your computer. You’ll get your own private copy of all materials, giving you a safe and personal space to run code, chat with Copilot, and explore how your code, data, and AI tools work together.
 
 Complete this page before the hands-on workshops. **[Part 2: Set Up GitHub Copilot](workshops/02_set_up_github_copilot.md)** walks you through launching your Codespace and getting Copilot running.
 
@@ -25,16 +21,27 @@ Complete this page before the hands-on workshops. **[Part 2: Set Up GitHub Copil
 
 To get started with these workshops, you don't need any complicated setup or coding background—just a few basics:
 
-- **A free [GitHub account](https://github.com/signup)**
+- [ ] **A free [GitHub account](https://github.com/signup)**
   
   If you don't have a GitHub account, go to [github.com/signup](https://github.com/signup) and create one. Be sure to check your email and confirm your account before you start.
 
-- **Access to GitHub Copilot**  
-  
-  After creating your GitHub account, you may need to enable GitHub Copilot before it can be used in your Codespace. If you don't see Copilot as an option in your Codespace or editor, go to [github.com/settings/copilot](https://github.com/settings/copilot) and click **Start using Copilot Free**.
+  ![GitHub sign-up page]({{ '/img/github_signup_page.png' | relative_url }})
 
-- **A modern web browser**  
-  Chrome, Edge, Firefox, or Safari all work—no software installation is needed on your computer.
+- [ ] Access to **GitHub Copilot** (Copilot Free is enough)
+  
+  To use Copilot, you'll need a personal GitHub account with access to a Copilot plan. For this workshop, you can start with **Copilot Free**, which lets you explore a limited set of features without subscribing to a paid plan.
+
+  After creating your GitHub account, you may need to enable GitHub Copilot before it can be used in your Codespace. To turn it on:
+
+  1. Sign in to GitHub, then visit [github.com/settings/copilot/features](https://github.com/settings/copilot/features) *(or click your profile photo in the top-right → **Settings** → **Copilot** in the left sidebar)*.
+  2. If you haven't set up Copilot yet, click **Start using Copilot Free**.
+  3. On the **Copilot** → **Features** page, find and turn on **Copilot Chat in GitHub.com**—this is the only Copilot feature you need for these workshops.
+     
+     ![GitHub Copilot activation and settings screenshot]({{ '/img/copilot_activation_setting.png' | relative_url }})
+
+  4. Save your changes, then reload your Codespace so it picks up the new settings.
+   
+- [ ] A modern **web browser** (Chrome, Edge, Firefox, or Safari)
 
 
 {: .warn}

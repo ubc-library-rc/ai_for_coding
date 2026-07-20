@@ -7,9 +7,9 @@ nav_order: 2
 
 # Part 2. Set Up GitHub Copilot
 
-Creating AI working environment with Copilot
+Creating an AI working environment with Copilot
 
-**Duration:** 30 min | **Tools:** GitHub Codespaces, Copilot, Python, pandas, matplotlib
+**Duration:** 30 min | **Tools:** GitHub Codespaces, Copilot, R, dplyr, ggplot2
 
 {: .warn}
 **Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
@@ -28,71 +28,58 @@ By the end of this workshop, you will:
 
 ---
 
+### Why all this setup?
+
+We designed this environment so you have a **safe, personal space** to try things out, experiment, and learn by doing. When you **fork** this repository, you get your own private copy—so you can run code, chat with Copilot, and make changes freely, without affecting the original materials.
+
+{: .note}
+**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place.
+
+Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). The rest of the series builds on the Codespace environment you set up here.
+
+The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
+
 ## Launch your Codespace
 
-Follow the steps below to open the exercises repository in a browser-based coding environment.
+Start by following these steps to create your own copy of the workshop materials and launch them in a browser-based coding environment (codespace), giving you a safe space to experiment and learn hands-on.
 
-<div class="setup-steps">
-  <section class="setup-step">
-    <h3>Step 1: Open the Repository</h3>
-    <img src="{{ '/img/p1.png' | relative_url }}" alt="Open exercises repository">
-    <p>Go to <a href="https://github.com/ubc-library-rc/ai-for-coding-exercies" target="_blank">github.com/ubc-library-rc/ai-for-coding-exercies</a> and sign in with your GitHub account.</p>
-  </section>
-  <section class="setup-step">
-    <h3>Step 2: Click Code</h3>
-    <img src="{{ '/img/p2.png' | relative_url }}" alt="Click the Code button">
-    <p>Click the green <strong>Code</strong> button near the top right of the repository page.</p>
-  </section>
-  <section class="setup-step">
-    <h3>Step 3: Open Codespaces Tab</h3>
-    <img src="{{ '/img/p3.png' | relative_url }}" alt="Go to Codespaces tab">
-    <p>Switch to the <strong>Codespaces</strong> tab in the menu that appears.</p>
-  </section>
-  <section class="setup-step">
-    <h3>Step 4: Create Codespace</h3>
-    <img src="{{ '/img/p4.png' | relative_url }}" alt="Create codespace on main">
-    <p>Click <strong>Create codespace on main</strong> to launch a new Codespace.</p>
-  </section>
-  <section class="setup-step">
-    <h3>Step 5: Wait for Setup</h3>
-    <img src="{{ '/img/p5.png' | relative_url }}" alt="Codespace setup progress">
-    <p>Wait a few moments—first-time builds may take a minute or two. Your Codespace is ready when it shows "Active".</p>
-  </section>
-  <section class="setup-step">
-    <h3>Step 6: Start Coding!</h3>
-    <img src="{{ '/img/p6.png' | relative_url }}" alt="Start coding in Codespaces">
-    <p>You now have a full coding environment with Python, workshop libraries, and Copilot ready to go—directly in your browser.</p>
-  </section>
+
+<div class="setup-slides">
+  <iframe src="{{ '/slides/index.html' | relative_url }}" title="GitHub Copilot: Codespace Setup slides" allowfullscreen></iframe>
 </div>
 
+<p><a href="{{ '/slides/index.html' | relative_url }}" target="_blank">Open the setup slides in a new tab &rarr;</a></p>
+
+
+
 <style>
-.setup-steps .setup-step {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px dashed #ddd;
-}
-.setup-steps .setup-step:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-.setup-steps img {
-  display: block;
-  max-width: 100%;
-  margin: 1rem 0 0.75rem;
+.setup-slides {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background: #f7f7f7;
+  overflow: hidden;
   box-shadow: 2px 3px 13px rgba(0, 0, 0, 0.06);
+}
+.setup-slides iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 </style>
 
-Once your Codespace opens in the browser, you'll see a full coding environment ready to use—just like in the screenshot below! Python, the workshop libraries, and GitHub Copilot are already installed for you automatically, thanks to the project's `.devcontainer` configuration file.
+Once your Codespace opens in the browser, you'll see a full coding environment ready to use—just like in the screenshot below.
 
 ![GitHub Codespace environment: code editor with file tree, terminal, and Copilot chat panel]({{ '/img/github_codespace.png' | relative_url }})
 
 
 {: .note}
-Your Codespace is given an automatically generated name, so it won't match the examples. To reopen it later, go to [github.com/codespaces](https://github.com/codespaces) and click your Codespace's name.
+Your Codespace is given an automatically generated name, so it won't match the examples. After you **fork** this repository, you'll have your own copy of the code under your GitHub account—so any changes you make are tracked and saved to your personal repository.
 
 ---
 
@@ -130,42 +117,6 @@ We'll focus on **Agent mode** today — it helps you build multi-step workflows 
 - **Plan:** outline or structure a coding task
 
 Choose **Auto mode** for now. On the free plan, this gets you started quickly while the system handles model selection.
-
----
-
-## Quick practice: your first Copilot chart
-
-Load the data, then ask Copilot to build a simple bar chart.
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-penguins = pd.read_csv("data/penguins.csv").dropna()
-
-species_colors = {
-    "Adelie": "#4878d0",
-    "Chinstrap": "#ee854a",
-    "Gentoo": "#6acc65",
-}
-```
-
-**Copilot prompt:**
-
-> "Create a bar chart showing how many penguins are in each species. Use the species_colors dictionary for bar colors. Add count labels on top of each bar."
-
-Expected output:
-
-![Chart 1 bar plot output]({{ '/img/chart1_barplot.png' | relative_url }})
-
----
-
-## Key Takeaways
-
-- Launch the exercises repo in a **Codespace** — Python, libraries, and Copilot are pre-installed
-- The workshop data lives at **`data/penguins.csv`** in your Codespace
-- Use **Agent mode** in Copilot Chat for multi-step coding tasks
-- Write **clear prompts** with data, task, and output format — better prompts give better code
 
 ---
 
