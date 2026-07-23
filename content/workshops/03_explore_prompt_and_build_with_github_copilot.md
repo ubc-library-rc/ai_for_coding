@@ -8,8 +8,6 @@ nav_order: 3
 # Part 3. Explore, Prompt, and Build with GitHub Copilot
 
 
-**Duration:** 30 min | **Tools:** GitHub Copilot, Jupyter notebook, Python (pandas, matplotlib)
-
 {: .warn}
 **Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
 

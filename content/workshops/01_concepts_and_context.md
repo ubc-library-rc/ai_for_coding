@@ -9,8 +9,6 @@ nav_order: 1
 
 Learning introductory concepts and context for AI-assisted coding.
 
-**Duration:** 30 min
-
 ---
 
 ## Learning Objectives
@@ -18,7 +16,7 @@ Learning introductory concepts and context for AI-assisted coding.
 By the end of this workshop, you will:
 
 - Have a conceptual understanding of how LLMs work
-- Learn how to write clear, intelligible prompts that AI tools respond to best
+- Learn how to write intelligible prompts that AI tools respond to best
 - Understand the privacy risks inherent in LLMs like Copilot
 
 ---
@@ -28,8 +26,6 @@ By the end of this workshop, you will:
 Large language models (LLMs) are trained on massive amounts of public code and documentation. This means they're skilled at recognizing syntax, identifying common programming patterns, and suggesting relevant fixes.
 
 Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, don't understand language the way humans do. While we read text as **words and meaning**, the model breaks text into **tokens** — small chunks that may be a whole word, part of a word, or even a single character. Tokens are the model's real unit of work: they determine how much it can "remember" at once and how much usage costs.
-
-**Context window:** AI agents can only pay attention to a limited chunk of text at any one time — your current prompt, recent chat history, and whatever code or files you explicitly share. Think of it like a sticky note: if you add too much, older details may fall off and be forgotten. The short, focused prompts we use in this workshop stay well within that limit, so it's just helpful background — something to keep in mind once you move on to larger, real-world projects.
 
 Every time you interact with Copilot or any AI tool, it starts from whatever info you provide *that session*.
 
@@ -47,7 +43,7 @@ flowchart TD
     C -- No --> E[Copilot provides a generic guess or asks follow-up questions to get more information]
 ```
 
-
+**Context window:** AI agents can only "remember" a limited amount of text at once (your prompt, recent chat, and shared files). The examples we use in this workshop stay well within that limit, so it’s just helpful background context and something to keep in mind once you move on to larger projects.
 
 ---
 
@@ -61,7 +57,7 @@ The quality of what you get back depends heavily on how you ask. A well-structur
 Context: What data or code are you working with?
 Task: What do you want to accomplish?
 Constraints: Any specific tools, libraries, or limits?
-Format: How should the AI present the answer?
+Format: How should the AI present and structure the answer?
 ```
 
 ### Example 1: Vague vs. Clear
@@ -72,13 +68,13 @@ Format: How should the AI present the answer?
 
 ![Copilot chat responding to the vague prompt "Tell me about my research data on penguins" with a generic answer]({{ '/img/copilot_sample_chat.png' | relative_url }})
 
-*Notice how the prompt answer is vague and general about penguins datasets*
+*Notice how the answer is vague and generic.*
 
 **Much better:**  
 
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
 
-Put the pieces together and you'll get a better response.
+Notice the difference: this version names the **context** (a CSV file), a specific **task** (count the columns), and the **format** (a list). It is more likely to get a precise answer instead of a generic one.
 
 
 ### Example 2: Stating Your Tools (Constraints)
@@ -90,15 +86,15 @@ This example makes your request clear and specific.
 | Prompt Component | Sample |
 | :--- | :--- |
 | **Context** | *"I have a `penguins.csv` dataset..."* |
-| **Task** | *"...calculate the average flipper length by species..."* |
+| **Task** | *"...calculate the average ... by species..."* |
 | **Constraints** | *"...using the dplyr package in R..."* |
-| **Format** | *"...and show the result as a table."* |
+| **Format** | *"...and show the result as a table"* |
 
 ```mermaid
 flowchart LR
     A[State tool: dplyr in R]
     B[Name data file: penguins.csv]
-    C[Define calculation: average flipper length by species]
+    C[Define calculation: average ...(metric) by species]
     D[Request output: table]
     A --> B --> C --> D
 ```
@@ -107,7 +103,10 @@ flowchart LR
 
 ## Data Privacy with LLMs
 
-Data privacy is a major concern when using Large Language Models (LLMs) such as GitHub Copilot or ChatGPT. Anything you input—your code, prompts, or datasets—might be sent to and seen by the tool’s servers. For this reason, throughout this workshop, we are using non-confidential **Palmer Penguins** data for coding and analysis activities in [Part 2](02_set_up_github_copilot.md) and [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
+Data privacy is an important consideration when working with Large Language Models (LLMs) and similar AI tools. Any information you provide—such as code, prompts, or datasets—may be transmitted to external servers and viewed or processed by the tool provider.
+
+For this reason, throughout these workshops we use only the public, non-confidential, demonstrative **Palmer Penguins** dataset for the coding and analysis activities in [Part 2](02_set_up_github_copilot.md) and [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
+
 
 ---
 
