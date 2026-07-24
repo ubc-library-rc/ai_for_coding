@@ -7,40 +7,23 @@ nav_order: 3
 
 # Part 3. Explore, Prompt, and Build with GitHub Copilot
 
-
-{: .warn}
-**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
-
-More detail: [UBC AI guidance](../ubc_ai_policy.html).
-
 ---
 
 ## Learning objectives
 
 By the end of this workshop, you will:
 
-- Complete a Jupyter notebook EDA report on Palmer Penguins using step-by-step Copilot prompts
-- Apply the prompt formula (Context + Task + Constraints + Format) from [Part 1](01_concepts_and_context.md)
-- Use tables and plots to answer what makes penguins heavier—and verify Copilot output yourself
+- **Explore** a dataset with AI as your guide
+- **Prompt** with intent to turn plain language into R and ggplot2 plots/code
+- **Build** a habit of verification and code review
 
 ---
-
-## The dataset
 
 ## Palmer Penguins dataset
 
-We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv]({{ '/data/penguins.csv' | relative_url }}) and save it in a `data` folder.)
+To have something concrete to work with, we'll explore the **Palmer Penguins** dataset (`data/penguins.csv` in your Codespace) and build toward clear, colorful visualizations. It holds body measurements for penguins from three species across three islands — already in your Codespace, no download needed.
 
-![Palmer Penguins illustrations]({{ '/img/lter_penguins.png' | relative_url }})
-
-**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
-**Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
-
----
-
-We'll work with the **Palmer Penguins** dataset (`data/penguins.csv`) — body measurements for penguins from three species across three islands.
-
-Here's a preview of what you'll work with:
+Here's a quick peek at the data:
 
 | species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
 |---------|--------|----------------|---------------|-------------------|-------------|-----|------|
@@ -52,150 +35,115 @@ Here's a preview of what you'll work with:
 
 **344 rows × 8 columns**
 
+![Palmer Penguins illustrations]({{ '/img/lter_penguins.png' | relative_url }})
 
-
----
-
-## Your research question
-
-Keep one question in mind for every prompt in this workshop:
-
-> **What makes a penguin heavier?**
-
-In the data, we measure this with the **`body_mass_g`** column (body mass in grams). Every step below adds evidence toward your answer.
+**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) · **Artwork:** [@allison_horst](https://twitter.com/allison_horst)
 
 ---
 
-## Open the notebook
+## How we'll work
 
-In your Codespace (from [Part 2](02_set_up_github_copilot.md)), open:
+The goal here isn't to write an analysis script — it's to make your **first visualization** by directing Copilot in plain language. You'll work in your Codespace using **`analysis.R`**, and there are really just two moves:
 
-**`analysies.ipynb` in the exercises repo**
+1. **Access the data** — load `data/penguins.csv` and get it ready to plot.
+2. **Build a visualization** — create a plot with Copilot, then refine it in conversation until it looks the way you want.
 
-- **Markdown cells** = section goals and your written findings
-- **Code cells** = where you paste Copilot-generated code, run it, and check the output
-
----
-
-## Step 1: Load and inspect
-
-**Goal:** Load `data/penguins.csv`, understand its structure, and list columns that could explain `body_mass_g`.
-
-**Suggested Prompt in Copilot Chat:**
-
-```
-Context: I am working in analysies.ipynb with data/penguins.csv.
-Research question: "What makes a penguin heavier?"
-Task: Load the CSV with pandas. Print row count, column names, data types, and missing values per column.
-Also list which columns could help explain body_mass_g.
-Constraints: Use pandas only. Keep the code in one cell.
-Format: Print readable labels before each output.
-```
-
-**What to check before moving on:**
-
-- Does the file path match `data/penguins.csv`?
-- Do you see 8 columns and about 344 rows?
-- Are species names spelled correctly (Adelie, Chinstrap, Gentoo)?
+We'll get the data in quickly together, then spend most of our time on the plot — that's where the real skill is.
 
 ---
 
-## Step 2: Clean data
+## Step 1: Access the data
 
-**Goal:** Keep rows with complete values for body mass and key predictors; report how many rows you kept.
+**Goal:** Get the data loaded and ready to plot.
 
-**Suggested Prompt in Copilot Chat:**
+> *In `analysis.R`, add code to read `data/penguins.csv` with the tidyverse, drop rows with missing values, and save the result as `penguins_clean`. Print how many rows there are before and after.*
 
-```
-Context: Same notebook. Research question: "What makes a penguin heavier?" Use the penguins DataFrame from the previous cell.
-Task: Drop rows with missing values in body_mass_g, bill_length_mm, bill_depth_mm, flipper_length_mm, species, sex, island, and year.
-Constraints: Use pandas; store the result as penguins_clean.
-Format: Print row count before cleaning, after cleaning, and percent retained.
-```
+Run the code (**`Cmd/Ctrl + Enter`**), then **quickly check**:
 
-**What to check before moving on:**
+- Did it read from `data/penguins.csv`?
+- Did the row count drop a little once missing values were removed?
+- Is the clean data stored as `penguins_clean` so your plots can use it?
 
-- Did the row count go down (missing values removed)?
-- Are you using `penguins_clean` for the rest of the notebook?
+That's it for setup — now the fun part.
 
 ---
 
-## Step 3: Summary tables
+## Step 2: Build and refine a visualization
 
-**Goal:** Build numeric evidence — average body mass by species and a ranked view of numeric associations.
+This is where you'll go back and forth with Copilot. **You don't need to know ggplot** — you describe what you want, look at the plot, and ask for changes.
 
-**Suggested Prompt in Copilot Chat:**
+**Start simple:**
 
-```
-Context: Same notebook; use penguins_clean. Research question: "What makes a penguin heavier?"
-Task: Create (1) a summary table by species with count and average body_mass_g, and (2) a ranked list of numeric columns correlated with body_mass_g.
-Constraints: Use pandas only.
-Format: Print both tables with values rounded to one decimal place.
-```
+> *Using `penguins_clean`, make a ggplot scatter plot of `flipper_length_mm` (x) vs `body_mass_g` (y), with points colored by species.*
 
-**What to check before moving on:**
+You'll get a basic plot. Now refine it, one request at a time:
 
-- Which species has the highest average body mass?
-- Which numeric column has the strongest correlation with body mass?
-- Do the numbers match what you expect from the data?
+> *Add a clear title and axis labels.*
 
-Example correlation output (optional):
+> *Use a cleaner theme — try `theme_minimal()`.*
 
-![Numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
+> *Give each species its own color: Adelie `#4878d0`, Chinstrap `#ee854a`, Gentoo `#6acc65`.*
 
----
+> *Make the points a bit larger and slightly transparent so overlaps are visible.*
 
-## Step 4: Visualize
+Each request builds on the last. This is exactly how you'd work on your own projects: start rough, then steer the details — colors, labels, styling — until the result matches what you had in mind.
 
-**Goal:** Add plots that support your answer — relationship and group comparison.
 
-**Suggested Prompt in Copilot Chat:**
-```
-Context: Same notebook; use penguins_clean. Research question: "What makes a penguin heavier?"
-Use species_colors if helpful (Adelie #4878d0, Chinstrap #ee854a, Gentoo #6acc65).
-Task: Create a scatter plot of flipper_length_mm (x) vs body_mass_g (y), colored by species, with title and axis labels.
-Then add a box plot of body_mass_g by species.
-Constraints: Use matplotlib only.
-Format: Show both plots and add a one-line comment on what each plot suggests.
-```
+**This is the key skill.** Changing a color scheme, a label, or a plot type is just a sentence to Copilot. You focus on *what you want to see*; it handles the syntax. If you don't like a change, say so and try another direction.
 
-**What to check before moving on:**
+**Then compare groups** with a second plot:
 
-- Does the scatter plot show a positive trend (longer flippers → heavier penguins)?
-- Does the box plot show clear differences between species?
-- Do the visuals agree with your summary tables?
+> *Add a box plot of `body_mass_g` by species, using the same colors.*
 
-Example outputs:
+Here are examples of the kinds of plots you can build:
 
 ![Scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
 
 ![Box plot: body mass by species](../../img/workshop3_boxplot_body-mass_by_species.png)
 
+**Verify:**
+
+- Does the scatter plot show a trend (longer flippers → heavier penguins)?
+- Does the box plot show clear differences between species?
+- Do the visuals match what you'd expect from the data?
+
+### More plots to explore
+
+Once you've got the basics, keep experimenting — each of these is just one more prompt, and a chance to see a different corner of ggplot:
+
+> *Add a histogram (or density plot) of `body_mass_g` to see how weights are distributed.*
+
+> *Turn the box plot into a violin plot to show the full shape of each species' distribution.*
+
+> *Facet the scatter plot by `island` so each island gets its own panel.*
+
+> *Make a bar chart of average `body_mass_g` per species, with error bars.*
+
+> *Show a correlation heatmap of the numeric columns so I can see what's most related to body mass.*
+
+A correlation heatmap, for instance, might look like this:
+
+![Numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
+
+Don't worry about the ggplot syntax — describe the plot you want, run what Copilot writes, and refine from there. That's the whole loop.
+
 ---
 
-## Optional
+## Make it your own
 
-> "Fit a simple linear regression predicting body_mass_g from flipper_length_mm and bill_length_mm using penguins_clean. Print the coefficients and a one-sentence interpretation."
+Now try experimenting on your own with Copilot. Here are a few ideas to keep your exploration going:
 
----
-
-## Key takeaways
-
-1. **One clear question** keeps every Copilot prompt focused
-2. **Notebook structure** — load → clean → summarize → visualize → interpret
-3. **Copilot drafts; you verify** — check row counts, labels, and whether plots match the tables
-4. **Use the prompt formula** — Context + Task + Constraints + Format (from Part 1)
+- *"Color the scatter plot by `sex` instead of species — does the pattern change?"*
+- *"Add a trend line to the scatter plot."*
+- *"Make a plot that compares body mass across islands."*
+- *"Explain what this code is doing, line by line."*
+- *"Redo the plot so the colors are defined once and reused."*
 
 ---
 
 ## Resources
 
-- [pandas documentation](https://pandas.pydata.org/docs/)
-- [Matplotlib documentation](https://matplotlib.org/stable/index.html)
+- [tidyverse documentation](https://www.tidyverse.org/)
+- [ggplot2 documentation](https://ggplot2.tidyverse.org/)
+- [Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/)
 - [UBC AI guidance](../ubc_ai_policy.html)
-
----
-
-**Previous:** [Part 2. Set Up GitHub Copilot](02_set_up_github_copilot.md)
-
-Congratulations — you built a short, evidence-based EDA report with Copilot from data to conclusion.
