@@ -35,6 +35,7 @@ Follow the steps below to open your copy of the workshop in a **Codespace** — 
 {: .note}
 **GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place. The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
 
+The slides below walk you through forking and launching the workshop exercise repository: [**ubc-library-rc/ai-for-coding-exercise**](https://github.com/ubc-library-rc/ai-for-coding-exercise)
 
 <div class="setup-slides">
   <iframe src="{{ '/slides/index.html' | relative_url }}" title="GitHub Copilot: Codespace Setup slides" allowfullscreen></iframe>
