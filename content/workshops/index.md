@@ -8,91 +8,32 @@ has_children: true
 # Workshops
 {: .no_toc }
 
-Three quick 30-minute workshops to get started with AI for Coding using GitHub Copilot. Choose your starting point or go through them in order for the full experience.
+About the series: AI for Coding consists of three 30-minute workshops designed to help you use Large Language Models (LLMs) to support exploratory data analysis. We will introduce fundamental concepts, practice breaking down problems into actionable components, and use GitHub Copilot to integrate AI and code more efficiently. Each workshop begins with 30 minutes of teaching, followed by optional 15 minutes for questions, discussion, and practice.
 
-{:toc}
-
-{: .note }
-Before you begin, see [Setup](../setup.html) to create a GitHub account and enable Copilot. 
-
-{: .warn}
-**Only use [GitHub Copilot](https://github.com/features/copilot) with files that can be made public.** All files in a Copilot _workspace_ may be indexed and shared with AI tools, even if you don't enter them into the chat. Never use GitHub Copilot with personal or confidential data.
-
-More detail: [UBC AI guidance](../ubc_ai_policy.html).
-
-## [(Part 1). AI for Coding: Concepts and Context](01_concepts_and_context.md) — 30 min
-The first in a three-part series on AI for Coding, this workshop introduces fundamental concepts that will help you engage efficiently with AI in coding tasks. We will use non-technical language to explain how Large Language Models (LLMs) like Copilot work, so you can use them more effectively.
-
-**Learning objectives**
-
-By the end of this workshop, you will know:
-
-- What Large Language Models (LLMs) are and how they power tools like Copilot
-- Why tokens and context matter when interacting with AI models
-- How to communicate clearly with AI by providing the right context, tasks, constraints, and output format
-
-
-**Time Breakdown:**
-
-| Time    | Activity                                  |
-|---------|-------------------------------------------|
-| 0–5 min | Intro: How LLMs Work & Why Context Matters|
-| 5–12 min| The Prompt Formula (context + task + constraints + format) |
-| 12–25 min| Practice: Try Out Prompts with Copilot   |
-| 25–30 min| Discussion & Recap of Key Concepts       |
+## [(Part 1). AI for Coding: Concepts and Context](01_concepts_and_context.md) 
+The first in a three-part series on AI for Coding, this online workshop introduces fundamental concepts that will help you engage efficiently with AI in coding tasks. We will use non-technical language to explain how Large Language Models (LLMs) work, so you can use them more effectively.
 
 ---
 
-## [(Part 2) AI for Coding: Introduction to GitHub Copilot](02_set_up_github_copilot.md) — 30 min
+## [(Part 2) AI for Coding: Introduction to GitHub Copilot](02_set_up_github_copilot.md) 
+In part two of the online AI for Coding series, we will learn how to use GitHub Copilot to interact with data in a GitHub repository. We’ll also learn how to integrate this powerful AI programming assistant into our workflow, set up our development environment, and explore the features of GitHub Copilot’s online workspace.
 
-In the second workshop of the AI for Coding series, you will learn how to use GitHub Copilot to interact with data in a GitHub repository. You'll walk through the steps to set up your development environment, explore Copilot’s features in an online workspace, and integrate this powerful AI assistant into your workflow—no prior GitHub experience required.
+>Prior experience with GitHub is not required, but to participate fully you will need a free GitHub account.
 
-> Prior experience with GitHub is not required, but to participate fully you will need a free GitHub account. 
-
-**Learning objectives**
-
-By the end of this workshop, you will:
-
-- Develop an understanding of different coding environments, helping you choose the best tools for your needs
-- Familiarize yourself with setting up GitHub Copilot and its working environment
-- Recognize the importance of maintaining an active, lead role when engaging with AI tools
-
-**Time Breakdown:**
-
-| Time    | Activity                                              |
-|---------|-------------------------------------------------------|
-| 0–5 min | Introduction: Overview of GitHub Copilot & requirements|
-| 5–10 min| Walkthrough: Setting up Copilot and your workspace    |
-|10–20 min| Exploring Copilot features (code generation, suggestions, completion)|
-|20–28 min| Hands-on: Interact with data using Copilot            |
-|28–30 min| Key takeaways and next steps                          |
-
----
 
 ## [(Part 3) AI for Coding: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md) — 30 min
 
-In the third part of our AI for Coding series, you'll guide Copilot through data exploration and coding tasks. Working with the Palmer Penguins dataset, you'll practice crafting clear, focused prompts and use Copilot’s chat features to generate Python code to load, clean, and visualize data. We will use a Jupyter notebook template with Copilot, guided step by step, to answer one research question: *What makes a penguin heavier?*
+In the third part of our AI for Coding series, we will set up a GitHub Codespace environment. Here we will learn how to use GitHub Copilot to enhance our data exploration and coding . Working with a sample dataset, we'll practice writing clear prompts and use Copilot’s chat features to generate R code to load, clean, and visualize the data.
 
-
-**Learning objectives**
-
-By the end of this workshop, you will:
-
-- Write focused prompts for data analysis and exploration
-- Build evidence using data checks, summary tables, and visualization
-- Compare and reason about likely predictors of `body_mass_g`
-- Break down coding goals into step-by-step prompts that Copilot can follow
-- Explore Copilot's "Ask" and "Plan" modes for different coding tasks
-- Set up a simple project structure for collaborative coding
-                    |
+> This online workshop builds on the environment participants set up in part two of the series. Prior experience with GitHub is not required, but to participate fully you will need a free GitHub account.
 
 ---
 
 ## Quick Start Workshops
 {: .no_toc }
 
-1. Pick **[Part 1: Concepts and Context](01_concepts_and_context.md)** and spend 30 minutes on it
-2. Come back for **[Part 2: Set Up GitHub Copilot](02_set_up_github_copilot.md)** when you're ready
-3. Finish with **[Part 3: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md)**
+1.  **[Part 1: Concepts and Context](01_concepts_and_context.md)**
+2. **[Part 2: Set Up GitHub Copilot](02_set_up_github_copilot.md)** 
+3. **[Part 3: Explore, Prompt, and Build with GitHub Copilot](03_explore_prompt_and_build_with_github_copilot.md)**
 
 Each one builds on the previous, but you can jump around if you want.
