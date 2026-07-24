@@ -100,7 +100,7 @@ A few things that often come up once you start working hands-on:
 The free plan has a monthly limit. To see how much you've used, click the **Copilot icon in the bottom-right status bar**.
 
 <img src="{{ '/img/copilot_usage_panel.png' | relative_url }}" alt="Copilot usage panel showing remaining credits and reset date" style="max-width: 340px; display: block; margin: 0.5em auto;" />
-git 
+
 ### Re-open the Copilot chat if you close it
 
 Closed the chat by accident? Open it again from the **chat icon dropdown in the top bar** (or press `Ctrl+Cmd+I` on macOS / `Ctrl+Alt+I` on Windows/Linux).
