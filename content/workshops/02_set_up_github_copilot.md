@@ -112,9 +112,6 @@ A Codespace keeps running for a while after you close the tab, using up your fre
 
 You can also see and manage all your Codespaces — including which are running and how much usage you've used — at [github.com/codespaces](https://github.com/codespaces/).
 
----
-
-That's all the setup you need. In [Part 3](03_explore_prompt_and_build_with_github_copilot.md) you'll put this to work by exploring the penguins data with Copilot.
 
 ---
 

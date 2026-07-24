@@ -92,10 +92,10 @@ This example makes your request clear and specific.
 
 ```mermaid
 flowchart LR
-    A[State tool: dplyr in R]
-    B[Name data file: penguins.csv]
-    C[Define calculation: average ...(metric) by species]
-    D[Request output: table]
+    A["State tool: dplyr in R"]
+    B["Name data file: penguins.csv"]
+    C["Define calculation: average metric by species"]
+    D["Request output: table"]
     A --> B --> C --> D
 ```
 
@@ -105,7 +105,7 @@ flowchart LR
 
 Data privacy is an important consideration when working with Large Language Models (LLMs) and similar AI tools. Any information you provide—such as code, prompts, or datasets—may be transmitted to external servers and viewed or processed by the tool provider.
 
-For this reason, throughout these workshops we use only the public, non-confidential, demonstrative **Palmer Penguins** dataset for the coding and analysis activities in [Part 2](02_set_up_github_copilot.md) and [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
+For this reason, throughout these workshops we use only the public, non-confidential, demonstrative dataset for the coding and analysis activities in [Part 3](03_explore_prompt_and_build_with_github_copilot.md).
 
 
 ---
