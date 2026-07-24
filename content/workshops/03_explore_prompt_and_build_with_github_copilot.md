@@ -25,6 +25,37 @@ By the end of this workshop, you will:
 
 ---
 
+## The dataset
+
+## Palmer Penguins dataset
+
+We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv]({{ '/data/penguins.csv' | relative_url }}) and save it in a `data` folder.)
+
+![Palmer Penguins illustrations]({{ '/img/lter_penguins.png' | relative_url }})
+
+**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
+**Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
+
+---
+
+We'll work with the **Palmer Penguins** dataset (`data/penguins.csv`) — body measurements for penguins from three species across three islands.
+
+Here's a preview of what you'll work with:
+
+| species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
+|---------|--------|----------------|---------------|-------------------|-------------|-----|------|
+| Adelie | Torgersen | 39.1 | 18.7 | 181 | 3750 | male | 2007 |
+| Adelie | Torgersen | 39.5 | 17.4 | 186 | 3800 | female | 2007 |
+| Adelie | Torgersen | 40.3 | 18.0 | 195 | 3250 | female | 2007 |
+| Chinstrap | Dream | 46.5 | 17.9 | 192 | 3500 | female | 2007 |
+| Gentoo | Biscoe | 46.1 | 13.2 | 211 | 4500 | female | 2007 |
+
+**344 rows × 8 columns**
+
+
+
+---
+
 ## Your research question
 
 Keep one question in mind for every prompt in this workshop:

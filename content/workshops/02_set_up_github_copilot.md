@@ -8,33 +8,32 @@ nav_order: 2
 # Part 2. Set Up GitHub Copilot
 
 Creating an AI working environment with Copilot
+
 ---
 
 ## Learning objectives
 
 By the end of this workshop, you will:
 
-- Understand the necessary components of an AI-assisted coding environment 
-- Know how to integrate an AI assistant (Copilot) into your workflow to enhance learning and coding
-- Explore GitHub Codespace, where you can experiment and practice new skills
-
+- Understand the necessary components of an AI-assisted coding environment.
+- Integrate an AI assistant (Copilot) into your workflow to enhance learning and coding.
+- Explore how a personal, sandboxed environment lets you experiment safely.
 
 ---
 
-### Why all this setup?
+## Why all this setup?
 
-We designed this environment so you have a **safe, personal space** to try things out, experiment, and learn by doing. When you **fork** this repository, you get your own private copy—so you can run code, chat with Copilot, and make changes freely, without affecting the original materials.
-
-{: .note}
-**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place.
+We designed this workshop environment so you have a **safe, personal space** to try things out, experiment, and learn by doing. Before you start, you'll make your own personal copy of the workshop files (a step called forking). This copy is yours alone — a safe space to experiment, run code, and chat with Copilot without worrying about breaking anything.
 
 Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). The rest of the series builds on the Codespace environment you set up here.
 
-The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
 
-## Launch your Codespace
+## Launch your GitHub Codespace
 
-Start by following these steps to create your own copy of the workshop materials and launch them in a browser-based coding environment (codespace), giving you a safe space to experiment and learn hands-on.
+Follow the steps below to open your copy of the workshop in a **Codespace** — a full coding environment that runs right in your browser, with nothing to install.
+
+{: .note}
+**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place. The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
 
 
 <div class="setup-slides">
@@ -70,46 +69,52 @@ Once your Codespace opens in the browser, you'll see a full coding environment r
 
 ![GitHub Codespace environment: code editor with file tree, terminal, and Copilot chat panel]({{ '/img/github_codespace.png' | relative_url }})
 
+1. **Top bar** — navigation, address bar, and window layout controls.
+2. **Directory (Explorer)** — your project files and folders; click a file to open it in the editor.
+3. **Working environment (Editor)** — where your open files are shown and edited (here, the README.md preview).
+4. **Terminal** — command-line access to the Codespace (a bash shell).
+5. **Chat interface** — the AI assistant (Copilot) panel for asking questions or generating code in this workspace.
 
-{: .note}
-Your Codespace is given an automatically generated name, so it won't match the examples. After you **fork** this repository, you'll have your own copy of the code under your GitHub account—so any changes you make are tracked and saved to your personal repository.
-
----
-
-## Palmer Penguins dataset
-
-We'll use the Palmer Penguins dataset throughout the workshop. It's already included in your Codespace at `data/penguins.csv` — no download needed. (If you're working outside a Codespace, you can [download penguins.csv]({{ '/data/penguins.csv' | relative_url }}) and save it in a `data` folder.)
-
-Preview of the data we'll work with:
-
-| species | island | bill_length_mm | bill_depth_mm | flipper_length_mm | body_mass_g | sex | year |
-|---------|--------|----------------|---------------|-------------------|-------------|-----|------|
-| Adelie | Torgersen | 39.1 | 18.7 | 181 | 3750 | male | 2007 |
-| Adelie | Torgersen | 39.5 | 17.4 | 186 | 3800 | female | 2007 |
-| Adelie | Torgersen | 40.3 | 18.0 | 195 | 3250 | female | 2007 |
-| Chinstrap | Dream | 46.5 | 17.9 | 192 | 3500 | female | 2007 |
-| Gentoo | Biscoe | 46.1 | 13.2 | 211 | 4500 | female | 2007 |
-
-**344 rows × 8 columns**
-
-![Palmer Penguins illustrations]({{ '/img/lter_penguins.png' | relative_url }})
-
-**Source:** [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/)  
-**Artwork:** [Illustrations](https://allisonhorst.github.io/palmerpenguins/articles/art.html) by [@allison_horst](https://twitter.com/allison_horst)
+Note: Your Codespace gets an automatically generated name, so it won't exactly match the example above.
 
 ---
 
 ## Explore Copilot in your Codespace
 
-Open Copilot Chat (`Ctrl+Cmd+I` on macOS, or `Ctrl+Alt+I` on Windows/Linux).
+Now let's open the tool we'll use. Open **Copilot Chat** with `Ctrl+Cmd+I` (macOS) or `Ctrl+Alt+I` (Windows/Linux).
 
-We'll focus on **Agent mode** today — it helps you build multi-step workflows quickly. Other modes:
+Inside the chat panel, there are two dropdowns worth knowing:
 
-- **Ask:** quick coding questions or short snippets
-- **Debug:** help fixing errors
-- **Plan:** outline or structure a coding task
+- **Mode** — how Copilot helps. Set this to **Agent**, which can carry out multi-step tasks across your files (what we'll use in Part 3). Other modes include *Ask* (quick questions), *Edit* (change specific code), and *Plan* (outline a task).
+- **Model** — which AI model answers. Set this to **Auto**, which lets Copilot pick a model for you — the simplest choice on the free plan.
 
-Choose **Auto mode** for now. On the free plan, this gets you started quickly while the system handles model selection.
+---
+
+## Good to know: working in your Codespace
+
+A few things that often come up once you start working hands-on:
+
+### Check your Copilot usage
+
+The free plan has a monthly limit. To see how much you've used, click the **Copilot icon in the bottom-right status bar**.
+
+![Copilot usage panel showing remaining credits and reset date]({{ '/img/copilot_usage_panel.png' | relative_url }})
+
+### Re-open the Copilot chat if you close it
+
+Closed the chat by accident? Open it again from the **chat icon dropdown in the top bar** (or press `Ctrl+Cmd+I` on macOS / `Ctrl+Alt+I` on Windows/Linux).
+
+![Command bar dropdown menu with the Open Chat option highlighted]({{ '/img/reopen_copilot_chat.png' | relative_url }})
+
+### Stop your Codespace when you're done
+
+A Codespace keeps running for a while after you close the tab, using up your free hours. To stop it, click the **Codespaces label in the bottom-left corner** and choose **Stop Current Codespace**. Stopping a Codespace saves your files. You can reopen it later right where you left off.
+
+You can also see and manage all your Codespaces — including which are running and how much usage you've used — at [github.com/codespaces](https://github.com/codespaces/).
+
+---
+
+That's all the setup you need. In [Part 3](03_explore_prompt_and_build_with_github_copilot.md) you'll put this to work by exploring the penguins data with Copilot.
 
 ---
 
