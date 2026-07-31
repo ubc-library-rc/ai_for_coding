@@ -48,7 +48,7 @@ The goal here isn't to write an analysis script — it's to make your **first vi
 1. **Access the data** — load `data/penguins.csv` and get it ready to plot.
 2. **Build a visualization** — create a plot with Copilot, then refine it in conversation until it looks the way you want.
 
-We'll get the data in quickly together, then spend most of our time on the plot — that's where the real skill is.
+We'll move through the data loading step together, then focus most of our attention on creating and refining your plot.
 
 ---
 
@@ -76,7 +76,11 @@ This is where you'll go back and forth with Copilot. **You don't need to know gg
 
 > *Using `penguins_clean`, make a ggplot scatter plot of `flipper_length_mm` (x) vs `body_mass_g` (y), with points colored by species.*
 
-You'll get a basic plot. Now refine it, one request at a time:
+Here is an example of the kind of scatter plot you can get:
+
+![Scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
+
+You'll get a basic plot, similar to the one above. Now refine it, one request at a time:
 
 > *Add a clear title and axis labels.*
 
@@ -95,9 +99,7 @@ Each request builds on the last. This is exactly how you'd work on your own proj
 
 > *Add a box plot of `body_mass_g` by species, using the same colors.*
 
-Here are examples of the kinds of plots you can build:
-
-![Scatter: body mass vs flipper length](../../img/workshop3_scatter_body-mass_vs_flipper-length.png)
+Here is an example of the kind of box plot you can get:
 
 ![Box plot: body mass by species](../../img/workshop3_boxplot_body-mass_by_species.png)
 
@@ -125,7 +127,6 @@ A correlation heatmap, for instance, might look like this:
 
 ![Numeric correlation heatmap](../../img/workshop3_heatmap_numeric-correlation-matrix.png)
 
-Don't worry about the ggplot syntax — describe the plot you want, run what Copilot writes, and refine from there. That's the whole loop.
 
 ---
 
