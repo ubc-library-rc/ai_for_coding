@@ -75,21 +75,14 @@ Clarity and specificity tends to produce **more helpful** responses:
 
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
 
-{: .note}
-FOR GRIGORY: add screenshot of response similar to above, or replace both screenshots with the text of a typical AI response (the sections should be parallel, with similar content and formatting in each)
-
+![Copilot chat responding to the clear prompt about CSV columns, showing a specific and helpful answer]({{ '/img/copilot_sample_chat_csv_detailed.png' | relative_url }})
 
 Notice the difference: this version names the **context** (a CSV file), a specific **task** (count the columns), and the **format** (a list). It is more likely to get a precise answer instead of a generic one.
 
 
 ### Example 2: Stating Your Tools (Constraints)
 
-> "I have a `penguins.csv` dataset. Using the dplyr package in R, can you calculate the average ... (some metrics of interest)? Show the results as a table."
-
-
-{: .note}
-GRIGORY: For continuity and ease of learning, preserve the order of components where possible (Context + Task + Constraints + Format) The sample prompts should align with the table in the "Prompt formula" section. For example, re-write the example 2 prompt as "I have a penguins.csv dataset. Calculate the average... (some metrics of interest) using the dplyr package in R. Show the results as a table.
-
+> "I have a `penguins.csv` dataset. Calculate the average... (some metrics of interest) using the dplyr package in R. Show the results as a table."
 
 This example makes your request clear and specific.
 
@@ -109,8 +102,7 @@ flowchart LR
     A --> B --> C --> D
 ```
 
-{: .note}
-GRIGORY: Add a text box or screenshot with a typical AI response, using the same format as used in the previous section.
+![Copilot chat responding to a clear prompt about calculating metrics with dplyr, showing a specific and relevant answer]({{ '/img/copilot_sample_chat_calc.png' | relative_url }})
 
 ---
 
