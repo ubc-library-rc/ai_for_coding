@@ -23,19 +23,25 @@ By the end of this workshop, you will:
 
 ## Why all this setup?
 
-We designed this workshop environment so you have a **safe, personal space** to try things out, experiment, and learn by doing. Before you start, you'll make your own personal copy of the workshop files (a step called forking). This copy is yours alone — a safe space to experiment, run code, and chat with Copilot without worrying about breaking anything.
+We designed this workshop environment so you have a **safe, personal space** to try things out, experiment, and learn by doing. 
 
-Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). The rest of the series builds on the Codespace environment you set up here.
+The workshop files are saved in a GitHub repository. Before you start, you'll make your own personal copy of the repository (in GitHub this process is called _forking_). This copy is yours alone — to experiment without worrying about breaking anything. You will also set up a GitHub _Codespace_, an online environment where you can develop code and chat with the _Copilot_ AI assistant without installing anything on your own computer.   
+
+{: .note}
+**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place. The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
+
+{: .note}
+Alternative: A **GitHub Codespace** is a virtual environment where you can interact with Copilot and develop code. It's a convenient teaching tool, but for your own projects consider setting up a similar environment on your own computer (e.g. with [VS Code](https://code.visualstudio.com/docs/getstarted/overview) or [Positron](https://positron.posit.co/)).
+
+Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). Activites in the next workshop in the series (Part 3) depend on the Codespace environment you set up here.
 
 
 ## Launch your GitHub Codespace
 
 Follow the steps below to open your copy of the workshop in a **Codespace** — a full coding environment that runs right in your browser, with nothing to install.
 
-{: .note}
-**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place. The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
 
-> The slides below walk you through forking and launching the workshop exercise repository: [**ubc-library-rc/ai-for-coding-exercise**](https://github.com/ubc-library-rc/ai-for-coding-exercise)
+The slides below walk you through forking and launching the workshop exercise repository: [ubc-library-rc/ai-for-coding-exercise](https://github.com/ubc-library-rc/ai-for-coding-exercise)
 
 <div class="setup-slides">
   <iframe src="{{ '/slides/index.html' | relative_url }}" title="GitHub Copilot: Codespace Setup slides" allowfullscreen></iframe>
@@ -66,9 +72,13 @@ Follow the steps below to open your copy of the workshop in a **Codespace** — 
 }
 </style>
 
+
+## Orientation to the Codespace environment
 Once your Codespace opens in the browser, you'll see a full coding environment ready to use—just like in the screenshot below.
 
+[View full-size image](../../img/github_codespace.png)
 ![GitHub Codespace environment: code editor with file tree, terminal, and Copilot chat panel]({{ '/img/github_codespace.png' | relative_url }})
+
 
 1. **Top bar** — navigation, address bar, and window layout controls.
 2. **Directory (Explorer)** — your project files and folders; click a file to open it in the editor.
@@ -84,7 +94,7 @@ Note: Your Codespace gets an automatically generated name, so it won't exactly m
 
 Now let's open the tool we'll use. Open **Copilot Chat** with `Ctrl+Cmd+I` (macOS) or `Ctrl+Alt+I` (Windows/Linux).
 
-Inside the chat panel, there are two dropdowns worth knowing:
+Inside the chat panel, there are two dropdown menus worth understanding:
 
 - **Mode** — how Copilot helps. Set this to **Agent**, which can carry out multi-step tasks across your files (what we'll use in Part 3). Other modes include *Ask* (quick questions), *Edit* (change specific code), and *Plan* (outline a task).
 - **Model** — which AI model answers. Set this to **Auto**, which lets Copilot pick a model for you — the simplest choice on the free plan.
@@ -111,7 +121,11 @@ Closed the chat by accident? Open it again from the **chat icon dropdown in the 
 
 A Codespace keeps running for a while after you close the tab, using up your free hours. To stop it, click the **Codespaces label in the bottom-left corner** and choose **Stop Current Codespace**. Stopping a Codespace saves your files. You can reopen it later right where you left off.
 
-You can also see and manage all your Codespaces — including which are running and how much of your free quota you've used — at [github.com/codespaces](https://github.com/codespaces/).
+{: .note}
+FOR GRIGORY: please add a relevant screenshot here
+
+
+You can also manage all your Codespaces — including to see which are running and how much of your free quota has been used — at [github.com/codespaces](https://github.com/codespaces/).
 
 ---
 

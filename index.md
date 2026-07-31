@@ -23,4 +23,4 @@ Each workshop will begin with 30 minutes of teaching, followed by an optional 15
 Our demonstration of AI coding will use GitHub Copilot to code in R, but the concepts and approaches apply to other tools and coding languages. We chose no-cost platforms that are already familiar to many users to make the workshops more accessible. To participate fully, please follow the instructions on the [setup](content/setup.html) page before the second workshop.
 
 {: .warn}
-Only use freely available AI tools with files that can be made public. Never use use GitHub Copilot with personal or confidential data. See [UBC AI guidance](content/ubc_ai_policy.html) for more about responsible AI use.
+Only use freely available AI tools with files that can be made public. Never use GitHub Copilot with personal or confidential data. See [UBC AI guidance](content/ubc_ai_policy.html) for more about responsible AI use.

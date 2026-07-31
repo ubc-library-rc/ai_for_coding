@@ -32,7 +32,7 @@ Every time you interact with Copilot or any AI tool, it starts from whatever inf
 **What this means in practice:**
 
 - LLMs have already memorized general coding patterns from huge amounts of **public** code and documentation online.
-- They use these patterns to predict what your request may be about. The more precise your question is, the more pertinent the resopnse will be.
+- They use these patterns to predict what your request may be about. The more precise your question is, the more pertinent the response will be.
 - Every time you use Copilot, the model works from **what you share** in that moment — not your entire project by default.
 
 In a nutshell:
