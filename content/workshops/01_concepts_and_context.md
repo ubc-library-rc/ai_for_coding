@@ -25,15 +25,19 @@ By the end of this workshop, you will:
 
 Large language models (LLMs) are trained on massive amounts of public code and documentation. This means they're skilled at recognizing syntax, identifying common programming patterns, and suggesting relevant fixes.
 
-Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, don't understand language the way humans do. While we read text as **words and meaning**, the model breaks text into **tokens** — small chunks that may be a whole word, part of a word, or even a single character. Tokens are the model's real unit of work: they determine how much it can "remember" at once and how much usage costs.
+Before getting the most out of AI-assisted coding, it’s important to understand how the underlying models work. LLMs, like those powering Copilot, don't understand language the way humans do. While we read text as **words with meaning**, the model breaks the same text into **tokens** — small chunks that may be whole words, parts of words, or even single characters. Tokens are the model's real unit of work: they determine how much it can "remember" at once and how much usage costs.
 
 Every time you interact with Copilot or any AI tool, it starts from whatever info you provide *that session*.
 
 **What this means in practice:**
 
-- LLMs learned general coding patterns from huge amounts of **public** code and documentation online.
+- LLMs have already memorized general coding patterns from huge amounts of **public** code and documentation online.
+- They use these patterns to predict what your request may be about. The more precise your question is, the more pertinent the resopnse will be.
 - Every time you use Copilot, the model works from **what you share** in that moment — not your entire project by default.
-- **Better context → better answers.** Vague or missing context → generic or incomplete outputs.
+
+In a nutshell:
+- **Better context → better answers.** 
+- Vague or missing context → generic or incomplete outputs.
 
 ```mermaid
 flowchart TD
@@ -43,36 +47,37 @@ flowchart TD
     C -- No --> E[Copilot provides a generic guess or asks follow-up questions to get more information]
 ```
 
-**Context window:** AI agents can only "remember" a limited amount of text at once (your prompt, recent chat, and shared files). The examples we use in this workshop stay well within that limit, so it’s just helpful background context and something to keep in mind once you move on to larger projects.
+## The context window
 
----
+AI agents can only "remember" a limited amount of text at once (your prompt, recent chat, and shared files). The examples we use in this workshop stay well within that limit. However, keep this in mind once you move on to larger projects, as the context of your work may become opaque for the AI agent after a while.
+
 
 ## The Prompt Formula
 
-The quality of what you get back depends heavily on how you ask. A well-structured prompt gives the model the context it needs to be genuinely useful — instead of a vague guess. When asking for help with code or data, try framing your request around these four parts:
+The quality of the model's response depends heavily on the way we prompt it. A well-structured prompt gives the model the context it needs to be genuinely useful — instead of making vague guesses. Therefore, when asking for help with code or data, try framing your request around these four elements:
 
-**Context + Task + Constraints + Format**
-
-```
-Context: What data or code are you working with?
-Task: What do you want to accomplish?
-Constraints: Any specific tools, libraries, or limits?
-Format: How should the AI present and structure the answer?
-```
+| **Context** | What data or code are you working with?
+| **Task** | What do you want to accomplish?
+| **Constraints** | Do you need any specific tools, libraries, or limitations?
+| **Format** | How should the AI present and structure the answer?
 
 ### Example 1: Vague vs. Clear
 
-**Less helpful:**  
+A relatively vague prompt is **less helpful.** For example:  
 
 > "Tell me about my research data on penguins."
 
 ![Copilot chat responding to the vague prompt "Tell me about my research data on penguins" with a generic answer]({{ '/img/copilot_sample_chat.png' | relative_url }})
 
-*Notice how the answer is vague and generic.*
+Notice how the AI response to this prompt is vague and generic.
 
-**Much better:**  
+Clarity and specificity tends to produce **more helpful** responses:  
 
 > "I have a CSV file with penguins data. How many columns does it have? Show me the column names as a list."
+
+{: .note}
+FOR GRIGORY: add screenshot of response similar to above, or replace both screenshots with the text of a typical AI response (the sections should be parallel, with similar content and formatting in each)
+
 
 Notice the difference: this version names the **context** (a CSV file), a specific **task** (count the columns), and the **format** (a list). It is more likely to get a precise answer instead of a generic one.
 
@@ -80,6 +85,11 @@ Notice the difference: this version names the **context** (a CSV file), a specif
 ### Example 2: Stating Your Tools (Constraints)
 
 > "I have a `penguins.csv` dataset. Using the dplyr package in R, can you calculate the average ... (some metrics of interest)? Show the results as a table."
+
+
+{: .note}
+GRIGORY: For continuity and ease of learning, preserve the order of components where possible (Context + Task + Constraints + Format) The sample prompts should align with the table in the "Prompt formula" section. For example, re-write the example 2 prompt as "I have a penguins.csv dataset. Calculate the average... (some metrics of interest) using the dplyr package in R. Show the results as a table.
+
 
 This example makes your request clear and specific.
 
@@ -98,6 +108,9 @@ flowchart LR
     D["Request output: table"]
     A --> B --> C --> D
 ```
+
+{: .note}
+GRIGORY: Add a text box or screenshot with a typical AI response, using the same format as used in the previous section.
 
 ---
 
