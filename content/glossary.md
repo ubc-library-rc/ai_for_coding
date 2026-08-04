@@ -19,7 +19,6 @@ has_toc: T
 |Prompt|Text input you give the LLM.|
 |Prompt engineering|The practice of designing and refining prompts so the model returns useful, accurate results.|
 |Integrated development environment (IDE)|Software for writing and running code in one place (e.g. Visual Studio Code with GitHub Copilot).|
-|Jupyter notebook (<code>.ipynb</code>)|An interactive document that combines code, output, plots, and notes in one file.|
 |Kernel|The Python runtime used by a notebook to execute code cells. Choosing the right kernel ensures your packages are available.|
 |Virtual environment (venv)|An isolated Python environment for a project so dependencies do not conflict with other projects.|
 |Comma-separated values (CSV)|A plain-text table format (often <code>.csv</code>). The Palmer Penguins dataset in this series is a CSV format.|
