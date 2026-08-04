@@ -28,13 +28,9 @@ We designed this workshop environment so you have a **safe, personal space** to 
 The workshop files are saved in a GitHub repository. Before you start, you'll make your own personal copy of the repository (in GitHub this process is called _forking_). This copy is yours alone — to experiment without worrying about breaking anything. You will also set up a GitHub _Codespace_, an online environment where you can develop code and chat with the _Copilot_ AI assistant without installing anything on your own computer.   
 
 {: .note}
-**GitHub Codespaces** lets you experiment, learn, and explore how your code, data, and AI tools connect—all in one place. The concepts we cover are general and apply to many languages and tools—what you learn here carries over to many environments, and this is just one way of putting the pieces together.
+A **GitHub Codespace** is a virtual environment where you can interact with Copilot and develop code. It's a convenient teaching tool, but for your own projects consider setting up a similar environment on your own computer (e.g. with [VS Code](https://code.visualstudio.com/docs/getstarted/overview) or [Positron](https://positron.posit.co/)).
 
-{: .note}
-Alternative: A **GitHub Codespace** is a virtual environment where you can interact with Copilot and develop code. It's a convenient teaching tool, but for your own projects consider setting up a similar environment on your own computer (e.g. with [VS Code](https://code.visualstudio.com/docs/getstarted/overview) or [Positron](https://positron.posit.co/)).
-
-Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). Activites in the next workshop in the series (Part 3) depend on the Codespace environment you set up here.
-
+Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). Later activities in the workshop depend on the Codespace environment you set up here.
 
 ## Launch your GitHub Codespace
 
@@ -121,8 +117,7 @@ Closed the chat by accident? Open it again from the **chat icon dropdown in the 
 
 A Codespace keeps running for a while after you close the tab, using up your free hours. To stop it, click the **Codespaces label in the bottom-left corner** and choose **Stop Current Codespace**. Stopping a Codespace saves your files. You can reopen it later right where you left off.
 
-{: .note}
-FOR GRIGORY: please add a relevant screenshot here
+![Codespaces label dropdown with the Stop Current Codespace option highlighted]({{ '/img/copilot_stop_codespace.png' | relative_url }})
 
 
 You can also manage all your Codespaces — including to see which are running and how much of your free quota has been used — at [github.com/codespaces](https://github.com/codespaces/).
