@@ -69,6 +69,7 @@ That's it for setup — now the fun part.
 <details>
 <summary><strong>Sample code Copilot might suggest</strong></summary>
 
+{% raw %}
 ```r
 library(tidyverse)
 
@@ -83,6 +84,7 @@ n_after <- nrow(penguins_clean)
 cat("Rows before cleaning:", n_before, "\n")
 cat("Rows after cleaning:", n_after, "\n")
 ```
+{% endraw %}
 
 </details>
 
