@@ -11,7 +11,7 @@ Creating an AI working environment with Copilot
 
 ---
 
-## Learning objectives
+## Learning Objectives
 
 By the end of this workshop, you will:
 
@@ -27,7 +27,7 @@ We designed this workshop environment so you have a **safe, personal space** to 
 
 The workshop files are saved in a GitHub repository. Before you start, you'll make your own personal copy of the repository (in GitHub this process is called _forking_). This copy is yours alone — to experiment without worrying about breaking anything. You will also set up a GitHub _Codespace_, an online environment where you can develop code and chat with the _Copilot_ AI assistant without installing anything on your own computer.   
 
-{: .note}
+{: .note} 
 A **GitHub Codespace** is a virtual environment where you can interact with Copilot and develop code. It's a convenient teaching tool, but for your own projects consider setting up a similar environment on your own computer (e.g. with [VS Code](https://code.visualstudio.com/docs/getstarted/overview) or [Positron](https://positron.posit.co/)).
 
 Prior experience with GitHub is *not* required to follow along, but to participate fully you'll need a free GitHub account (see [Setup](../setup.md)). Later activities in the workshop depend on the Codespace environment you set up here.

@@ -13,9 +13,9 @@ nav_order: 3
 
 By the end of this workshop, you will:
 
-- **Explore** a dataset with AI as your guide
-- **Prompt** with intent to turn plain language into R and ggplot2 plots/code
-- **Build** a habit of verification and code review
+- Explore a real dataset and use Copilot to load, clean, and visualize it.
+- Apply the Prompt Formula iteratively to refine AI-generated code toward a clear result.
+- Review and verify AI output/code yourself — staying the human in the loop.
 
 ---
 
@@ -43,12 +43,12 @@ Here's a quick peek at the data:
 
 ## How we'll work
 
-The goal here isn't to write an analysis script — it's to make your **first visualization** by directing Copilot in plain language. You'll work in your Codespace using **`analysis.R`**, and there are really just two moves:
+The goal here isn't to write an analysis script — it's to make your **first visualization** by directing Copilot in plain language. You'll work in your Codespace and it will put your R code in the **`analysis.R`** file. There are really just two moves:
 
-1. **Access the data** — load `data/penguins.csv` and get it ready to plot.
+1. **Access the data** — load and get it ready to plot.
 2. **Build a visualization** — create a plot with Copilot, then refine it in conversation until it looks the way you want.
 
-We'll move through the data loading step together, then focus most of our attention on creating and refining your plot.
+We'll move through the data loading step together, then focus most of our attention on creating and refining your plots.
 
 ---
 
@@ -58,7 +58,7 @@ We'll move through the data loading step together, then focus most of our attent
 
 > *In `analysis.R`, add code to read `data/penguins.csv` with the tidyverse, drop rows with missing values, and save the result as `penguins_clean`. Print how many rows there are before and after.*
 
-Run the code (**`Cmd/Ctrl + Enter`**), then **quickly check**:
+Check the code:
 
 - Did it read from `data/penguins.csv`?
 - Did the row count drop a little once missing values were removed?
@@ -66,11 +66,31 @@ Run the code (**`Cmd/Ctrl + Enter`**), then **quickly check**:
 
 That's it for setup — now the fun part.
 
+<details>
+<summary><strong>Sample code Copilot might suggest</strong></summary>
+
+```r
+library(tidyverse)
+
+# Read in the Palmer Penguins dataset
+penguins <- read_csv("data/penguins.csv")
+
+# For now, let's drop missing values and count before/after:
+n_before <- nrow(penguins)
+penguins_clean <- penguins |> drop_na()
+n_after <- nrow(penguins_clean)
+
+cat("Rows before cleaning:", n_before, "\n")
+cat("Rows after cleaning:", n_after, "\n")
+```
+
+</details>
+
 ---
 
 ## Step 2: Build and refine a visualization
 
-This is where you'll go back and forth with Copilot. **You don't need to know ggplot** — you describe what you want, look at the plot, and ask for changes.
+This is where you'll go back and forth with Copilot. **You don't need to know specialized plotting tools or libraries.** Copilot will likely use tools like "ggplot" (an R package for making plots) behind the scenes to turn your description into code and show you the result.
 
 **Start simple:**
 
@@ -90,10 +110,7 @@ You'll get a basic plot, similar to the one above. Now refine it, one request at
 
 > *Make the points a bit larger and slightly transparent so overlaps are visible.*
 
-Each request builds on the last. This is exactly how you'd work on your own projects: start rough, then steer the details — colors, labels, styling — until the result matches what you had in mind.
-
-
-**This is the key skill.** Changing a color scheme, a label, or a plot type is just a sentence to Copilot. You focus on *what you want to see*; it handles the syntax. If you don't like a change, say so and try another direction.
+Each prompt builds upon the previous one, helping you gradually refine your work. This iterative approach can scale to your own projects: begin with a rough version, then iteratively adjust details—like we did above with colors, labels, and styling.
 
 **Then compare groups** with a second plot:
 
@@ -111,7 +128,7 @@ Here is an example of the kind of box plot you can get:
 
 ### More plots to explore
 
-Once you've got the basics, keep experimenting — each of these is just one more prompt, and a chance to see a different corner of ggplot:
+Once you've got the basics, keep experimenting — each of these is just one more prompt, and a chance to see a different use of ggplot:
 
 > *Add a histogram (or density plot) of `body_mass_g` to see how weights are distributed.*
 
@@ -137,6 +154,7 @@ Now try experimenting on your own with Copilot. Here are a few ideas to keep you
 - *"Color the scatter plot by `sex` instead of species — does the pattern change?"*
 - *"Add a trend line to the scatter plot."*
 - *"Make a plot that compares body mass across islands."*
+  
 - *"Explain what this code is doing, line by line."*
 - *"Redo the plot so the colors are defined once and reused."*
 
