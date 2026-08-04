@@ -154,7 +154,6 @@ Now try experimenting on your own with Copilot. Here are a few ideas to keep you
 - *"Color the scatter plot by `sex` instead of species — does the pattern change?"*
 - *"Add a trend line to the scatter plot."*
 - *"Make a plot that compares body mass across islands."*
-  
 - *"Explain what this code is doing, line by line."*
 - *"Redo the plot so the colors are defined once and reused."*
 
