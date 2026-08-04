@@ -66,27 +66,16 @@ Check the code:
 
 That's it for setup — now the fun part.
 
-<details>
-<summary><strong>Sample code Copilot might suggest</strong></summary>
-
-{% raw %}
-```r
-library(tidyverse)
-
-# Read in the Palmer Penguins dataset
-penguins <- read_csv("data/penguins.csv")
-
-# For now, let's drop missing values and count before/after:
-n_before <- nrow(penguins)
-penguins_clean <- penguins |> drop_na()
-n_after <- nrow(penguins_clean)
-
-cat("Rows before cleaning:", n_before, "\n")
-cat("Rows after cleaning:", n_after, "\n")
-```
-{% endraw %}
-
-</details>
+<details> <summary><strong>Sample code Copilot might suggest</strong></summary> <pre><code class="language-r"> 
+library(tidyverse) # Read in the Palmer Penguins 
+dataset penguins <- read_csv("data/penguins.csv")
+# For now, let's drop missing values and count before/after: 
+n_before <- nrow(penguins) 
+penguins_clean <- penguins |> drop_na() 
+n_after <- nrow(penguins_clean) 
+cat("Rows before cleaning:", n_before, "\n") 
+cat("Rows after cleaning:", n_after, "\n") 
+</code></pre> </details>
 
 ---
 
